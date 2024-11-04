@@ -34,7 +34,7 @@ const NavAdmin = () => {
                     <i className="fa-solid fa-building-columns text-white"></i>
                 </button>
                 <button className="log-out  bg-gray-100  px-3 py-1 rounded-lg hover:bg-gray-200">
-                    <p>Cerrar Sesión</p>
+                    Cerrar Sesión
                 </button>
             </div>
         </nav>
