@@ -1,6 +1,6 @@
 // src/views/Home.js
 import React, { useState } from 'react';
-import Header from '../../components/Header/Header.jsx';        // Sube dos niveles y entra en components
+import Header from '../../components/Header/Header.jsx';
 import FilterTab from '../../components/FilterTab/FilterTab.jsx';
 import MatchCard from '../../components/MatchCard/MatchCard.jsx';
 import Footer from '../../components/Footer/Footer.jsx';

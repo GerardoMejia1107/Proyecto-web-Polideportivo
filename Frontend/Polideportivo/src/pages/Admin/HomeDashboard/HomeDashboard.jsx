@@ -1,4 +1,4 @@
-import HeaderAdmin from "../../../components/Header/HeaderAdmin.jsx";
+import HeaderAdmin from "../../../components/Admin/Header/HeaderAdmin.jsx";
 import UcaLogo from "../../../assets/images/UCA.png";
 import './HomeDashboard.css'
 
