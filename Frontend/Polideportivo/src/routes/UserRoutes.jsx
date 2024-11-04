@@ -1,7 +1,7 @@
 // src/routes/UserRoutes.jsx
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from '../pages/Usuario/Home.jsx';
+import Home from '../pages/User/Home/Home.jsx';
 
 const UserRoutes = () => {
     return (
