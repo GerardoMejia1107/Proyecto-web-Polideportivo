@@ -1,0 +1,88 @@
+
+.header {
+    background-color: #003C71;
+    padding: 0 1rem;
+    justify-content: flex-end;
+}
+
+.icons-container {
+    width: auto;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+.option {
+    margin: 0 0.5rem;
+    width: auto;
+    height: auto;
+}
+
+.option i, .log-out {
+    transition: transform 0.3s ease;
+}
+
+.log-out:hover {
+    transform: scale(1.1);
+}
+
+.option:hover i {
+    transform: scale(1.2);
+}
+
+
+.log-out {
+    margin-left: 5rem;
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .option > i {
+        font-size: 1.5rem;
+    }
+
+    .log-out {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        font-weight: bold;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+    . .option > i {
+        font-size: 1.5rem;
+    }
+
+    .log-out {
+        font-size: 1rem;
+        padding: 0.5rem;
+        font-weight: bold;
+    }
+}
+
+
+@media (min-width: 1280px) and (max-width: 1535px) {
+    .option > i {
+        font-size: 1.5rem;
+    }
+
+    .log-out {
+        font-size: 1rem;
+        padding: 0.5rem;
+        font-weight: bold;
+    }
+}
+
+@media (min-width: 1536px) {
+    .option > i {
+        font-size: 1.5rem;
+    }
+
+    .log-out {
+        font-size: 1rem;
+        padding: 0.5rem;
+        font-weight: bold;
+    }
+}
+
+
+
