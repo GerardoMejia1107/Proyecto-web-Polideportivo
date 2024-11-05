@@ -21,6 +21,10 @@ que lleva la información del origin, metodo y headers, si se apreuba entonces s
 */
 app.use(express.json());
 app.use("/api", mainRoutes);
+// Middleware para manejar los erroes que puedan suceder en las solicitudes
+app.use((err, req, res, next) => {
+  res.status(500).json({ message: err.message || "Internal Server Error" });
+});
 
 //Conectando con la base de datos MongoDB
 dotenv.config(); //Configuracion del dotenv
