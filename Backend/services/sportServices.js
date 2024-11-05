@@ -1,24 +1,14 @@
 import Sport from "../models/sportModel.js";
+import { checkDocumentExists } from "../utils/process.js";
 
 export const createSport = async (sportData) => {
   try {
     //Verifico que no exista el deporte
-    if (!(await checkSportExists(sportData))) {
+    if (!(await checkDocumentExists(Sport, sportData))) {
       const newSport = new Sport(sportData);
       return await newSport.save();
     }
     throw new Error("Sport already exists");
-  } catch (e) {
-    throw new Error(e.message);
-  }
-};
-
-const checkSportExists = async (sportData) => {
-  try {
-    //Expression regex para encontrar si el nombre del deporte existe, independiente mente del patron del nombre
-    const regex = new RegExp(`^${sportData.name.trim()}$`, "i"); //Le paso el nombre que contiene sportData
-    const existingSport = await Sport.findOne({ name: { $regex: regex } }); //Busco en la BD si existe algun documento con el patron
-    return !!existingSport; //Convierto el paso anterior en un boolean, si existe retornara true, sino entonces retorna false
   } catch (e) {
     throw new Error(e.message);
   }
@@ -55,7 +45,10 @@ export const deleteSportById = async (id) => {
 export const updateSportById = async (id, updatedSportData) => {
   try {
     const sport = await getMySportById(id); //Verifico que el existencia del doc
-    const nameAlreadyExists = await checkSportExists(updatedSportData); //Verifico la existencia del nombre del deporte
+    const nameAlreadyExists = await checkDocumentExists(
+      Sport,
+      updatedSportData
+    ); //Verifico la existencia del nombre del deporte
     if (sport && !nameAlreadyExists) {
       //Si existe el doc y el nombre no esta en uso
       sport.set(updatedSportData);
