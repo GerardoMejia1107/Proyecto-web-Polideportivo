@@ -1,12 +1,12 @@
-.header-container{
-    width: 100%;
-    flex-direction: column;
+.header-container {
+  width: 100%;
+  flex-direction: column;
 }
 
-.u-info{
-    padding: 2rem;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
+.u-info {
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
 }
