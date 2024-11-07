@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './TableData.css'
 
 const TableData = () => {
+    //Este es un array de objetos, esta estático solamente para ver como se visualiza la información en la Tabla
     const data = [
         {
             id: 1,
@@ -98,15 +99,21 @@ const TableData = () => {
         },
     ];
 
+    //Esta es una propiedad de la libreria de la Tabla, es para customizarla (estilos)
     const customStyles = {
         header: {
             style: {
-                fontFamily: '"Roboto", sans-serif',
-
+                display: 'none',
             },
         },
+        headCells: {
+            style: {
+                fontSize: '1.2rem',
+                fontFamily: '"Roboto", sans-serif',
+            }
+        },
 
-        rows:{
+        rows: {
             style: {
                 fontSize: '1rem'
             }
@@ -114,8 +121,8 @@ const TableData = () => {
     };
 
 
-    const [showModal, setShowModal] = useState(false);
-    const [selectedRow, setSelectedRow] = useState(null);
+    const [showModal, setShowModal] = useState(false); //Mostrar el modal
+    const [selectedRow, setSelectedRow] = useState(null); //Saber si se ha seleccionada una fila
 
     const handleRowClick = (row) => {
         setSelectedRow(row);
@@ -141,8 +148,6 @@ const TableData = () => {
         {name: 'Universidad_1', selector: row => row.universidad_1, sortable: true},
         {name: 'Universidad_2', selector: row => row.universidad_2, sortable: true},
         {name: 'Estado', selector: row => row.estado, sortable: true},
-
-
     ];
 
     return (
@@ -152,12 +157,12 @@ const TableData = () => {
                 </button>
             </div>
             <DataTable
-                title="Partidos planificados"
-                customStyles={customStyles}
-                columns={columns}
-                data={data}
+                title="Partidos planificados" //Titulo de la tabla - lo he ocultado
+                customStyles={customStyles} //Los estilos customizados
+                columns={columns} //las columnas
+                data={data} //el array de objetos al inicio
                 pagination
-                onRowClicked={handleRowClick}
+                onRowClicked={handleRowClick} //acciones al momento que se seleccione una fila
                 pointerOnHover
                 highlightOnHover
             />
