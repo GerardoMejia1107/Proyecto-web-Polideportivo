@@ -29,7 +29,7 @@
 }
 
 .option:hover {
-    background-color: #0066cc;
+    background-color: #3b82f6;
     transform: scale(1.1); /* Aumento leve en el hover */
 }
 
@@ -44,17 +44,30 @@
     margin-left: 2rem;
     background-color: #ffffff;
     color: #003C71;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.25rem;
     border-radius: 0.5rem;
     font-weight: bold;
+    font-size: 1rem;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
     cursor: pointer;
 }
 
 .log-out:hover {
     background-color: #e0e0e0;
-    color: #003366;
-    transform: scale(1.05);
+    color: #000000;
+    transform: none; /* Desactiva transformaciones adicionales */
+}
+
+/* Pantallas medianas (768px a 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .option > i {
+        font-size: 1.25rem;
+    }
+
+    .log-out {
+        font-size: 0.875rem;
+        font-weight: bold;
+    }
 }
 
 /* Ajustes de tamaño para pantallas medianas y grandes */
@@ -66,6 +79,7 @@
     .log-out {
         font-size: 1rem;
         padding: 0.5rem 1.25rem;
+        font-weight: bold;
     }
 }
 
@@ -77,6 +91,7 @@
     .log-out {
         font-size: 1.125rem;
         padding: 0.5rem 1.5rem;
+        font-weight: bold;
     }
 }
 
@@ -87,22 +102,7 @@
     color: #ffffff;
 }
 
-/* Efecto de hover en todos los botones */
-.option:hover {
-    background-color: #3b82f6;
-}
-
 /* Icono dentro del botón activo */
 .option.active i {
     color: #ffffff; /* Asegura que el icono se mantenga blanco en el botón activo */
 }
-
-/* Ajustes generales */
-.log-out:hover {
-    background-color: #e0e0e0;
-    color: #000000;
-    transform: none; /* Desactiva transformaciones adicionales */
-}
-
-
-

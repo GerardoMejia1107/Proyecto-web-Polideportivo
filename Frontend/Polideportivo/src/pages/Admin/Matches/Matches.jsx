@@ -1,11 +1,15 @@
 import React from 'react';
 import HeaderAdmin from "../../../components/Admin/HeaderAdmin/HeaderAdmin.jsx";
+import TableData from "../../../components/Admin/Table/TableData.jsx";
 import './Matches.css';
 
 const Matches = () => {
     return (
         <section className="content">
             <HeaderAdmin />
+            <div className="table-container">
+                <TableData />
+            </div>
             <div className="match-form-container">
                 <h2 className="match-form-title">Información Sobre Partido</h2>
                 
