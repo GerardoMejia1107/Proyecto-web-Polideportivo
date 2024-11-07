@@ -1,1 +1,101 @@
+.match-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el efecto de hover */
+    max-width: 100%;
+    width: 100%;
+}
 
+/* Efecto de hover para una sombra más pronunciada y un ligero aumento de tamaño */
+.match-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Título del deporte */
+.match-sport h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Fecha y hora */
+.match-date p {
+    font-size: 0.9em;
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de los equipos */
+.teams-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Estilos de cada equipo */
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-bottom: 5px;
+}
+
+.team-name {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+/* Texto VS */
+.vs-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #003366;
+}
+
+/* Botón de información */
+.info-button {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    transition: background-color 0.3s;
+}
+
+.info-button:hover {
+    background-color: #00509e;
+}
+
+/* Responsividad */
+@media (min-width: 768px) {
+    .match-card {
+        max-width: 45%; /* Dos tarjetas por fila en pantallas medianas y grandes */
+    }
+}
+
+@media (min-width: 1024px) {
+    .match-card {
+        max-width: 30%; /* Tres tarjetas por fila en pantallas grandes */
+    }
+}

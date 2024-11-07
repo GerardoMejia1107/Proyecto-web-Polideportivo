@@ -4,7 +4,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './styles/App.css';
 import './styles/index.css';
 import AppRoutes from './routes/AppRoutes.jsx';
-import NavUser from './components/User/NavUser.jsx';
 
 function App() {
     return (

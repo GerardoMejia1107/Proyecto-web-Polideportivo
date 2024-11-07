@@ -5,19 +5,14 @@ const FilterTab = ({ selectedSport, onSelectSport }) => {
     const sports = ['Todos', 'Voleibol', 'Baloncesto', 'Futsal'];
 
     return (
-        <div style={{ display: 'flex', gap: '1em', justifyContent: 'center', margin: '1em 0' }}>
+        <div className="filter-tab">
             {sports.map((sport) => (
                 <button
                     key={sport}
                     onClick={() => onSelectSport(sport)}
-                    style={{
-                        padding: '0.5em 1em',
-                        backgroundColor: selectedSport === sport ? '#003366' : '#e0e0e0',
-                        color: selectedSport === sport ? '#fff' : '#000',
-                        border: 'none',
-                        borderRadius: '5px'
-                    }}
+                    className={`filter-button ${selectedSport === sport ? 'active' : ''}`}
                 >
+                    {selectedSport === sport && <span className="checkmark">✓</span>} {/* Agrega el icono en el botón activo */}
                     {sport}
                 </button>
             ))}
