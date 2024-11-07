@@ -1,0 +1,48 @@
+/* Contenedor del tab */
+.filter-tab {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    margin: 1em 0;
+}
+
+/* Estilos base para los botones */
+.filter-button {
+    padding: 0.5em 1em;
+    background-color: #e0e0e0;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    font-size: 1em;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+/* Efecto hover para los botones */
+.filter-button:hover {
+    background-color: #c0c0c0;
+    transform: translateY(-2px); /* Pequeño movimiento al hacer hover */
+}
+
+/* Botón activo */
+.filter-button.active {
+    background-color: #003366;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en el botón activo */
+}
+
+/* Estilo para el ícono de verificación */
+.checkmark {
+    font-size: 1.2em;
+    color: #fff; /* Cambia el color según el fondo del botón activo */
+}
+
+/* Efecto para dispositivos táctiles */
+.filter-button:active {
+    transform: translateY(1px); /* Retroceso al hacer clic */
+}

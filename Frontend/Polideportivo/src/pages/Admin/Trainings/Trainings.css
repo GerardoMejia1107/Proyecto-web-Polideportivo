@@ -1,0 +1,107 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.training-form-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00509E;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #0070c9; /* Línea inferior azul */
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+
+.training-form-container {
+    max-width: 500px;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 2px solid transparent; /* Inicialmente transparente */
+    background-color: #f5faff;
+    margin-top: 2rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.training-form-container:hover {
+    border-color: #0070c9; /* Borde azul al pasar el cursor */
+    box-shadow: 0 6px 12px rgba(0, 112, 201, 0.2); /* Sombra más intensa en hover */
+}
+
+.training-form-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00509E;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #003366;
+}
+
+.form-group select,
+.form-group input {
+    padding: 0.75rem;
+    border: 1px solid #b0c4de;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group-inline {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+}
+
+.save-btn,
+.cancel-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.save-btn {
+    background-color: #0070c9;
+    color: white;
+    border: none;
+}
+
+.cancel-btn {
+    background-color: #cccccc;
+    color: #333333;
+    border: none;
+}
+
+.save-btn:hover {
+    background-color: #00509E;
+    transform: scale(1.05);
+}
+
+.cancel-btn:hover {
+    background-color: #b3b3b3;
+    transform: scale(1.05);
+}

@@ -1,40 +1,62 @@
-
+/* Contenedor principal de la navegación */
 .nav {
     background-color: #003C71;
-    padding: 0 1rem;
-    justify-content: flex-end;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Contenedor de iconos */
 .icons-container {
-    width: auto;
-    justify-content: space-evenly;
-    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
+/* Estilo base para cada botón de opción */
 .option {
-    margin: 0 0.5rem;
-    width: auto;
-    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: #00509e;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
 }
 
-.option i, .log-out {
+.option:hover {
+    background-color: #3b82f6;
+    transform: scale(1.1); /* Aumento leve en el hover */
+}
+
+.option i {
+    color: #ffffff;
+    font-size: 1.25rem;
     transition: transform 0.3s ease;
 }
 
-.log-out:hover {
-    transform: scale(1.1);
-}
-
-.option:hover i {
-    transform: scale(1.2);
-}
-
-
+/* Botón de Cerrar Sesión */
 .log-out {
-    margin-left: 5rem;
+    margin-left: 2rem;
+    background-color: #ffffff;
+    color: #003C71;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
 }
 
+.log-out:hover {
+    background-color: #e0e0e0;
+    color: #000000;
+    transform: none; /* Desactiva transformaciones adicionales */
+}
 
 /* Pantallas medianas (768px a 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -48,42 +70,39 @@
     }
 }
 
-/* Pantallas grandes (1024px a 1279px) */
-@media (min-width: 1024px) and (max-width: 1279px) {
-    .option > i {
+/* Ajustes de tamaño para pantallas medianas y grandes */
+@media (min-width: 768px) {
+    .option i {
         font-size: 1.5rem;
     }
 
     .log-out {
         font-size: 1rem;
+        padding: 0.5rem 1.25rem;
         font-weight: bold;
     }
 }
 
-/* Pantallas extra grandes (1280px a 1535px) */
-@media (min-width: 1280px) and (max-width: 1535px) {
-    .option > i {
+@media (min-width: 1280px) {
+    .option i {
         font-size: 1.75rem;
     }
 
     .log-out {
         font-size: 1.125rem;
+        padding: 0.5rem 1.5rem;
         font-weight: bold;
     }
 }
 
-/* Pantallas ultra grandes (1536px en adelante) */
-@media (min-width: 1536px) {
-    .option > i {
-        font-size: 1.5rem;
-    }
-
-    .log-out {
-        font-size: 1.15rem;
-        font-weight: bold;
-    }
+/* Estilo para el botón activo */
+.option.active {
+    background-color: #1e3a8a; /* Fondo más oscuro */
+    border-left: 4px solid #3b82f6; /* Borde izquierdo azul claro */
+    color: #ffffff;
 }
 
-
-
-
+/* Icono dentro del botón activo */
+.option.active i {
+    color: #ffffff; /* Asegura que el icono se mantenga blanco en el botón activo */
+}

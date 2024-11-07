@@ -1,10 +1,9 @@
-// src/views/Home.js
 import React, { useState } from 'react';
 import Header from '../../../components/Header/Header.jsx';
 import FilterTab from '../../../components/FilterTab/FilterTab.jsx';
 import MatchCard from '../../../components/MatchCard/MatchCard.jsx';
 import Footer from '../../../components/Footer/Footer.jsx';
-
+import './Home.css'
 const Home = () => {
     const [selectedSport, setSelectedSport] = useState('Todos');
 
@@ -19,12 +18,16 @@ const Home = () => {
     return (
         <div>
             <Header />
-            <h2 style={{ textAlign: 'center', margin: '1em 0' }}>Partidos de esta semana</h2>
-            <FilterTab selectedSport={selectedSport} onSelectSport={setSelectedSport} />
-            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-                {filteredMatches.map((match, index) => (
-                    <MatchCard key={index} match={match} />
-                ))}
+            <div className="container">
+                <h2 className="title">Partidos de esta semana</h2>
+                <div className="filter-tab">
+                    <FilterTab selectedSport={selectedSport} onSelectSport={setSelectedSport} />
+                </div>
+                <div>
+                    {filteredMatches.map((match, index) => (
+                        <MatchCard key={index} match={match} className="match-card" />
+                    ))}
+                </div>
             </div>
             <Footer />
         </div>
