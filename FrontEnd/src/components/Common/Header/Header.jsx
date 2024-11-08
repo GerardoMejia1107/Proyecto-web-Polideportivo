@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-import UCALogo from '../../../assets/images/UCA.png';
+import UCALogo from '../../../../public/images/UCA.png';
 
 const Header = () => {
     return (

@@ -2,11 +2,12 @@
 @import url("../../../styles/color-variables.css");
 @import url("../../../styles/breakpoints-variables.css");
 
-*{
+* {
     font-size: 1rem;
+
 }
 
-.home-container{
+.home-container {
     width: 100%;
     height: auto;
     display: grid;
@@ -14,8 +15,18 @@
 }
 
 .content-from-main {
-  grid-column: 1/-1;
+    grid-column: 1/-1;
     min-height: 50vh;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.match-cards-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 @media (min-width: 320px) and (max-width: 575px) {

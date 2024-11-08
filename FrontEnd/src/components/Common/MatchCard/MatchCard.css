@@ -1,3 +1,7 @@
+@import '../../../styles/color-variables.css';
+*{
+
+}
 .match-card {
     display: flex;
     flex-direction: column;
@@ -5,8 +9,8 @@
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 20px;
-    margin: 10px;
+    padding: 2rem;
+    margin: 1rem 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el efecto de hover */
     max-width: 100%;
@@ -16,7 +20,9 @@
 /* Efecto de hover para una sombra más pronunciada y un ligero aumento de tamaño */
 .match-card:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
+    cursor: pointer;
+    /*transform: translateY(-5px);*/
+
 }
 
 /* Título del deporte */
@@ -96,6 +102,6 @@
 
 @media (min-width: 1024px) {
     .match-card {
-        max-width: 30%; /* Tres tarjetas por fila en pantallas grandes */
+        max-width: 30rem; /* Tres tarjetas por fila en pantallas grandes */
     }
 }

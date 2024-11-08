@@ -2,7 +2,7 @@ import React from 'react';
 import "./FilterTab.css";
 
 const FilterTab = ({ selectedSport, onSelectSport }) => {
-    const sports = ['Todos', 'Voleibol', 'Baloncesto', 'Futsal'];
+    const sports = ['Todos', 'Voleibol', 'Baloncesto', 'Fútbol Sala', 'Fútbol 11'];
 
     return (
         <div className="filter-tab">

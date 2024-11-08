@@ -1,4 +1,4 @@
-import UcaLogo from "../../../assets/images/UCA.png";
+import UcaLogo from "../../../../public/images/UCA.png";
 import NavAdmin from "../NavAdmin/NavAdmin.jsx";
 import "./HeaderAdmin.css";
 
