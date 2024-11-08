@@ -3,53 +3,51 @@
 @import url("../../../styles/breakpoints-variables.css");
 
 * {
-    font-size: 1rem;
-
+  font-size: 1rem;
 }
 
 .home-container {
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
 }
 
 .content-from-main {
-    grid-column: 1/-1;
-    min-height: 50vh;
-    width: 90%;
-    margin: 0 auto;
+  grid-column: 1/-1;
+  min-height: 50vh;
+  width: 90%;
+  margin: 0 auto 5rem;
 }
 
 .match-cards-container {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 @media (min-width: 320px) and (max-width: 575px) {
-    /* Estilos para pantallas móviles muy pequeñas */
+  /* Estilos para pantallas móviles muy pequeñas */
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-    /* Estilos para pantallas móviles grandes */
+  /* Estilos para pantallas móviles grandes */
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-    /* Estilos para tabletas */
+  /* Estilos para tabletas */
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-    /* Estilos para laptops pequeños y pantallas medianas */
+  /* Estilos para laptops pequeños y pantallas medianas */
 }
 
 @media (min-width: 1200px) and (max-width: 1399px) {
-    /* Estilos para monitores grandes */
+  /* Estilos para monitores grandes */
 }
 
 @media (min-width: 1400px) {
-    /* Estilos para monitores muy grandes */
+  /* Estilos para monitores muy grandes */
 }
-

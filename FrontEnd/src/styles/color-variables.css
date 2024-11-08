@@ -1,10 +1,12 @@
 :root {
-    --bg-color-blue: #003C71;
-    --bg-color-gray-light: #D9D9D9;
-    --bg-color-gray-dark: #CAC4D0;
-    --bg-color-white: #FFFFFF;
-    --bg-color-dark: #000000;
-    --bg-color-success: #508D69;
-    --bg-color-warning: #FF9910;
-    --bg-color-danger: #FF8F8F;
+  --bg-color-blue: #003c71;
+  --bg-color-gray-light: #d9d9d9;
+  --bg-color-gray-dark: #cac4d0;
+  --bg-color-white: #ffffff;
+  --bg-color-dark: #000000;
+  --bg-color-success: #508d69;
+  --bg-color-warning: #ff9910;
+  --bg-color-danger: #ff8f8f;
+  --bg-background: rgb(248, 246, 243);
+  --text-color-gray: #666;
 }
