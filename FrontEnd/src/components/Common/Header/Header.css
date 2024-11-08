@@ -1,19 +1,19 @@
-/* Contenedor principal del header */
+@import '../../../styles/color-variables.css';
 .header {
-  background-color: #003366;
-  color: #fff;
-  padding: 1em 2em;
+  grid-column: 1/-1;
+  background-color: var(--bg-color-white);
+  color: var(--bg-color-dark);
   display: flex;
   align-items: center;
   gap: 1em;
   text-align: left;
+  width: 100%;
+  margin-top: 1rem;
 }
 
 /* Estilo para el logo */
 .header-logo {
-  height: 90px;
-  width: auto;
-  margin-right: 1em;
+  height: auto;
 }
 
 /* Contenedor del texto */
@@ -24,38 +24,148 @@
 
 /* Título del header */
 .header-title {
-  font-size: 1.6em;
+  font-size: 1.6rem;
   font-weight: bold;
   margin: 0;
-  color: #ffffff;
 }
 
 /* Subtítulo o descripción */
 .header-subtitle {
   font-size: 0.9em;
-  color: #e0e0e0;
   margin-top: 0.2em;
   font-style: italic;
 }
 
 /* Ajustes de responsividad */
-@media (max-width: 768px) {
+
+@media (min-width: 320px) and (max-width: 575px) {
+  .header-logo {
+    max-width: 5rem;
+  }
+
   .header {
-    padding: 1em;
+    padding: 0 1rem;
     flex-direction: column;
     text-align: center;
     align-items: center;
   }
 
-  .header-logo {
-    margin-right: 0;
-  }
-
   .header-title {
-    font-size: 1.4em;
+    font-size: 1.2rem;
   }
 
   .header-subtitle {
-    font-size: 0.8em;
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .header-logo {
+    max-width: 5rem;
+  }
+
+  .header {
+    padding: 0 1rem;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .header-title {
+    font-size: 1.2rem;
+  }
+
+  .header-subtitle {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .header-logo {
+    max-width: 5rem;
+  }
+
+  .header {
+    padding: 0 1rem;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .header-title {
+    font-size: 1.2rem;
+  }
+
+  .header-subtitle {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .header-logo {
+    max-width: 5rem;
+  }
+
+  .header {
+    padding: 0 1rem;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .header-title {
+    font-size: 1.2rem;
+  }
+
+  .header-subtitle {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .header-logo {
+    max-width: 5rem;
+  }
+
+  .header {
+    padding: 0 1rem;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .header-title {
+    font-size: 1.3rem;
+  }
+
+  .header-subtitle {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .header-logo {
+    max-width: 5rem;
+  }
+
+  .header {
+    padding: 0 1rem;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .header-title {
+    font-size: 1.4rem;
+  }
+
+  .header-subtitle {
+    margin-top: 1rem;
+    font-size: 1rem;
   }
 }

@@ -1,0 +1,10 @@
+:root {
+    --bg-color-blue: #003C71;
+    --bg-color-gray-light: #D9D9D9;
+    --bg-color-gray-dark: #CAC4D0;
+    --bg-color-white: #FFFFFF;
+    --bg-color-dark: #000000;
+    --bg-color-success: #508D69;
+    --bg-color-warning: #FF9910;
+    --bg-color-danger: #FF8F8F;
+}

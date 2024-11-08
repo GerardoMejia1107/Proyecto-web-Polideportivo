@@ -1,24 +1,44 @@
 /* Estilo para el contenedor principal */
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 1em;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  /* Estilo para el pie de página */
-  .footer {
-    background-color: #003366;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9em;
-    font-family: "Roboto", sans-serif;
+@import url("../../../styles/color-variables.css");
+@import url("../../../styles/breakpoints-variables.css");
 
-  }
-  .main-content {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+*{
+    font-size: 1rem;
 }
+
+.home-container{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.content-from-main {
+  grid-column: 1/-1;
+    min-height: 50vh;
+}
+
+@media (min-width: 320px) and (max-width: 575px) {
+    /* Estilos para pantallas móviles muy pequeñas */
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    /* Estilos para pantallas móviles grandes */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Estilos para tabletas */
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* Estilos para laptops pequeños y pantallas medianas */
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    /* Estilos para monitores grandes */
+}
+
+@media (min-width: 1400px) {
+    /* Estilos para monitores muy grandes */
+}
+
