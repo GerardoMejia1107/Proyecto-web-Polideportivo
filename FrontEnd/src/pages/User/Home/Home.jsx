@@ -50,7 +50,7 @@ const Home = () => {
   return (
     <div className={"home-container"}>
       <NavVar />
-      <Header />
+      <Header message={' Mantente informado sobre todos los eventos deportivos de la semana.'}/>
 
       <main className="content-from-main">
         {/*  <h2 className="title">Partidos de esta semana</h2>*/}

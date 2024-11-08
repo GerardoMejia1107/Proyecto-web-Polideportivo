@@ -2,8 +2,10 @@ import React from "react";
 import "./Header.css";
 import UCALogo from "../../../assets/images/UCA.png";
 
-const Header = () => {
+const Header = ({message}) => {
+    console.log(message)
   return (
+
     <header className="header">
       <img
         className="header-logo"
@@ -15,7 +17,7 @@ const Header = () => {
           Universidad Centroamericana José Simeón Cañas
         </h1>
         <p className="header-subtitle">
-          Mantente informado sobre todos los eventos deportivos de la semana.
+            {message}
         </p>
       </div>
     </header>

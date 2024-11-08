@@ -27,7 +27,7 @@ const MatchCard = ({ match }) => {
           {/* <span className="team-name">{match.teamA.name}</span> */}
         </div>
 
-        <span className="vs-text">-</span>
+        <span className="vs-text">vs</span>
 
         <div className="team">
           <img
