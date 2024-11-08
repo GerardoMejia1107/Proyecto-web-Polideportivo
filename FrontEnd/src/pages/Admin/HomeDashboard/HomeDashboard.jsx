@@ -2,6 +2,7 @@ import React from 'react';
 import NavAdmin from "../../../components/Admin/NavAdmin/NavAdmin.jsx";
 import HeaderAdmin from "../../../components/Admin/HeaderAdmin/HeaderAdmin.jsx";
 import './HomeDashboard.css';
+import Header from "../../../components/Common/Header/Header.jsx";
 
 const HomeDashboard = () => {
     const partidos = [
@@ -16,7 +17,8 @@ const HomeDashboard = () => {
 
     return (
         <section className="content">
-            <HeaderAdmin />
+            <NavAdmin/>
+            <Header message={'Visualiza tus eventos deportivos transcurriendo'}/>
             <main className="container">
                 <div className="main-content">
                     {/* Sección de Partidos en curso */}

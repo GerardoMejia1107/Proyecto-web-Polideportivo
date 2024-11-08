@@ -1,11 +1,14 @@
 import HeaderAdmin from "../../../components/Admin/HeaderAdmin/HeaderAdmin.jsx";
 import React from "react";
 import "./Universities.css";
+import NavAdmin from "../../../components/Admin/NavAdmin/NavAdmin.jsx";
+import Header from "../../../components/Common/Header/Header.jsx";
 
 const Universities = () => {
     return (
         <section className="content">
-            <HeaderAdmin />
+            <NavAdmin/>
+            <Header message={'Visualiza tus eventos deportivos transcurriendo'}/>
             <div className="university-form-container">
                 <h2 className="form-title">Agregar Universidad</h2>
                 <form className="university-form">

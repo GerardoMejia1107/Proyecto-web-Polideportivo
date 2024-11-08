@@ -1,5 +1,8 @@
 import HeaderAdmin from "../../../components/Admin/HeaderAdmin/HeaderAdmin.jsx";
 import './History.css';
+import NavAdmin from "../../../components/Admin/NavAdmin/NavAdmin.jsx";
+import Header from "../../../components/Common/Header/Header.jsx";
+import React from "react";
 
 const History = () => {
     const matches = [
@@ -10,7 +13,8 @@ const History = () => {
 
     return (
         <section className="content">
-            <HeaderAdmin />
+            <NavAdmin/>
+            <Header message={'Visualiza tus eventos deportivos finalizados'}/>
             <h2 className="history-title">Historial de Partidos</h2>
             <div className="table-container">
                 <table className="history-table">

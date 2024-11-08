@@ -1,10 +1,14 @@
 import HeaderAdmin from "../../../components/Admin/HeaderAdmin/HeaderAdmin.jsx";
 import "./Trainings.css";
+import NavAdmin from "../../../components/Admin/NavAdmin/NavAdmin.jsx";
+import Header from "../../../components/Common/Header/Header.jsx";
+import React from "react";
 
 const Trainings = () => {
     return (
         <section className={'content'}>
-            <HeaderAdmin />
+            <NavAdmin/>
+            <Header message={'Visualiza tus eventos deportivos transcurriendo'}/>
             <div className="training-form-container">
                 <h2 className="training-form-title">Información Sobre Entrenamiento</h2>
                 <form>

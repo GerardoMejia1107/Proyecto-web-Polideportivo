@@ -2,11 +2,14 @@ import React from 'react';
 import HeaderAdmin from "../../../components/Admin/HeaderAdmin/HeaderAdmin.jsx";
 import TableData from "../../../components/Admin/Table/TableData.jsx";
 import './Matches.css';
+import NavAdmin from "../../../components/Admin/NavAdmin/NavAdmin.jsx";
+import Header from "../../../components/Common/Header/Header.jsx";
 
 const Matches = () => {
     return (
         <section className="content">
-            <HeaderAdmin />
+            <NavAdmin/>
+            <Header message={'Crea y publica eventos deportivos'}/>
             <div className="table-container">
                 <TableData />
             </div>
