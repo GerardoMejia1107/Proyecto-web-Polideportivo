@@ -1,6 +1,4 @@
-
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -19,11 +17,16 @@ main {
   display: block;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Libre Franklin", sans-serif;
 }
 
-p{
+p {
   font-family: "Roboto", sans-serif;
 }
 
@@ -96,15 +99,16 @@ textarea {
 }
 
 button,
-input { /* 1 */
+input {
+  /* 1 */
   overflow: visible;
 }
 
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
-
 
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
@@ -131,11 +135,9 @@ progress {
   vertical-align: baseline;
 }
 
-
 textarea {
   overflow: auto;
 }
-
 
 [type="checkbox"],
 [type="radio"] {
@@ -165,16 +167,13 @@ details {
   display: block;
 }
 
-
 summary {
   display: list-item;
 }
 
-
 template {
   display: none;
 }
-
 
 [hidden] {
   display: none;

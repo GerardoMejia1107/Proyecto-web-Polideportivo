@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Header from '../../../components/Header/Header.jsx';
-import FilterTab from '../../../components/FilterTab/FilterTab.jsx';
-import MatchCard from '../../../components/MatchCard/MatchCard.jsx';
-import Footer from '../../../components/Footer/Footer.jsx';
+import Header from '../../../components/Common/Header/Header.jsx';
+import FilterTab from '../../../components/Common/FilterTab/FilterTab.jsx';
+import MatchCard from '../../../components/Common/MatchCard/MatchCard.jsx';
+import Footer from '../../../components/Common/Footer/Footer.jsx';
 import './Home.css'
 const Home = () => {
     const [selectedSport, setSelectedSport] = useState('Todos');
