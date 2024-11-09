@@ -12,47 +12,6 @@
   margin: 0 auto 5rem;
 }
 
-.admin-home-match-item,
-.admin-home-training-item {
-  display: flex;
-  align-items: center;
-  background-color: var(--bg-background);
-  padding: 1rem;
-  padding-right: 3rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease;
-  gap: 2rem;
-  width: 100%;
-}
-
-.admin-home-match-item .admin-home-match-details .admin-home-team-logos img {
-  height: auto;
-  width: 4.5rem;
-  object-fit: cover;
-}
-
-.admin-home-match-item .admin-home-match-details .admin-home-team-logos {
-  display: flex;
-  height: auto;
-  padding: 0.3rem;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.admin-home-match-item:hover,
-.admin-home-training-item:hover,
-.admin-home-training-item:hover {
-  transform: scale(1.02);
-  cursor: pointer;
-}
-
-.admin-home-match-status-icon,
-.admin-home-training-status-icon {
-  align-self: self-start;
-  color: var(--bg-color-success);
-}
-
 /* Título de cada sección */
 .admin-home-matches-section h2,
 .admin-home-trainings-section h2 {
@@ -60,14 +19,6 @@
   font-weight: 600;
   font-size: 1.1rem;
   margin-bottom: 1rem;
-}
-
-.admin-home-match-item .admin-home-match-details,
-.admin-home-training-details {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
 }
 
 .admin-home-main-section {
@@ -98,15 +49,8 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  /* Estilos para tabletas */
-  .admin-home-match-item,
-  .admin-home-training-item {
-    max-width: max-content;
-  }
-
   .admin-home-matches-list,
   .admin-home-trainings-list {
-    width: auto;
     width: 80%;
     flex-wrap: wrap;
     justify-content: center;
@@ -114,14 +58,8 @@
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  .admin-home-match-item,
-  .admin-home-training-item {
-    max-width: max-content;
-  }
-
   .admin-home-matches-list,
   .admin-home-trainings-list {
-    width: auto;
     width: 80%;
     flex-wrap: wrap;
     justify-content: center;
@@ -130,14 +68,8 @@
 }
 
 @media (min-width: 1200px) and (max-width: 1399px) {
-  .admin-home-match-item,
-  .admin-home-training-item {
-    max-width: max-content;
-  }
-
   .admin-home-matches-list,
   .admin-home-trainings-list {
-    width: auto;
     width: 80%;
     flex-wrap: wrap;
     justify-content: center;
@@ -146,11 +78,6 @@
 }
 
 @media (min-width: 1400px) {
-  .admin-home-match-item,
-  .admin-home-training-item {
-    max-width: max-content;
-  }
-
   .admin-home-matches-list,
   .admin-home-trainings-list {
     margin: 0 auto;
@@ -158,9 +85,5 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
-  }
-
-  p {
-    font-size: 1.2rem;
   }
 }
