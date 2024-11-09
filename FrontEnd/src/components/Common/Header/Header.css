@@ -1,0 +1,171 @@
+@import "../../../styles/color-variables.css";
+.header {
+  grid-column: 1/-1;
+  background-color: var(--bg-background);
+  color: var(--bg-color-dark);
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  text-align: left;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* Estilo para el logo */
+.header-logo {
+  height: auto;
+}
+
+/* Contenedor del texto */
+.header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Título del header */
+.header-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Subtítulo o descripción */
+.header-subtitle {
+  font-size: 0.9em;
+  margin-top: 0.2em;
+  font-style: italic;
+}
+
+/* Ajustes de responsividad */
+
+@media (min-width: 320px) and (max-width: 575px) {
+  .header-logo {
+    max-width: 5rem;
+  }
+
+  .header {
+    padding: 0 1rem;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .header-title {
+    font-size: 1.2rem;
+  }
+
+  .header-subtitle {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .header-logo {
+    max-width: 5rem;
+  }
+
+  .header {
+    padding: 0 1rem;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .header-title {
+    font-size: 1.2rem;
+  }
+
+  .header-subtitle {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .header-logo {
+    max-width: 5rem;
+  }
+
+  .header {
+    padding: 0 1rem;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .header-title {
+    font-size: 1.2rem;
+  }
+
+  .header-subtitle {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .header-logo {
+    max-width: 5rem;
+  }
+
+  .header {
+    padding: 0 1rem;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .header-title {
+    font-size: 1.2rem;
+  }
+
+  .header-subtitle {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .header-logo {
+    max-width: 5rem;
+  }
+
+  .header {
+    padding: 0 1rem;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .header-title {
+    font-size: 1.3rem;
+  }
+
+  .header-subtitle {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .header-logo {
+    max-width: 5rem;
+  }
+
+  .header {
+    padding: 0 1rem;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .header-title {
+    font-size: 1.4rem;
+  }
+
+  .header-subtitle {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+}

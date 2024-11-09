@@ -1,0 +1,43 @@
+/* Contenedor principal */
+.history-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh; /* Cubre toda la altura de la pantalla */
+    overflow-x: hidden; /* Evita desplazamiento horizontal */
+    background-color: #f7f7f7;
+}
+
+/* Contenedor para el contenido principal */
+.content-from-main {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contenedor de filtro */
+.filter-tab {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de tarjetas de partidos */
+.match-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Asegura que el Header y Footer ocupen todo el ancho */
+.header, .footer {
+    width: 100%;
+}
+

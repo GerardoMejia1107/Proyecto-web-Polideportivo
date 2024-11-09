@@ -1,0 +1,87 @@
+/* Contenedor del tab */
+@import "../../../styles/color-variables.css";
+.filter-tab {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  margin: 1em 0;
+  flex-wrap: wrap;
+}
+
+/* Estilos base para los botones */
+.filter-button {
+  padding: 0.5em 1em;
+  background-color: var(--bg-color-gray-light);
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+/* Efecto hover para los botones */
+.filter-button:hover {
+  background-color: #c0c0c0;
+  transform: translateY(-2px); /* Pequeño movimiento al hacer hover */
+}
+
+/* Botón activo */
+.filter-button.active {
+  background-color: var(--bg-color-warning);
+  font-weight: 500;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en el botón activo */
+}
+
+/* Estilo para el ícono de verificación */
+.checkmark {
+  font-size: 1.2em;
+  color: #fff; /* Cambia el color según el fondo del botón activo */
+}
+
+/* Efecto para dispositivos táctiles */
+.filter-button:active {
+  transform: translateY(1px); /* Retroceso al hacer clic */
+}
+
+@media (min-width: 320px) and (max-width: 575px) {
+  .filter-button {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .filter-button {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .filter-button {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .filter-button {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .filter-button {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .filter-button {
+    font-size: 1rem;
+  }
+}

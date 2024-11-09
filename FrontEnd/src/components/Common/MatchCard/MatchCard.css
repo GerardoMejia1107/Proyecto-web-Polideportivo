@@ -1,0 +1,190 @@
+@import "../../../styles/color-variables.css";
+
+.match-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el efecto de hover */
+  max-width: 100%;
+  width: 100%;
+}
+
+/* Efecto de hover para una sombra más pronunciada y un ligero aumento de tamaño */
+.match-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transform: translateY(-5px);
+}
+
+/* Título del deporte */
+.match-sport h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--bg-color-blue);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Fecha y hora */
+.match-date p {
+  font-size: 0.9em;
+  color: var(--text-color-gray);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Contenedor de los equipos */
+.teams-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  max-width: 15rem;
+  margin-bottom: 15px;
+}
+
+/* Estilos de cada equipo */
+.team {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%; /* Se adapta al contenedor padre */
+  max-width: 50%; /* Previene que exceda el ancho disponible */
+  overflow: hidden;
+}
+
+.team-logo {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.team-name {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* Texto VS */
+.vs-text {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--bg-color-blue);
+}
+
+/* Botón de información */
+.info-button {
+  background-color: var(--bg-color-blue);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  transition: background-color 0.3s;
+}
+
+.info-button:hover {
+  background-color: #00509e;
+}
+
+@media (min-width: 320px) and (max-width: 575px) {
+  .match-sport h3 {
+    font-size: 1rem;
+  }
+
+  .info-button {
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+
+  .match-card {
+    max-width: 20rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .match-sport h3 {
+    font-size: 1rem;
+  }
+
+  .info-button {
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+
+  .match-card {
+    max-width: 20rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .match-sport h3 {
+    font-size: 1.1rem;
+  }
+
+  .info-button {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+
+  .match-card {
+    max-width: 20rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .match-sport h3 {
+    font-size: 1.1rem;
+  }
+
+  .info-button {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+
+  .match-card {
+    max-width: 20rem;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .match-sport h3 {
+    font-size: 1.1rem;
+  }
+
+  .info-button {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+
+  .match-card {
+    max-width: 20rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .match-sport h3 {
+    font-size: 1.1rem;
+  }
+
+  .info-button {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+
+  .match-card {
+    max-width: 30rem;
+  }
+}
