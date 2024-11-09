@@ -10,8 +10,8 @@
   padding: 2rem;
   margin: 1rem 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Ajuste para sincronizar tamaño */
-  max-width: 20rem; /* Igual que otras tarjetas */
+  width: 100%;
+  max-width: 20rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -21,6 +21,7 @@
   transform: translateY(-5px);
 }
 
+/* Título del deporte */
 .match-sport-title h3 {
   font-size: 1.2rem;
   font-weight: bold;
@@ -28,6 +29,7 @@
   color: var(--bg-color-blue);
 }
 
+/* Alineación de equipos y puntuaciones */
 .teams-score-row {
   display: flex;
   align-items: center;
@@ -50,29 +52,29 @@
   margin-bottom: 0.5rem;
 }
 
-.team-name {
-  font-size: 0.9em;
-  font-weight: bold;
-}
-
 .score-display {
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--bg-color-blue); /* Usa el color principal */
   flex: 0.5;
 }
 
 .score-separator {
   margin: 0 0.5rem;
+  font-size: 1.2em;
 }
 
+/* Información del partido */
 .match-info p {
   font-size: 0.9em;
   color: var(--text-color-gray);
+  margin-top: 1rem;
 }
 
+/* Botón de galería */
 .gallery-button {
   background-color: var(--bg-color-blue);
   color: white;
@@ -83,19 +85,20 @@
   cursor: pointer;
   font-family: "Roboto", sans-serif;
   transition: background-color 0.3s;
-  width: 100%; /* Para que tenga el mismo ancho que la tarjeta */
+  width: 100%; /* Botón ocupa el ancho completo */
   text-align: center;
-  max-width: max-content;
+  max-width: 15rem; /* Ajusta el ancho máximo */
 }
 
 .gallery-button:hover {
-  background-color: var(--bg-color-blue);
+  background-color: darken(var(--bg-color-blue), 10%);
 }
 
+/* Adaptabilidad para pantallas pequeñas */
 @media (max-width: 768px) {
   .match-card-with-score {
     padding: 1.5rem;
-    max-width: 18rem; /* Ajuste para pantallas pequeñas */
+    max-width: 18rem;
   }
 
   .team-logo {
@@ -104,10 +107,23 @@
   }
 
   .score-display {
-    font-size: 1em;
+    font-size: 1.2em;
   }
 
   .gallery-button {
     font-size: 0.9em;
   }
+}
+
+/* Puntaje del equipo ganador, perdedor y empate */
+.winner {
+  color: green;
+}
+
+.loser {
+  color: red;
+}
+
+.draw {
+  color: black; /* O cualquier otro color neutro */
 }

@@ -1,0 +1,104 @@
+.trainings-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+  }
+  
+  .trainings-content {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f7f7f7;
+    flex-grow: 1;
+  }
+  
+  .current-week {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .sport-selector {
+    margin-bottom: 20px;
+  }
+  
+  .sport-select {
+    padding: 5px;
+    border-radius: 4px;
+  }
+  
+  .training-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .training-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .training-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .training-day {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 0.5rem;
+  }
+  
+  .training-time,
+  .training-place {
+    font-size: 0.9em;
+    color: #666666;
+    margin: 0.3rem 0;
+  }
+  
+  .training-status {
+    font-weight: bold;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .status-icon {
+    font-size: 1.2em;
+    margin-right: 5px;
+  }
+  
+  /* Colores por estado con emojis */
+  .training-status.no-decidido {
+    color: orange;
+    background-color: #fff4e5;
+  }
+  
+  .training-status.cancelado {
+    color: red;
+    background-color: #f8d7da;
+  }
+  
+  .training-status.confirmado {
+    color: green;
+    background-color: #e0f7e0;
+  }
+  
