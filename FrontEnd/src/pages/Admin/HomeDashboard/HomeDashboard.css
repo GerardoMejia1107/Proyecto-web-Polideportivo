@@ -27,6 +27,7 @@
   width: 100%;
   padding: 1rem;
   border-radius: 8px;
+  gap: 1.5rem;
 }
 
 i {
@@ -47,10 +48,9 @@ i {
   align-items: center;
   background-color: var(--bg-background);
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease;
-  margin-bottom: 1rem;
 }
 
 .item:hover {
@@ -95,15 +95,12 @@ i {
 
 @media (min-width: 768px) and (max-width: 991px) {
   .team-logos {
-    gap: 8px;
+    width: 100%;
+    justify-content: space-evenly;
   }
 
   .item {
-    width: 100%;
-  }
-
-  .item-details {
-    align-items: center;
+    width: 50%;
   }
 
   .data-content {
@@ -155,13 +152,13 @@ i {
   }
 
   .data-from-db {
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
   }
 
   .data-content {
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: rem;
   }
 
   .item {
