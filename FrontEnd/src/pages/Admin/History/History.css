@@ -1,72 +1,15 @@
-/* Contenedor de la tabla para centrar y agregar estilo */
-.table-container {
-    max-width: 700px;
-    margin: 1rem auto;
-    background-color: #ffffff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.admin-history-container {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
 }
 
-/* Título del historial de partidos */
-.history-title {
-    color: #003C71;
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    font-weight: bold;
+.admin-history-main-content {
+  grid-column: 1/-1;
+  min-height: 50vh;
+  width: 90%;
+  margin: 2rem auto 5rem;
 }
 
-/* Estilo de la tabla */
-.history-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
-}
 
-/* Estilos para cabeceras de la tabla */
-.history-table th {
-    background-color: #003C71;
-    color: #ffffff;
-    font-weight: bold;
-    padding: 0.75rem;
-    border-bottom: 2px solid #e0e0e0;
-    font-size: 1rem;
-}
-
-/* Estilos para celdas de la tabla */
-.history-table td {
-    padding: 0.75rem;
-    border-bottom: 1px solid #e0e0e0;
-    background-color: #f9f9f9;
-}
-
-/* Resaltado de puntaje */
-.history-table .score {
-    font-weight: bold;
-}
-
-.history-table .scoreA {
-    color: #28a745; /* Verde */
-}
-
-.history-table .scoreB {
-    color: #dc3545; /* Rojo */
-}
-
-/* Efecto hover en filas */
-.history-table tr:hover td {
-    background-color: #e8f4ff;
-}
-
-/* Responsivo para pantallas pequeñas */
-@media (max-width: 600px) {
-    .table-container {
-        padding: 0.5rem;
-    }
-
-    .history-table th,
-    .history-table td {
-        padding: 0.5rem;
-        font-size: 0.9rem;
-    }
-}
