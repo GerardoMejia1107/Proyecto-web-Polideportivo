@@ -1,172 +1,170 @@
 .events-container {
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
 }
 
 .content-from-main {
-    grid-column: 1 / -1;
-    min-height: 50vh;
-    width: 100%;
-    margin: 0 auto 5rem;
-    display: flex;
-    flex-direction: column;
+  grid-column: 1 / -1;
+  min-height: 50vh;
+  width: 100%;
+  margin: 0 auto 5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .data-from-db {
-    width: 100%;
-    padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
 }
 
 .data-content {
-    display: grid;
-    justify-items: center;
-    width: 100%;
-    padding: 1rem;
-    border-radius: 8px;
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
 }
 
-
+i {
+  align-self: self-start;
+}
 
 /* Título de cada sección */
 .data-from-db h2 {
-    color: var(--bg-color-blue);
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+  color: var(--bg-color-blue);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
 }
 
 /* Estilo de cada item de partido o entrenamiento */
 .item {
-    display: flex;
-    align-items: center;
-    background-color: var(--bg-background);
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease;
-    margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-background);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+  margin-bottom: 1rem;
 }
 
 .item:hover {
-    transform: scale(1.02);
-    cursor: pointer;
+  transform: scale(1.02);
+  cursor: pointer;
 }
 
 /* Icono de estado */
 .status-icon {
-    color: #28a745; /* Verde para indicar que está en curso */
-    font-size: 1rem;
-    margin-right: 1rem;
+  color: #28a745; /* Verde para indicar que está en curso */
+  font-size: 1rem;
+  margin-right: 1rem;
 }
 
 /* Detalles de cada item */
 .item-details {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    gap: 0.5rem;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 0.5rem;
+  width: 100%;
 }
 
 .team-logo {
-    width: 100%;
-    max-width: 80px;
-    height: auto;
-    object-fit: contain;
-    display: block;
+  width: 100%;
+  max-width: 80px;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .team-logos {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .versus {
-    font-weight: bold;
-    font-size: 1.2rem;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-    .team-logos {
-        gap: 8px;
-    }
+  .team-logos {
+    gap: 8px;
+  }
 
-    .item{
-        min-width: 20rem;
-    }
+  .item {
+    width: 100%;
+  }
 
-    .item-details {
-        align-items: center;
-    }
+  .item-details {
+    align-items: center;
+  }
 
-    .data-content{
-
-        grid-template-columns: repeat(1, 1fr);
-        gap: 1.5rem;
-    }
+  .data-content {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-    .team-logo {
-        max-width: 70px;
-    }
+  .team-logo {
+    max-width: 70px;
+  }
 
-    .item{
-        min-width: 20rem;
-    }
+  .item {
+    width: 100%;
+  }
 
-    .data-content{
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
+  .data-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
 }
 
 @media (min-width: 1200px) and (max-width: 1399px) {
-    .team-logo {
-        max-width: 90px;
-    }
+  .team-logo {
+    max-width: 90px;
+  }
 
-    .team-logos {
-        gap: 15px;
-    }
+  .team-logos {
+    gap: 15px;
+  }
 
-    .item{
-        flex: 1 1 auto;
-    }
-
-    .data-content{
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-    }
+  .item {
+    width: 100%;
+  }
+  .data-content {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
 }
 
 @media (min-width: 1400px) {
-    .team-logos {
-        gap: 2rem;
-    }
+  .team-logos {
+    gap: 2rem;
+  }
 
-    .match-sport {
-        font-size: 1.2rem;
-    }
+  .match-sport {
+    font-size: 1.2rem;
+  }
 
-    .data-from-db{
-        width: 70%;
-        margin: 0 auto;
-    }
+  .data-from-db {
+    width: 70%;
+    margin: 0 auto;
+  }
 
-    .data-content{
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-    }
+  .data-content {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
 
-    .item{
-        min-width: auto;
-    }
-
-
+  .item {
+    width: 100%;
+  }
 }
