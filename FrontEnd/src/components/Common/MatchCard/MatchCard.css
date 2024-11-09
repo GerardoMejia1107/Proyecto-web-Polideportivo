@@ -11,8 +11,6 @@
   margin: 1rem 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el efecto de hover */
-  max-width: 100%;
-  width: 100%;
 }
 
 /* Efecto de hover para una sombra más pronunciada y un ligero aumento de tamaño */
@@ -185,6 +183,6 @@
   }
 
   .match-card {
-    max-width: 30rem;
+    width: 20rem;
   }
 }

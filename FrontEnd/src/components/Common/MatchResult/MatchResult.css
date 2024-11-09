@@ -1,0 +1,113 @@
+@import "../../../styles/color-variables.css";
+
+.match-card-with-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ajuste para sincronizar tamaño */
+  max-width: 20rem; /* Igual que otras tarjetas */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.match-card-with-score:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transform: translateY(-5px);
+}
+
+.match-sport-title h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--bg-color-blue);
+}
+
+.teams-score-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.team-with-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.team-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.team-name {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.score-display {
+  font-size: 1.2em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0.5;
+}
+
+.score-separator {
+  margin: 0 0.5rem;
+}
+
+.match-info p {
+  font-size: 0.9em;
+  color: var(--text-color-gray);
+}
+
+.gallery-button {
+  background-color: var(--bg-color-blue);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  transition: background-color 0.3s;
+  width: 100%; /* Para que tenga el mismo ancho que la tarjeta */
+  text-align: center;
+  max-width: max-content;
+}
+
+.gallery-button:hover {
+  background-color: var(--bg-color-blue);
+}
+
+@media (max-width: 768px) {
+  .match-card-with-score {
+    padding: 1.5rem;
+    max-width: 18rem; /* Ajuste para pantallas pequeñas */
+  }
+
+  .team-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .score-display {
+    font-size: 1em;
+  }
+
+  .gallery-button {
+    font-size: 0.9em;
+  }
+}

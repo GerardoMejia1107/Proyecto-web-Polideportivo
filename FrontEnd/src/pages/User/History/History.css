@@ -25,13 +25,6 @@
 }
 
 /* Contenedor de tarjetas de partidos */
-.match-cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  width: 100%;
-  padding: 20px;
-}
 
 /* Asegura que el Header y Footer ocupen todo el ancho */
 .header,

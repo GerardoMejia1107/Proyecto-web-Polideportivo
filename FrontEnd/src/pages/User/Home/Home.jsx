@@ -50,7 +50,11 @@ const Home = () => {
   return (
     <section className={"home-container"}>
       <NavVar />
-      <Header message={' Mantente informado sobre todos los eventos deportivos de la semana.'}/>
+      <Header
+        message={
+          " Mantente informado sobre todos los eventos deportivos de la semana."
+        }
+      />
 
       <main className="content-from-main">
         {/*  <h2 className="title">Partidos de esta semana</h2>*/}
@@ -63,7 +67,7 @@ const Home = () => {
 
         <section className={"match-cards-container"}>
           {filteredMatches.map((match, index) => (
-            <MatchCard key={index} match={match} className="match-card" />
+            <MatchCard key={index} match={match} />
           ))}
         </section>
       </main>
