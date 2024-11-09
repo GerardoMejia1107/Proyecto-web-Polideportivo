@@ -6,7 +6,7 @@ import React from "react";
 
 const Trainings = () => {
     return (
-        <section className={'content'}>
+        <section className={'matches-container'}>
             <NavAdmin/>
             <Header message={'Visualiza tus eventos deportivos transcurriendo'}/>
             <div className="training-form-container">
