@@ -6,7 +6,7 @@ import Header from "../../../components/Common/Header/Header.jsx";
 
 const Universities = () => {
     return (
-        <section className="content">
+        <section className="matches-container">
             <NavAdmin/>
             <Header message={'Visualiza tus eventos deportivos transcurriendo'}/>
             <div className="university-form-container">

@@ -12,11 +12,12 @@
 }
 
 .option {
-  margin: 0 0.5rem;
+  margin: 0 0.7rem;
   width: auto;
   height: auto;
   background-color: transparent;
   border: none;
+  color: white;
 }
 
 .option i,
@@ -37,6 +38,7 @@
   background-color: white;
   border: none;
   border-radius: 0.5rem;
+  padding: 0.2rem;
 }
 
 /* Pantallas medianas (768px a 1023px) */

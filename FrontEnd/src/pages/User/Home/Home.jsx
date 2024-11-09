@@ -48,7 +48,7 @@ const Home = () => {
   );
 
   return (
-    <div className={"home-container"}>
+    <section className={"home-container"}>
       <NavVar />
       <Header message={' Mantente informado sobre todos los eventos deportivos de la semana.'}/>
 
@@ -68,7 +68,7 @@ const Home = () => {
         </section>
       </main>
       <Footer />
-    </div>
+    </section>
   );
 };
 

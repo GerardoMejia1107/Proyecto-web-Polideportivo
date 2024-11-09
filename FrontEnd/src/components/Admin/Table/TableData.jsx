@@ -158,7 +158,7 @@ const TableData = () => {
   ];
 
   return (
-    <section className={"content"}>
+    <section className={"matches-container"}>
       <div className={"add-btn-container"}>
         <button className={"add-btn"} title={"Nuevo partido"}>
           <i className="fa-solid fa-circle-plus add"></i>

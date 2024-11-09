@@ -1,6 +1,6 @@
 /* Estilo para el contenedor principal */
 @import url("../../../styles/color-variables.css");
-@import url("../../../styles/breakpoints-variables.css");
+
 
 * {
   font-size: 1rem;
