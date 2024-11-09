@@ -32,6 +32,9 @@ h6 {
   font-family: "Libre Franklin", sans-serif;
 }
 
-p{
+p,
+a,
+li,
+button {
   font-family: "Roboto", sans-serif;
 }

@@ -45,28 +45,28 @@ const History = () => {
   );
 
   return (
-    <div className="history-container">
-        <NavVar />
-        <Header message="Mantente informado de partidos anteriores y de otras temporadas" />
+    <section className="history-container">
+      <NavVar />
+      <Header message="Mantente informado de partidos anteriores y de otras temporadas" />
 
-        <main className="content-from-main">
+      <main className="content-from-main">
         <div className="filter-tab">
-            <FilterTab
+          <FilterTab
             selectedSport={selectedYear}
             onSelectSport={setSelectedYear}
-            />
+          />
         </div>
 
         <section className="match-cards-container">
-            {filteredMatches.map((match, index) => (
+          {filteredMatches.map((match, index) => (
             <MatchCard key={index} match={match} className="match-card" />
-            ))}
+          ))}
         </section>
-        </main>
+      </main>
 
-    <Footer />
-    </div>
-    );
+      <Footer />
+    </section>
+  );
 };
 
 export default History;
