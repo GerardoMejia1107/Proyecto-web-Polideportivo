@@ -2,6 +2,9 @@ import React from "react";
 import "./MatchResult.css";
 
 const MatchResult = ({ match }) => {
+  const isTeamAWinner = match.teamA.score > match.teamB.score;
+  const isDraw = match.teamA.score === match.teamB.score;
+
   return (
     <div className="match-card-with-score">
       <div className="match-sport-title">
@@ -16,9 +19,13 @@ const MatchResult = ({ match }) => {
           />
         </div>
         <div className="score-display">
-          <span className="team-score">{match.teamA.score}</span>
+          <span className={`team-score ${isDraw ? "draw" : isTeamAWinner ? "winner" : "loser"}`}>
+            {match.teamA.score}
+          </span>
           <span className="score-separator">-</span>
-          <span className="team-score">{match.teamB.score}</span>
+          <span className={`team-score ${isDraw ? "draw" : isTeamAWinner ? "loser" : "winner"}`}>
+            {match.teamB.score}
+          </span>
         </div>
         <div className="team-with-logo">
           <img

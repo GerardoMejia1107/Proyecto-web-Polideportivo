@@ -31,3 +31,35 @@
 .footer {
   width: 100%;
 }
+
+
+/* Estilos para la pestaña de filtro de años */
+.year-filter-tab {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; /* Espacio entre filtros de deportes y años */
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.year-filter-button {
+  padding: 8px 16px;
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.year-filter-button.active {
+  background-color: #ff9900;
+  color: white;
+}
+
+.year-filter-button:hover {
+  background-color: #cccccc;
+}
+
