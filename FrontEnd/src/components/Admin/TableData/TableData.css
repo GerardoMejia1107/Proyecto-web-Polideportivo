@@ -18,6 +18,7 @@
 
 .table-action-btn:hover {
     opacity: 1;
+    transform: translateY(-5px);
 }
 
 .update-button {
