@@ -1,64 +1,68 @@
-import HeaderAdmin from "../../../components/Admin/HeaderAdmin/HeaderAdmin.jsx";
 import "./Trainings.css";
 import NavAdmin from "../../../components/Admin/NavAdmin/NavAdmin.jsx";
 import Header from "../../../components/Common/Header/Header.jsx";
 import React from "react";
+import TableData from "../../../components/Admin/TableData/TableData.jsx";
 
 const Trainings = () => {
+    const headersColumns = [
+        {name: "Fecha", selector: (row) => row.fecha, sortable: true},
+        {name: 'Hora',selector: (row)=> row.hora},
+        {name: "Deporte", selector: (row) => row.deporte, sortable: true},
+        {name: "Lugar", selector: (row) => row.lugar},
+
+        {name: "Estado", selector: (row) => row.estado},
+    ];
+
+    const data = [
+        {
+            fecha: "2024-11-11",
+            hora: "10:00 AM",
+            deporte: "Fútbol",
+            lugar: "Universidad Central",
+            estado: "Programado"
+        },
+        {
+            fecha: "2024-11-12",
+            hora: "2:00 PM",
+            deporte: "Baloncesto",
+            lugar: "Universidad del Norte",
+            estado: "Finalizado"
+        },
+        {
+            fecha: "2024-11-13",
+            hora: "4:30 PM",
+            deporte: "Vóleibol",
+            lugar: "Instituto Superior Deportivo",
+            estado: "En Progreso"
+        },
+        {
+            fecha: "2024-11-14",
+            hora: "1:00 PM",
+            deporte: "Tenis",
+            lugar: "Universidad Sur",
+            estado: "Programado"
+        },
+        {
+            fecha: "2024-11-15",
+            hora: "3:15 PM",
+            deporte: "Natación",
+            lugar: "Escuela Nacional de Deportes",
+            estado: "Cancelado"
+        }
+    ];
+
+    const actionsForTable = ["update", "delete", "visibility"];
+
+
+
     return (
-        <section className={'matches-container'}>
+        <section className={'admin-trainings-page-container'}>
             <NavAdmin/>
             <Header message={'Visualiza tus eventos deportivos transcurriendo'}/>
-            <div className="training-form-container">
-                <h2 className="training-form-title">Información Sobre Entrenamiento</h2>
-                <form>
-                    <div className="form-group">
-                        <label>Deporte</label>
-                        <select>
-                            <option>Seleccionar Deporte</option>
-                            {/* Opciones adicionales */}
-                        </select>
-                    </div>
-                    
-                    <div className="form-group-inline">
-                        <div className="form-group">
-                            <label>Fecha</label>
-                            <input type="date" />
-                        </div>
-                        <div className="form-group">
-                            <label>Hora</label>
-                            <input type="time" />
-                        </div>
-                    </div>
-
-                    <div className="form-group">
-                        <label>Ubicación</label>
-                        <input type="text" placeholder="Ej. Gimnasio, Cancha 1, etc." />
-                    </div>
-
-                    <div className="form-group-inline">
-                        <div className="form-group">
-                            <label>Entrenador Principal</label>
-                            <select>
-                                <option>Seleccionar Entrenador</option>
-                                {/* Opciones adicionales */}
-                            </select>
-                        </div>
-                        <div className="form-group">
-                            <label>Entrenador Asistente</label>
-                            <select>
-                                <option>Seleccionar Entrenador</option>
-                                {/* Opciones adicionales */}
-                            </select>
-                        </div>
-                    </div>
-
-                    <div className="form-buttons">
-                        <button type="submit" className="save-btn">Guardar</button>
-                        <button type="button" className="cancel-btn">Cancelar</button>
-                    </div>
-                </form>
-            </div>
+            <main className={'admin-trainings-view-content'}>
+                <TableData data={data} columnsName={headersColumns} actions={actionsForTable}/>
+            </main>
         </section>
     );
 }
