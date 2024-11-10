@@ -116,7 +116,7 @@ const TableData = () => {
 
     createTheme('theme', {
         background: {
-            default: '#f8f6f3',
+            default: '#F5F7F8',
         },
     });
 

@@ -48,8 +48,8 @@
   }
 
   .log-out {
-    font-size: 0.875rem;
-    font-weight: bold;
+    font-size: 1rem;
+    font-weight: 400;
   }
 }
 
@@ -61,7 +61,7 @@
 
   .log-out {
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 400;
   }
 }
 
@@ -72,8 +72,8 @@
   }
 
   .log-out {
-    font-size: 1.125rem;
-    font-weight: bold;
+    font-size: 1rem;
+    font-weight: 400;
   }
 }
 
@@ -84,7 +84,7 @@
   }
 
   .log-out {
-    font-size: 1.15rem;
-    font-weight: bold;
+    font-size: 1rem;
+    font-weight: 400;
   }
 }
