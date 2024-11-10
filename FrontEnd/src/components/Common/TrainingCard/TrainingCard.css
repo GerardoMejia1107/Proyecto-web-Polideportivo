@@ -1,13 +1,4 @@
 @import "../../../styles/color-variables.css";
-
-.training-cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    width: 100%;
-}
-
 .training-card {
     background-color: var(--bg-background);
     border-radius: 8px;
@@ -103,7 +94,8 @@
 
     .training-time,
     .training-place, .training-status-btn {
-        font-size: 1rem;}
+        font-size: 1rem;
+    }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -114,7 +106,8 @@
 
     .training-time,
     .training-place, .training-status-btn {
-        font-size: 1rem;}
+        font-size: 1rem;
+    }
 }
 
 @media (min-width: 1200px) and (max-width: 1399px) {
@@ -125,7 +118,8 @@
 
     .training-time,
     .training-place, .training-status-btn {
-        font-size: 1rem;}
+        font-size: 1rem;
+    }
 }
 
 @media (min-width: 1400px) {
@@ -136,5 +130,10 @@
 
     .training-time,
     .training-place, .training-status-btn {
-        font-size: 1rem;}
+        font-size: 1rem;
+    }
+
+    .training-card {
+        min-width: 18rem;
+    }
 }
