@@ -39,3 +39,9 @@ button,
 span {
   font-family: "Roboto", sans-serif;
 }
+
+button{
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}

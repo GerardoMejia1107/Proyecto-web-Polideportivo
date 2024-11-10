@@ -1,0 +1,140 @@
+@import "../../../styles/color-variables.css";
+
+.training-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.training-card {
+    background-color: var(--bg-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.training-card:hover {
+    transform: translateY(-5px);
+}
+
+.training-day {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--bg-color-blue);
+    margin-bottom: 0.5rem;
+}
+
+.training-time,
+.training-place {
+    font-size: 0.9em;
+    color: #666666;
+    margin: 0.3rem 0;
+}
+
+.training-status {
+    font-weight: bold;
+    padding: 0.3rem 1rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+    max-width: max-content;
+    border-radius: 0.5rem;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.status-icon i {
+    font-weight: 400;
+}
+
+/* Colores por estado con emojis */
+.training-status.no-decidido, .training-status.no-decidido i {
+    color: var(--bg-color-warning);
+    background-color: #f9e1c0;
+}
+
+.training-status.cancelado, .training-status.cancelado i {
+    color: var(--bg-color-danger);
+    background-color: #f8d7da;
+}
+
+.training-status.confirmado, .training-status.confirmado i {
+    color: var(--bg-color-success);
+    background-color: #e0f7e0;
+}
+
+
+@media (min-width: 320px) and (max-width: 575px) {
+    /* Contenido para dispositivos móviles pequeños */
+    .training-day {
+        font-size: 0.9rem;
+    }
+
+    .training-time,
+    .training-place, .training-status-btn {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    /* Contenido para dispositivos móviles grandes */
+    .training-day {
+        font-size: 0.9rem;
+    }
+
+    .training-time,
+    .training-place, .training-status-btn {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Contenido para tabletas y escritorios pequeños */
+    .training-day {
+        font-size: 1rem;
+    }
+
+    .training-time,
+    .training-place, .training-status-btn {
+        font-size: 1rem;}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* Contenido para escritorios medianos */
+    .training-day {
+        font-size: 1rem;
+    }
+
+    .training-time,
+    .training-place, .training-status-btn {
+        font-size: 1rem;}
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    /* Contenido para escritorios grandes */
+    .training-day {
+        font-size: 1rem;
+    }
+
+    .training-time,
+    .training-place, .training-status-btn {
+        font-size: 1rem;}
+}
+
+@media (min-width: 1400px) {
+    /* Contenido para escritorios extra grandes */
+    .training-day {
+        font-size: 1.1rem;
+    }
+
+    .training-time,
+    .training-place, .training-status-btn {
+        font-size: 1rem;}
+}
