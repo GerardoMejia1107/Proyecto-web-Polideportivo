@@ -1,17 +1,20 @@
-@import url("../../../styles/color-variables.css");
+@import url('../../../styles/color-variables.css');
 
-.admin-matches-page-container {
+.admin-universities-page-container {
   width: 100%;
   height: auto;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
 }
 
-.admin-matches-view-content {
+.admin-universities-view-content {
   grid-column: 1/-1;
   min-height: 50vh;
   width: 90%;
   margin: 2rem auto 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .universities-table-section h3,
@@ -19,4 +22,15 @@
   font-weight: 600;
   font-size: 1.1rem;
   color: var(--bg-color-blue);
+}
+.universities-table-section,
+.sports-table-section {
+  position: relative;
+}
+.add-btn-doc-universities,
+.add-btn-doc-sports {
+  position: absolute;
+  z-index: 1;
+  right: 1rem;
+  top: 1rem;
 }

@@ -1,4 +1,4 @@
-@import url("../styles/color-variables.css");
+@import url('../styles/color-variables.css');
 * {
   margin: 0;
   padding: 0;
@@ -29,23 +29,27 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Libre Franklin", sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
 }
-
 
 a,
 li,
-span, button {
-  font-family: "Source Sans 3", serif;
+span,
+button {
+  font-family: 'Source Sans 3', serif;
 }
 
-p,  tr, td{
-
-  font-family: "Roboto", sans-serif;
+p,
+tr,
+td {
+  font-family: 'Roboto', sans-serif;
 }
 
-button{
+button {
   border: none;
   background-color: transparent;
   cursor: pointer;
 }
+
+
+
