@@ -1,11 +1,11 @@
-.admin-matches-page-containe {
+.admin-universities-page-container {
   width: 100%;
   height: auto;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
 }
 
-.admin-matches-view-content {
+.admin-universities-view-content {
   grid-column: 1/-1;
   min-height: 50vh;
   width: 90%;

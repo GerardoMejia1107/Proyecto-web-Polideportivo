@@ -1,8 +1,9 @@
 import TableComponent, { createTheme } from "react-data-table-component";
 import "./TableData.css";
 import React, { useState } from "react";
+import styled from "styled-components";
 
-const TableData = ({ columnsName, data, actions }) => {
+const TableData = ({ columnsName, data, actions, title }) => {
   const [visibilityToggled, setVisibilityToggled] = useState({});
 
   const [tableData, setTableData] = useState(data || []);
@@ -71,14 +72,31 @@ const TableData = ({ columnsName, data, actions }) => {
   const customStyles = {
     headCells: {
       style: {
+        backgroundColor: "#003c71", // Darker background for the header
+        color: "#ffffff", // White text for contrast
         fontFamily: '"Roboto", sans-serif',
-        fontWeight: "500",
+        fontWeight: "600",
+        textAlign: "center",
+        borderBottom: "2px solid #f0f0f0", // Línea inferior de los encabezados
       },
     },
     rows: {
       style: {
         minHeight: "3.5rem",
         fontFamily: '"Roboto", sans-serif',
+        "&:nth-of-type(odd)": {
+          backgroundColor: "#f7faff", // Color de fondo alterno para filas impares
+        },
+        "&:hover": {
+          backgroundColor: "#e1f0ff", // Color de fondo al pasar el cursor
+        },
+      },
+    },
+    cells: {
+      style: {
+        borderRight: "1px solid #e0e0e0", // Bordes entre celdas
+        padding: "10px", // Espaciado interno de las celdas
+        textAlign: "center", // Alineación del texto
       },
     },
   };
@@ -92,6 +110,7 @@ const TableData = ({ columnsName, data, actions }) => {
   return (
     <>
       <TableComponent
+        title={title}
         customStyles={customStyles}
         columns={columns}
         data={tableData}

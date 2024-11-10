@@ -1,0 +1,22 @@
+@import url("../../../styles/color-variables.css");
+
+.admin-matches-page-container {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.admin-matches-view-content {
+  grid-column: 1/-1;
+  min-height: 50vh;
+  width: 90%;
+  margin: 2rem auto 5rem;
+}
+
+.universities-table-section h3,
+.sports-table-section h3 {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--bg-color-blue);
+}
