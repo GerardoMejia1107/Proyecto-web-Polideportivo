@@ -1,0 +1,90 @@
+/* Contenedor principal con borde que responde al hover */
+.sport-form-container {
+    border: 2px solid transparent; /* Borde transparente inicialmente */
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 450px;
+    background-color: #fff;
+    transition: border-color 0.3s ease; /* Transición suave al activar el borde */
+}
+
+.sport-form-container:hover {
+    border-color: #003C71; /* Borde azul solo al pasar el cursor */
+}
+
+/* Estilos del título */
+.sport-form-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #003C71;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #003C71; /* Línea inferior del título */
+    padding-bottom: 0.5rem;
+}
+
+
+
+/* Estilos de los grupos de formulario */
+.sport-form-group {
+    margin-bottom: 1.2rem;
+}
+
+.sport-form-group label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+   
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+/* Cambios en el borde de los campos al hacer hover */
+.sport-form-group input[type="text"]:hover{
+    border-color: #003C71; /* Borde azul al pasar el cursor en el campo */
+} 
+
+/* Estilos de los botones */
+.sport-form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+
+}
+
+.save-button {
+    background-color: #003C71;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    
+}
+
+.save-button:hover {
+    background-color: #005a9c;
+}
+
+.cancel-button {
+    background-color: #e0e0e0;
+    color: #333;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-button:hover {
+    background-color: #c0c0c0;
+}

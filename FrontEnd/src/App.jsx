@@ -5,11 +5,12 @@ import './styles/App.css';
 import './styles/index.css';
 import AppRoutes from './routes/AppRoutes.jsx';
 
+
 function App() {
     return (
         <Router>
             <div className="global-container">
-                <AppRoutes />
+                <AppRoutes/>
             </div>
         </Router>
     );
