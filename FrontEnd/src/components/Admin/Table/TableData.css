@@ -1,0 +1,44 @@
+@import "../../../styles/color-variables.css";
+
+.action-buttons-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.table-action-btn {
+    border-radius: 0.5rem;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.5s ease-in;
+    opacity: 0.8;
+}
+
+.table-action-btn:hover {
+    opacity: 1;
+}
+
+.update-button {
+    background-color: var(--bg-color-success);
+
+}
+
+
+.delete-button {
+    background-color: var(--bg-color-danger);
+
+}
+
+.visibility-button {
+    background-color: var(--bg-color-gray-dark);
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .action-buttons-container{
+        flex-direction: column;
+        padding: 0.2rem;
+    }
+}
