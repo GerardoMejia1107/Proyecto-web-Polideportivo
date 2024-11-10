@@ -42,14 +42,16 @@
 
 .admin-home-match-details-table {
     width: 100%;
+    border-collapse: collapse;
 }
 
 .admin-home-match-cell {
     padding: 0.75rem;
     text-align: left;
     font-size: 1rem;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--bg-color-gray-light);
 }
+
 
 .admin-home-match-cell:first-child {
     font-weight: bold;
@@ -93,6 +95,6 @@
     }
 
     .admin-home-match-details tr td {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 }

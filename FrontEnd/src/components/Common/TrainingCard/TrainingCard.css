@@ -1,5 +1,8 @@
 @import "../../../styles/color-variables.css";
 .training-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
     background-color: var(--bg-background);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -7,9 +10,11 @@
     width: 250px;
     padding: 20px;
     transition: transform 0.3s ease;
+    font-family: "Roboto", sans-serif;
 }
 
 .training-card:hover {
+    cursor: pointer;
     transform: translateY(-5px);
 }
 
@@ -30,9 +35,8 @@
 .training-status {
     font-weight: bold;
     padding: 0.3rem 1rem;
-    margin: 0 auto;
-    margin-top: 1rem;
-    max-width: max-content;
+
+    width: 100%;
     border-radius: 0.5rem;
     font-size: 0.9em;
     display: flex;
@@ -45,21 +49,34 @@
     font-weight: 400;
 }
 
+.status-icon{
+    display: flex;
+    gap: 0.2rem;
+    padding: 0.2rem;
+    justify-content: center;
+    align-items: center;}
+
 /* Colores por estado con emojis */
-.training-status.no-decidido, .training-status.no-decidido i {
+.training-status.no-decidido, .training-status.no-decidido i, .training-status-btn .doubt {
     color: var(--bg-color-warning);
-    background-color: #f9e1c0;
+    background-color: #f5e7d4;
+    font-weight: 500;
 }
 
-.training-status.cancelado, .training-status.cancelado i {
+.training-status.cancelado, .training-status.cancelado i, .training-status-btn .cancel {
     color: var(--bg-color-danger);
     background-color: #f8d7da;
+    font-weight: 500;
 }
 
-.training-status.confirmado, .training-status.confirmado i {
+.training-status.confirmado, .training-status.confirmado i, .training-status-btn .confirm {
     color: var(--bg-color-success);
     background-color: #e0f7e0;
+    font-weight: 500;
 }
+
+
+
 
 
 @media (min-width: 320px) and (max-width: 575px) {

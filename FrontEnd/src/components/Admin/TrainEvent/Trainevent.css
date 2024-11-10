@@ -31,6 +31,7 @@
 
 .admin-home-training-details {
     width: 100%;
+    border-collapse: collapse;
 }
 
 
@@ -38,7 +39,7 @@
     padding: 0.75rem;
     text-align: left;
     font-size: 1rem;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--bg-color-gray-light);
 }
 
 .admin-home-training-cell:first-child {
@@ -86,7 +87,7 @@
     }
 
     .admin-home-training-details tr td {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
 }

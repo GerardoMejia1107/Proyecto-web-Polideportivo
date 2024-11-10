@@ -32,11 +32,15 @@ h6 {
   font-family: "Libre Franklin", sans-serif;
 }
 
-p,
+
 a,
 li,
-button,
-span {
+span, button {
+  font-family: "Source Sans 3", serif;
+}
+
+p,  tr, td{
+
   font-family: "Roboto", sans-serif;
 }
 
