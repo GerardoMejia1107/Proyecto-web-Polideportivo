@@ -3,8 +3,26 @@ import NavAdmin from '../../../components/Admin/NavAdmin/NavAdmin.jsx';
 import Header from '../../../components/Common/Header/Header.jsx';
 import TableData from '../../../components/Admin/TableData/TableData.jsx';
 import Footer from '../../../components/Common/Footer/Footer.jsx';
+import UniversityForm from '../../../components/Admin/Forms/University/UniversityForm.jsx';
+import SportForm from '../../../components/Admin/Forms/Sport/SportForm.jsx';
+import Modal from '../../../components/Admin/Forms/Modal.jsx';
+import React, { useState } from 'react';
 
 const Universities = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeForm, setActiveForm] = useState(null);
+
+  const openModal = (form) => {
+    setActiveForm(form);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setActiveForm(null);
+  };
+
   const headersColumns = [
     { name: 'Nombre', selector: (row) => row.nombre, sortable: true },
     {
@@ -89,7 +107,7 @@ const Universities = () => {
       />
       <main className='admin-universities-view-content'>
         <section className='universities-table-section'>
-          <button className='add-btn-doc add-btn-doc-universities '>
+          <button onClick={() => openModal('form1')} className='add-btn-doc add-btn-doc-universities '>
             <i className='fa-solid fa-file-circle-plus'></i>
           </button>
           <TableData
@@ -104,7 +122,7 @@ const Universities = () => {
           />
         </section>
         <section className='sports-table-section'>
-          <button className='add-btn-doc add-btn-doc-sports '>
+          <button onClick={() => openModal('form2')} className='add-btn-doc add-btn-doc-sports '>
             <i className='fa-solid fa-file-circle-plus'></i>
           </button>
           <TableData
@@ -118,6 +136,10 @@ const Universities = () => {
             actions={actionsForTable}
           />
         </section>
+        <Modal show={isModalOpen} onClose={closeModal}>
+            {activeForm === 'form1' && <UniversityForm />}
+            {activeForm === 'form2' && <SportForm />}
+          </Modal>
       </main>
       <Footer />
     </section>

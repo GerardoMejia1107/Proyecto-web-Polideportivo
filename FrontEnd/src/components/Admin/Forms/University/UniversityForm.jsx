@@ -1,5 +1,5 @@
 import './UniversityForm.css'
-const UniversityForm = () => {
+const UniversityForm = ({ onClose }) => {
     return (
         <div className="university-form-container">
                 <h2 className="university-form-title">Agregar universidad</h2>
@@ -27,7 +27,7 @@ const UniversityForm = () => {
                   
                     <div className="university-form-actions">
                         <button type="submit" className="save-button">Guardar</button>
-                        <button type="button" className="cancel-button">Cancelar</button>
+                        <button onClick={onClose} className="cancel-button">Cancelar</button>
                     </div>
                 </form>
             </div>
