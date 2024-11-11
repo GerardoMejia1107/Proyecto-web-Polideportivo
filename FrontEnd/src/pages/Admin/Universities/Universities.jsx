@@ -5,7 +5,7 @@ import TableData from '../../../components/Admin/TableData/TableData.jsx';
 import Footer from '../../../components/Common/Footer/Footer.jsx';
 import UniversityForm from '../../../components/Admin/Forms/University/UniversityForm.jsx';
 import SportForm from '../../../components/Admin/Forms/Sport/SportForm.jsx';
-import Modal from '../../../components/Admin/Forms/Modal.jsx';
+import Modal from '../../../components/Admin/Forms/ModalForm/Modal.jsx';
 import React, { useState } from 'react';
 
 const Universities = () => {
@@ -21,6 +21,23 @@ const Universities = () => {
   const closeModal = () => {
     setIsModalOpen(false);
     setActiveForm(null);
+  };
+
+
+  // Define estilos diferentes para cada formulario
+  const styleForm1 = {
+    width: '450px',
+    height: '500px',
+    borderRadius: '20px',
+    padding: '0px',
+  
+  };
+
+  const styleForm2 = {
+    width: '400px',
+    height: '300px',
+    borderRadius: '15px',
+    padding: '5px',
   };
 
   const headersColumns = [
@@ -136,10 +153,13 @@ const Universities = () => {
             actions={actionsForTable}
           />
         </section>
-        <Modal show={isModalOpen} onClose={closeModal}>
-            {activeForm === 'form1' && <UniversityForm />}
-            {activeForm === 'form2' && <SportForm />}
-          </Modal>
+        <Modal 
+        show={isModalOpen} 
+        onClose={closeModal} 
+        style={activeForm === 'form1' ? styleForm1 : styleForm2}>
+          {activeForm === 'form1' && <UniversityForm onCancel={closeModal} />}
+          {activeForm === 'form2' && <SportForm onCancel={closeModal} />}
+      </Modal>
       </main>
       <Footer />
     </section>

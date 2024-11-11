@@ -1,12 +1,12 @@
 // Modal.js
 import React from 'react';
 
-const Modal = ({ show, children }) => {
+const Modal = ({ show,children, style }) => {
   if (!show) return null;
 
   return (
     <div style={modalStyles}>
-      <div style={modalContentStyles}>
+      <div style={{ ...modalContentStyles, ...style }}>
         {children}
       </div>
     </div>
@@ -27,9 +27,6 @@ const modalStyles = {
 
 const modalContentStyles = {
   backgroundColor: '#fff',
-  padding: '20px',
-  borderRadius: '8px',
-  width: '300px',
 };
 
 export default Modal;
