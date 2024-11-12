@@ -9,7 +9,6 @@ import Modal from '../../../components/Admin/Forms/ModalForm/Modal.jsx';
 import React, { useState } from 'react';
 
 const Universities = () => {
-
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeForm, setActiveForm] = useState(null);
 
@@ -23,83 +22,46 @@ const Universities = () => {
     setActiveForm(null);
   };
 
-
-  // Define estilos diferentes para cada formulario
-  const styleForm1 = {
-    width: '450px',
-    height: '500px',
-    borderRadius: '20px',
-    padding: '0px',
-  
-  };
-
-  const styleForm2 = {
-    width: '400px',
-    height: '300px',
-    borderRadius: '15px',
-    padding: '5px',
-  };
-
   const headersColumns = [
     { name: 'Nombre', selector: (row) => row.nombre, sortable: true },
     {
       cell: (row) => (
-        <div
-          style={{
-            whiteSpace: 'normal',
-            wordWrap: 'break-word',
-            wordBreak: 'break-word',
-          }}
-        >
-          {row.nombre}
-        </div>
+          <div
+              style={{
+                whiteSpace: 'normal',
+                wordWrap: 'break-word',
+                wordBreak: 'break-word',
+              }}
+          >
+            {row.nombre}
+          </div>
       ),
     },
     {
       name: 'Ubicacion',
       selector: (row) => row.ubicacion,
       cell: (row) => (
-        <div
-          style={{
-            lineHeight: '2.0',
-            textAlign: 'start',
-            whiteSpace: 'normal',
-            wordWrap: 'break-word',
-            wordBreak: 'break-word',
-          }}
-        >
-          {row.ubicacion}
-        </div>
+          <div
+              style={{
+                lineHeight: '2.0',
+                textAlign: 'start',
+                whiteSpace: 'normal',
+                wordWrap: 'break-word',
+                wordBreak: 'break-word',
+              }}
+          >
+            {row.ubicacion}
+          </div>
       ),
     },
   ];
 
   const data = [
-    {
-      id: 1,
-      nombre: 'Biblioteca Central',
-      ubicacion: 'Av. Universidad 123, Ciudad Universitaria',
-    },
-    {
-      id: 2,
-      nombre: 'Laboratorio de Física',
-      ubicacion: 'Edificio A, Piso 2',
-    },
-    {
-      id: 3,
-      nombre: 'Cafetería Principal',
-      ubicacion: 'Plaza Central, frente al Auditorio',
-    },
-    {
-      id: 4,
-      nombre: 'Gimnasio Universitario',
-      ubicacion: 'Calle Deportes, junto al Estadio',
-    },
-    {
-      id: 5,
-      nombre: 'Centro de Informática',
-      ubicacion: 'Edificio B, Planta Baja',
-    },
+    { id: 1, nombre: 'Biblioteca Central', ubicacion: 'Av. Universidad 123, Ciudad Universitaria' },
+    { id: 2, nombre: 'Laboratorio de Física', ubicacion: 'Edificio A, Piso 2' },
+    { id: 3, nombre: 'Cafetería Principal', ubicacion: 'Plaza Central, frente al Auditorio' },
+    { id: 4, nombre: 'Gimnasio Universitario', ubicacion: 'Calle Deportes, junto al Estadio' },
+    { id: 5, nombre: 'Centro de Informática', ubicacion: 'Edificio B, Planta Baja' },
   ];
 
   const actionsForTable = ['update', 'delete'];
@@ -117,52 +79,39 @@ const Universities = () => {
   ];
 
   return (
-    <section className='admin-universities-page-container'>
-      <NavAdmin />
-      <Header
-        message={'Agrega universidades que estan participando en tu torneo'}
-      />
-      <main className='admin-universities-view-content'>
-        <section className='universities-table-section'>
-          <button onClick={() => openModal('form1')} className='add-btn-doc add-btn-doc-universities '>
-            <i className='fa-solid fa-file-circle-plus'></i>
-          </button>
-          <TableData
-            title={
-              <h3 className='table-title'>
-                Universidades involucradas en tu torneo
-              </h3>
-            }
-            columnsName={headersColumns}
-            data={data}
-            actions={actionsForTable}
-          />
-        </section>
-        <section className='sports-table-section'>
-          <button onClick={() => openModal('form2')} className='add-btn-doc add-btn-doc-sports '>
-            <i className='fa-solid fa-file-circle-plus'></i>
-          </button>
-          <TableData
-            title={
-              <h3 className='table-title'>
-                Deportes en los que tu universidad esta involucrada
-              </h3>
-            }
-            columnsName={sportsColumns}
-            data={sportsData}
-            actions={actionsForTable}
-          />
-        </section>
-        <Modal 
-        show={isModalOpen} 
-        onClose={closeModal} 
-        style={activeForm === 'form1' ? styleForm1 : styleForm2}>
-          {activeForm === 'form1' && <UniversityForm onCancel={closeModal} />}
-          {activeForm === 'form2' && <SportForm onCancel={closeModal} />}
-      </Modal>
-      </main>
-      <Footer />
-    </section>
+      <section className='admin-universities-page-container'>
+        <NavAdmin />
+        <Header message={'Agrega universidades que estan participando en tu torneo'} />
+        <main className='admin-universities-view-content'>
+          <section className='universities-table-section'>
+            <button onClick={() => openModal('form1')} className='add-btn-doc add-btn-doc-universities'>
+              <i className='fa-solid fa-file-circle-plus'></i>
+            </button>
+            <TableData
+                title={<h3 className='table-title'>Universidades involucradas en tu torneo</h3>}
+                columnsName={headersColumns}
+                data={data}
+                actions={actionsForTable}
+            />
+          </section>
+          <section className='sports-table-section'>
+            <button onClick={() => openModal('form2')} className='add-btn-doc add-btn-doc-sports'>
+              <i className='fa-solid fa-file-circle-plus'></i>
+            </button>
+            <TableData
+                title={<h3 className='table-title'>Deportes en los que tu universidad esta involucrada</h3>}
+                columnsName={sportsColumns}
+                data={sportsData}
+                actions={actionsForTable}
+            />
+          </section>
+          <Modal show={isModalOpen} onClose={closeModal}>
+            {activeForm === 'form1' && <UniversityForm onCancel={closeModal} />}
+            {activeForm === 'form2' && <SportForm onCancel={closeModal} />}
+          </Modal>
+        </main>
+        <Footer />
+      </section>
   );
 };
 

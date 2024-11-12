@@ -2,7 +2,7 @@ import './UniversityForm.css'
 const UniversityForm = ({ onClose }) => {
     return (
         <div className="university-form-container">
-                <h2 className="university-form-title">Agregar universidad</h2>
+                <h2 className="university-form-title">Datos</h2>
                 <form className="university-form">
                     <div className="university-form-group">
                         <label htmlFor="universityName">Nombre de la universidad</label>

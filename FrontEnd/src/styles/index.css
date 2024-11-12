@@ -41,7 +41,7 @@ button {
 
 p,
 tr,
-td {
+td, label {
   font-family: 'Roboto', sans-serif;
 }
 

@@ -4,7 +4,7 @@ const SportForm = ({ onClose }) => {
     
     return (
         <div className="sport-form-container">
-                <h2 className="sport-form-title">Agregar deporte</h2>
+                <h2 className="sport-form-title">Datos</h2>
                 <form className="sport-form">
                     <div className="sport-form-group">
                         <label htmlFor="sportName" className='label-name'>Nombre del deporte:</label>
