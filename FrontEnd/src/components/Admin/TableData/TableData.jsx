@@ -18,7 +18,7 @@ const TableData = ({ columnsName, data, actions, title }) => {
             <button
               title={"Editar"}
               className="update-button table-action-btn"
-              onClick={() => handleUpdate(row)}
+
             >
               <i className="fa-solid fa-pen-to-square"></i>
             </button>
