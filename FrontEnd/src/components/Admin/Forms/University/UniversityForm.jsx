@@ -1,14 +1,20 @@
 import './UniversityForm.css'
 import usePost from "../../../../hooks/usePost.js";
 import React, {useState} from "react";
+import { ToastContainer, toast } from "react-toastify";
+
 const UniversityForm = ({ onClose }) => {
     const {postData, data, error, loading}=usePost('http://localhost:3000/api/universities/create')
     const [universityName, setUniversityName] = useState('');
     const [location, setLocation] = useState('');
 
-    const handleSubmit = (e) => {
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        postData({ name: universityName, location });
+        const success = await postData({ name: universityName, location });
+        if (success) {
+            toast.success("Operación exitosa!");
+        }
     };
     return (
         <div className="university-form-container">

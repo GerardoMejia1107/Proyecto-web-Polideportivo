@@ -27,7 +27,7 @@ const TableData = ({ columnsName, data, actions, title }) => {
             <button
               title={"Eliminar"}
               className="delete-button table-action-btn"
-              onClick={() => handleDelete(row.id)}
+
             >
               <i className="fa-solid fa-trash"></i>
             </button>
@@ -52,18 +52,7 @@ const TableData = ({ columnsName, data, actions, title }) => {
     },
   ];
 
-  const handleDelete = (id) => {
-    const updatedData = tableData.filter((row) => row.id !== id);
-    setTableData(updatedData);
-  };
 
-  const handleUpdate = (row) => {
-    const updatedRow = { ...row, ganador: "Updated" };
-    const updatedData = tableData.map((item) =>
-      item.id === row.id ? updatedRow : item
-    );
-    setTableData(updatedData);
-  };
 
   const handleVisibility = (row) => {
     setVisibilityToggled((prev) => ({ ...prev, [row.id]: !prev[row.id] }));

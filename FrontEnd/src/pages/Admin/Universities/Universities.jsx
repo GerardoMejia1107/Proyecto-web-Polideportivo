@@ -8,6 +8,8 @@ import SportForm from '../../../components/Admin/Forms/Sport/SportForm.jsx';
 import Modal from '../../../components/Admin/Forms/ModalForm/Modal.jsx';
 import React, { useEffect, useState } from 'react';
 import useFetch from "../../../hooks/useFetch.js";
+import {SPORT_FORM, U_FORM} from "../../../config/forms.js";
+
 
 const Universities = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -45,17 +47,8 @@ const Universities = () => {
     const actionsForTable = ['update', 'delete'];
 
 
-    const { data: universitiesData, loading: loadingUniversities, error: errorUniversities } = useFetch('http://localhost:3000/api/universities/getAll');
-    const { data: sportsData, loading: loadingSports, error: errorSports } = useFetch('http://localhost:3000/api/sports/getAll');
-
-    useEffect(() => {
-        if (universitiesData) {
-            console.log('Universities:', universitiesData);
-        }
-        if (sportsData) {
-            console.log('Sports:', sportsData);
-        }
-    }, [universitiesData, sportsData]);
+    const { data: fetchedUniData, loading: loadingUniversities, error: errorUniversities } = useFetch('http://localhost:3000/api/universities/getAll');
+    const { data: fetchedSportsData, loading: loadingSports, error: errorSports } = useFetch('http://localhost:3000/api/sports/getAll');
 
     return (
         <section className='admin-universities-page-container'>
@@ -63,7 +56,7 @@ const Universities = () => {
             <Header message={'Agrega universidades que están participando en tu torneo'} />
             <main className='admin-universities-view-content'>
                 <section className='universities-table-section'>
-                    <button onClick={() => openModal('form1')} className='add-btn-doc add-btn-doc-universities'>
+                    <button onClick={() => openModal(U_FORM)} className='add-btn-doc add-btn-doc-universities'>
                         <i className='fa-solid fa-file-circle-plus'></i>
                     </button>
                     {loadingUniversities ? (
@@ -74,14 +67,14 @@ const Universities = () => {
                         <TableData
                             title={<h3 className='table-title'>Universidades involucradas en tu torneo</h3>}
                             columnsName={universityColumns}
-                            data={universitiesData}
+                            data={fetchedUniData}
                             actions={actionsForTable}
                         />
                     )}
                 </section>
 
                 <section className='sports-table-section'>
-                    <button onClick={() => openModal('form2')} className='add-btn-doc add-btn-doc-sports'>
+                    <button onClick={() => openModal(SPORT_FORM)} className='add-btn-doc add-btn-doc-sports'>
                         <i className='fa-solid fa-file-circle-plus'></i>
                     </button>
                     {loadingSports ? (
@@ -92,15 +85,15 @@ const Universities = () => {
                         <TableData
                             title={<h3 className='table-title'>Deportes en los que tu universidad está involucrada</h3>}
                             columnsName={sportsColumns}
-                            data={sportsData}
+                            data={fetchedSportsData}
                             actions={actionsForTable}
                         />
                     )}
                 </section>
 
                 <Modal show={isModalOpen} onClose={closeModal}>
-                    {activeForm === 'form1' && <UniversityForm onClose={closeModal} />}
-                    {activeForm === 'form2' && <SportForm onClose={closeModal} />}
+                    {activeForm === U_FORM && <UniversityForm onClose={closeModal} />}
+                    {activeForm === SPORT_FORM && <SportForm onClose={closeModal} />}
                 </Modal>
             </main>
             <Footer />
