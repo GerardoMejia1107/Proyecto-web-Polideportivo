@@ -1,12 +1,17 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import './Matches.css';
 import NavAdmin from '../../../components/Admin/NavAdmin/NavAdmin.jsx';
 import Header from '../../../components/Common/Header/Header.jsx';
 import Footer from '../../../components/Common/Footer/Footer.jsx';
 import TableData from '../../../components/Admin/TableData/TableData.jsx';
+import MatchForm from '../../../components/Admin/Forms/Match/MatchForm.jsx';
 
 const Matches = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false); 
+
   const headersColumns = [
     { name: 'Fecha', selector: (row) => row.fecha, sortable: true },
     { name: 'Deporte', selector: (row) => row.deporte, sortable: true },
@@ -84,10 +89,11 @@ const Matches = () => {
       <Header message={'Crea y consulta los partidos de tu institución'} />
       <main className={'admin-matches-view-content'}>
         <div className='add-btn-doc-container'>
-          <button className='add-btn-doc'>
+          <button className='add-btn-doc'onClick={openModal} >
             <i className='fa-solid fa-file-circle-plus'></i>
           </button>
         </div>
+        <MatchForm show={isModalOpen} onClose={closeModal} />
         <TableData
           columnsName={headersColumns}
           data={dataFromDB}

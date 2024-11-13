@@ -1,10 +1,18 @@
 import './Trainings.css';
+import React, { useState } from 'react';
 import NavAdmin from '../../../components/Admin/NavAdmin/NavAdmin.jsx';
 import Header from '../../../components/Common/Header/Header.jsx';
-import React from 'react';
 import TableData from '../../../components/Admin/TableData/TableData.jsx';
+import TrainingForm from '../../../components/Admin/Forms/Training/TrainingForm.jsx';
+
 
 const Trainings = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false); 
+
   const headersColumns = [
     { name: 'Fecha', selector: (row) => row.fecha, sortable: true },
     { name: 'Hora', selector: (row) => row.hora },
@@ -60,10 +68,11 @@ const Trainings = () => {
       <Header message={'Visualiza tus eventos deportivos transcurriendo'} />
       <main className={'admin-trainings-view-content'}>
         <div className='add-btn-doc-container'>
-          <button className='add-btn-doc'>
+          <button className='add-btn-doc' onClick={openModal}>
             <i className='fa-solid fa-file-circle-plus'></i>
           </button>
         </div>
+        <TrainingForm show={isModalOpen} onClose={closeModal} />
         <TableData
           data={data}
           columnsName={headersColumns}
