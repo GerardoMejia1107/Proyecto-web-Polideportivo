@@ -5,23 +5,29 @@
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 999;
+    
 }
 
 /* Contenedor del contenido del modal */
 .modal-content-style {
     background-color: #ffffff;
     border-radius: 8px;
-    padding: 0.9rem;
-    position: relative;
-    height: 600px;
-    width: 500px;
+    padding: 20px;
+    /*position: relative;*/
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     z-index: 1000;
+    
 }
 
 .modal-close-btn {
@@ -38,12 +44,16 @@
 
 
 .match-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     max-width: 500px;
     width: 100%;
-    padding: 2rem;
-    border-radius: 8px;
+    padding: 1 rem;
+    border-radius: 5px;
     border: 2px solid transparent; /* Transparente por defecto */
-    background-color: #f5faff;
+    background-color: white;
     margin-top: 1rem;
     transition: border-color 0.3s ease; /* Transición suave solo en el color del borde */
 }
@@ -53,7 +63,7 @@
 }
 
 .match-form-title {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     font-weight: bold;
     color: #00509E;
     text-align: center;
@@ -110,6 +120,7 @@
     display: flex;
     justify-content: space-around;
     margin-top: 1.5rem;
+    gap: 10px;
 }
 
 .save-btn,

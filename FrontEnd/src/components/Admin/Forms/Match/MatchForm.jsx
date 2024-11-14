@@ -7,7 +7,9 @@ const MatchForm = ({ show, onClose }) => {
     return (
         <div className="modal-style">
             <div className="modal-content-style">
-
+                <button className="modal-close-btn" onClick={onClose}>
+                    &times;
+                </button>
                 <div className="match-form-container">
                     <h2 className="match-form-title">Información Sobre Partido</h2>
 
