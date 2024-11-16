@@ -17,6 +17,7 @@ const usePost = (url) => {
             if (!response.ok) throw new Error('Error posting data');
             const result = await response.json();
             setData(result);
+            return true
         } catch (err) {
             setError(err.message);
         } finally {

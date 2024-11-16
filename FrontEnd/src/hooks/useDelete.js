@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {outcome} from "../utils/sweetAlert.js";
 
 const useDelete = () => {
     const [loading, setLoading] = useState(false);
@@ -15,6 +16,7 @@ const useDelete = () => {
             if (!response.ok) {
                 throw new Error(`Failed to delete: ${response.statusText}`);
             }
+            outcome.success("Eliminado", "El registro fue eliminado con éxito");
             setLoading(false);
             return response.json(); // Assuming the API returns a JSON response
         } catch (err) {

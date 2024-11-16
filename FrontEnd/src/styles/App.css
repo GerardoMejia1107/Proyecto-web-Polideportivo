@@ -23,3 +23,8 @@
   transform: scale(1.1);
   opacity: 1;
 }
+
+/*Sweet alert*/
+.swal-custom-text {
+  font-family: 'Roboto', sans-serif; /* Cambia por la fuente que desees */ !important;
+}
