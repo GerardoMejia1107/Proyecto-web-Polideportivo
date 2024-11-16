@@ -9,11 +9,14 @@ import Modal from '../../../components/Admin/Forms/ModalForm/Modal.jsx';
 import React, { useEffect, useState } from 'react';
 import useFetch from "../../../hooks/useFetch.js";
 import {SPORT_FORM, U_FORM} from "../../../config/forms.js";
+import Swal from "sweetalert2";
+
 
 
 const Universities = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [activeForm, setActiveForm] = useState(null);
+    const [requestStatus, setRequestStatus] = useState(false);
 
     const openModal = (form) => {
         setActiveForm(form);
@@ -24,6 +27,12 @@ const Universities = () => {
         setIsModalOpen(false);
         setActiveForm(null);
     };
+
+    const urls = {
+        universitiesUrl: 'http://localhost:3000/api/universities/delete',
+        sportsUrl: 'http://localhost:3000/api/sports/delete'
+    }
+
 
 
     const universityColumns = [
@@ -40,6 +49,7 @@ const Universities = () => {
     ];
 
 
+
     const sportsColumns = [
         { name: 'Deporte', selector: (row) => row.name, sortable: true },
     ];
@@ -49,6 +59,17 @@ const Universities = () => {
 
     const { data: fetchedUniData, loading: loadingUniversities, error: errorUniversities } = useFetch('http://localhost:3000/api/universities/getAll');
     const { data: fetchedSportsData, loading: loadingSports, error: errorSports } = useFetch('http://localhost:3000/api/sports/getAll');
+
+
+    if(requestStatus){
+        Swal.fire({
+            title: '¡Exito!',
+            text: 'Se eliminado el documento',
+            icon: 'success',
+            confirmButtonText: 'Ok',
+        });
+        setRequestStatus(false);
+    }
 
     return (
         <section className='admin-universities-page-container'>
@@ -69,6 +90,9 @@ const Universities = () => {
                             columnsName={universityColumns}
                             data={fetchedUniData}
                             actions={actionsForTable}
+                            urls={urls}
+                            tableName={'universities'}
+                            status={setRequestStatus}
                         />
                     )}
                 </section>
@@ -87,6 +111,9 @@ const Universities = () => {
                             columnsName={sportsColumns}
                             data={fetchedSportsData}
                             actions={actionsForTable}
+                            urls = {urls}
+                            tableName={'sports'}
+                            status={setRequestStatus}
                         />
                     )}
                 </section>
