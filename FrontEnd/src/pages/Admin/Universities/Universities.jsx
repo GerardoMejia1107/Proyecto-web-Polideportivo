@@ -6,11 +6,10 @@ import Footer from '../../../components/Common/Footer/Footer.jsx';
 import UniversityForm from '../../../components/Admin/Forms/University/UniversityForm.jsx';
 import SportForm from '../../../components/Admin/Forms/Sport/SportForm.jsx';
 import Modal from '../../../components/Admin/Forms/ModalForm/Modal.jsx';
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import useFetch from "../../../hooks/useFetch.js";
 import {SPORT_FORM, U_FORM} from "../../../config/forms.js";
 import Swal from "sweetalert2";
-
 
 
 const Universities = () => {
@@ -18,9 +17,11 @@ const Universities = () => {
     const [activeForm, setActiveForm] = useState(null);
     const [requestStatus, setRequestStatus] = useState(false);
 
+
     const openModal = (form) => {
         setActiveForm(form);
         setIsModalOpen(true);
+
     };
 
     const closeModal = () => {
@@ -28,20 +29,25 @@ const Universities = () => {
         setActiveForm(null);
     };
 
+
     const urls = {
         universitiesUrl: 'http://localhost:3000/api/universities/delete',
         sportsUrl: 'http://localhost:3000/api/sports/delete'
     }
 
-
-
     const universityColumns = [
-        { name: 'Nombre', selector: (row) => row.name, sortable: true },
+        {name: 'Nombre', selector: (row) => row.name, sortable: true},
         {
             name: 'Ubicación',
             selector: (row) => row.location,
             cell: (row) => (
-                <div style={{ lineHeight: '2.0', textAlign: 'start', whiteSpace: 'normal', wordWrap: 'break-word', wordBreak: 'break-word' }}>
+                <div style={{
+                    lineHeight: '2.0',
+                    textAlign: 'start',
+                    whiteSpace: 'normal',
+                    wordWrap: 'break-word',
+                    wordBreak: 'break-word'
+                }}>
                     {row.location}
                 </div>
             ),
@@ -49,19 +55,27 @@ const Universities = () => {
     ];
 
 
-
     const sportsColumns = [
-        { name: 'Deporte', selector: (row) => row.name, sortable: true },
+        {name: 'Deporte', selector: (row) => row.name, sortable: true},
     ];
 
     const actionsForTable = ['update', 'delete'];
 
 
-    const { data: fetchedUniData, loading: loadingUniversities, error: errorUniversities } = useFetch('http://localhost:3000/api/universities/getAll');
-    const { data: fetchedSportsData, loading: loadingSports, error: errorSports } = useFetch('http://localhost:3000/api/sports/getAll');
+    const {
+        data: fetchedUniData,
+        loading: loadingUniversities,
+        error: errorUniversities
+    } = useFetch('http://localhost:3000/api/universities/getAll');
+
+    const {
+        data: fetchedSportsData,
+        loading: loadingSports,
+        error: errorSports
+    } = useFetch('http://localhost:3000/api/sports/getAll');
 
 
-    if(requestStatus){
+    if (requestStatus) {
         Swal.fire({
             title: '¡Exito!',
             text: 'Se eliminado el documento',
@@ -73,8 +87,8 @@ const Universities = () => {
 
     return (
         <section className='admin-universities-page-container'>
-            <NavAdmin />
-            <Header message={'Agrega universidades que están participando en tu torneo'} />
+            <NavAdmin/>
+            <Header message={'Agrega universidades que están participando en tu torneo'}/>
             <main className='admin-universities-view-content'>
                 <section className='universities-table-section'>
                     <button onClick={() => openModal(U_FORM)} className='add-btn-doc add-btn-doc-universities'>
@@ -111,19 +125,20 @@ const Universities = () => {
                             columnsName={sportsColumns}
                             data={fetchedSportsData}
                             actions={actionsForTable}
-                            urls = {urls}
+                            urls={urls}
                             tableName={'sports'}
                             status={setRequestStatus}
+
                         />
                     )}
                 </section>
 
                 <Modal show={isModalOpen} onClose={closeModal}>
-                    {activeForm === U_FORM && <UniversityForm onClose={closeModal} />}
-                    {activeForm === SPORT_FORM && <SportForm onClose={closeModal} />}
+                    {activeForm === U_FORM && <UniversityForm onClose={closeModal}/>}
+                    {activeForm === SPORT_FORM && <SportForm onClose={closeModal}/>}
                 </Modal>
             </main>
-            <Footer />
+            <Footer/>
         </section>
     );
 };

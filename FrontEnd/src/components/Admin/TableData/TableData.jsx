@@ -1,12 +1,37 @@
 import TableComponent, {createTheme} from "react-data-table-component";
 import "./TableData.css";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import useDelete from "../../../hooks/useDelete";
+import {SPORT_FORM, U_FORM} from "../../../config/forms.js";
+import UniversityForm from "../Forms/University/UniversityForm.jsx";
+import SportForm from "../Forms/Sport/SportForm.jsx";
+import Modal from "../Forms/ModalForm/Modal.jsx";
 
 const TableData = ({columnsName, data, actions, title, urls, tableName, status}) => {
     const [visibilityToggled, setVisibilityToggled] = useState({});
     const [tableData, setTableData] = useState(data || []);
     const {handleDelete, loading, error} = useDelete();
+    const [idSelected, setIdSelected] = useState(null);
+
+
+    useEffect(() => {
+        console.log(idSelected)
+    }, [idSelected]);
+
+
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [activeForm, setActiveForm] = useState(null);
+
+    const openModal = (form) => {
+        setActiveForm(form);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setActiveForm(null);
+    };
 
     const columns = [
         ...columnsName,
@@ -19,8 +44,8 @@ const TableData = ({columnsName, data, actions, title, urls, tableName, status})
                             title={"Editar"}
                             className="update-button table-action-btn"
                             onClick={() => {
-                                console.log("Editar:", row._id);
-                                // Add your update logic here
+                                openModal(SPORT_FORM);
+                                setIdSelected(row._id);
                             }}
                         >
                             <i className="fa-solid fa-pen-to-square"></i>
@@ -124,6 +149,10 @@ const TableData = ({columnsName, data, actions, title, urls, tableName, status})
                 highlightOnHover
                 theme={"theme"}
             />
+
+            <Modal show={isModalOpen} onClose={closeModal}>
+                {activeForm === SPORT_FORM && <SportForm onClose={closeModal} id={idSelected}/>}
+            </Modal>
         </>
     );
 };
