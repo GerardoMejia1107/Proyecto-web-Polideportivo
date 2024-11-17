@@ -36,7 +36,7 @@ export const getSportById = async (req, res) => {
 export const deleteSport = async (req, res, next) => {
   try {
     const deletedSport = await deleteSportById(req.params.id);
-    res.status(200).json({ message: "Sport deleted", data: deletedSport });
+    res.status(200).json({ message: "SportForm deleted", data: deletedSport });
   } catch (error) {
     next(error); // Pass error to error handling middleware
   }
@@ -45,7 +45,7 @@ export const deleteSport = async (req, res, next) => {
 export const updateSport = async (req, res, next) => {
   try {
     const updatedSport = await updateSportById(req.params.id, req.body);
-    res.status(200).json({ message: "Sport updated", data: updatedSport });
+    res.status(200).json({ message: "SportForm updated", data: updatedSport });
   } catch (error) {
     next(error); // Pass error to error handling middleware
   }

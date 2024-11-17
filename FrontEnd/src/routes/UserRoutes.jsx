@@ -1,16 +1,16 @@
 // src/routes/UserRoutes.jsx
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from '../pages/User/Home/Home.jsx';
-import History from '../pages/User/History/History.jsx';
-import Trainings from "../pages/User/Trainings/Trainings.jsx";
+import HomePage from '../pages/User/HomePage/HomePage.jsx';
+import HistoryPage from '../pages/User/HistoryPage/HistoryPage.jsx';
+import TrainsPage from "../pages/User/TrainsPage/TrainsPage.jsx";
 
 const UserRoutes = () => {
     return (
         <Routes>
-            <Route path="home" element={<Home />} />
-            <Route path='history' element={<History />} />
-            <Route path="trainings" element={<Trainings />} />
+            <Route path="home" element={<HomePage />} />
+            <Route path='history' element={<HistoryPage />} />
+            <Route path="trainings" element={<TrainsPage />} />
         </Routes>
     );
 };

@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Header from "../../../components/Common/Header/Header.jsx";
 import Footer from "../../../components/Common/Footer/Footer.jsx";
 import NavVar from "../../../components/Common/NavVar/NavVar.jsx";
-import "./Trainings.css";
+import "./TrainsPage.css";
 import TrainingCard from "../../../components/Common/TrainingCard/TrainingCard.jsx";
 
-const Trainings = () => {
+const TrainsPage = () => {
   const [selectedSport, setSelectedSport] = useState("Todos");
   const date = new Date()
 
@@ -57,4 +57,4 @@ const Trainings = () => {
   );
 };
 
-export default Trainings;
+export default TrainsPage;

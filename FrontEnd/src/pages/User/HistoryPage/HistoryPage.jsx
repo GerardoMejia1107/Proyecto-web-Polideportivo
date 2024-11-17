@@ -3,10 +3,10 @@ import Header from "../../../components/Common/Header/Header.jsx";
 import FilterTab from "../../../components/Common/FilterTab/FilterTab.jsx";
 import Footer from "../../../components/Common/Footer/Footer.jsx";
 import NavVar from "../../../components/Common/NavVar/NavVar.jsx";
-import "./History.css";
+import "./HistoryPage.css";
 import MatchResult from "../../../components/Common/MatchResult/MatchResult.jsx";
 
-const History = () => {
+const HistoryPage = () => {
   const [selectedSport, setSelectedSport] = useState("Todos");
   const [selectedYear, setSelectedYear] = useState("2024");
 
@@ -99,4 +99,4 @@ const History = () => {
   );
 };
 
-export default History;
+export default HistoryPage;

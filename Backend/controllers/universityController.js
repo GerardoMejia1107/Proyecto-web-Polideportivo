@@ -38,7 +38,7 @@ export const deleteUniversity = async (req, res, next) => {
     const deletedUniversity = await deleteUniversityById(req.params.id);
     res
       .status(200)
-      .json({ message: "University deleted", data: deletedUniversity });
+      .json({ message: "UniversityForm deleted", data: deletedUniversity });
   } catch (e) {
     next(e); // Pass error to error handling middleware
   }

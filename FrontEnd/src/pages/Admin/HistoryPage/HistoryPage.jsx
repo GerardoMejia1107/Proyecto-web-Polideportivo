@@ -1,10 +1,10 @@
-import './History.css';
+import './HistoryPage.css';
 import NavAdmin from '../../../components/Admin/NavAdmin/NavAdmin.jsx';
 import Header from '../../../components/Common/Header/Header.jsx';
 import Footer from '../../../components/Common/Footer/Footer.jsx';
 import TableData from '../../../components/Admin/TableData/TableData.jsx';
 
-const History = () => {
+const HistoryPage = () => {
   const headersColumns = [
     { name: 'Fecha', selector: (row) => row.fecha, sortable: true },
     { name: 'Deporte', selector: (row) => row.deporte, sortable: true },
@@ -84,4 +84,4 @@ const History = () => {
   );
 };
 
-export default History;
+export default HistoryPage;

@@ -1,20 +1,20 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import HomeDashboard from '../pages/Admin/HomeDashboard/HomeDashboard.jsx';
-import Matches from "../pages/Admin/Matches/Matches.jsx";
-import History from "../pages/Admin/History/History.jsx";
-import Trainings from "../pages/Admin/Trainings/Trainings.jsx";
-import Universities from "../pages/Admin/Universities/Universities.jsx";
+import HomeDashPage from '../pages/Admin/HomeDashPage/HomeDashPage.jsx';
+import MatchesPage from "../pages/Admin/MatchesPage/MatchesPage.jsx";
+import HistoryPage from "../pages/Admin/HistoryPage/HistoryPage.jsx";
+import TrainsPage from "../pages/Admin/TrainsPage/TrainsPage.jsx";
+import UnivSportPage from "../pages/Admin/Univ&SportPage/Univ&SportPage.jsx";
 
 
 const AdminRoutes = () => {
     return (
         <Routes>
-            <Route path="home" element={<HomeDashboard />} />
-            <Route path="matches" element={<Matches />} />
-            <Route path="history" element={<History />} />
-            <Route path="trainings" element={<Trainings />} />
-            <Route path="universities" element={<Universities />} />
+            <Route path="home" element={<HomeDashPage />} />
+            <Route path="matches" element={<MatchesPage />} />
+            <Route path="history" element={<HistoryPage />} />
+            <Route path="trainings" element={<TrainsPage />} />
+            <Route path="universities" element={<UnivSportPage />} />
         </Routes>
     );
 }

@@ -1,18 +1,18 @@
-import "./Universities.css";
+import "./Univ&SportPage.css";
 import NavAdmin from "../../../components/Admin/NavAdmin/NavAdmin.jsx";
 import Header from "../../../components/Common/Header/Header.jsx";
 import TableData from "../../../components/Admin/TableData/TableData.jsx";
 import Footer from "../../../components/Common/Footer/Footer.jsx";
-import UniversityForm from "../../../components/Admin/Forms/University/UniversityForm.jsx";
-import SportForm from "../../../components/Admin/Forms/Sport/SportForm.jsx";
+import UniversityForm from "../../../components/Admin/Forms/UniversityForm/UniversityForm.jsx";
+import SportForm from "../../../components/Admin/Forms/SportForm/SportForm.jsx";
 import Modal from "../../../components/Admin/Forms/ModalForm/Modal.jsx";
 import React, {useEffect, useState} from "react";
 import useFetch from "../../../hooks/useFetch.js";
 import {SPORT_FRM, UNIV_FRM} from "../../../config/forms.js";
-import {URLS} from "../../../utils/routesFromServer.js";
+import {URLS} from "../../../utils/serverRoutes.js";
 import {SPORTS_TBL, UNIV_TBL} from "../../../config/tables.js";
 
-const Universities = () => {
+const UnivSportPage = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [activeForm, setActiveForm] = useState(null);
     const [sportData, setSportData] = useState([]);
@@ -155,4 +155,4 @@ const Universities = () => {
     );
 };
 
-export default Universities;
+export default UnivSportPage;

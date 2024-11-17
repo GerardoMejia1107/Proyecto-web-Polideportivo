@@ -7,7 +7,7 @@ export const createUniversity = async (universityData) => {
       const newUniversity = new University(universityData);
       return await newUniversity.save();
     } else {
-      throw new Error("University already registered");
+      throw new Error("UniversityForm already registered");
     }
   } catch (e) {
     throw new Error(e.message);
@@ -26,7 +26,7 @@ export const getMyUniversityById = async (id) => {
   try {
     const university = await University.findById(id);
     if (!university) {
-      throw new Error("University not found");
+      throw new Error("UniversityForm not found");
     }
     return university;
   } catch (e) {
@@ -39,7 +39,7 @@ export const deleteUniversityById = async (id) => {
     const university = await getMyUniversityById(id);
     if (university) {
       await university.deleteOne();
-      return { message: "University deleted successfully", university };
+      return { message: "UniversityForm deleted successfully", university };
     }
   } catch (e) {
     throw new Error(e.message);
@@ -51,7 +51,7 @@ export const updateUniversityById = async (id, updatedUniversityData) => {
     const university = await getMyUniversityById(id);
     const nameAlreadyExists = await checkDocumentExists(
       University,
-      updatedData
+      updatedUniversityData
     );
 
     if (university && !nameAlreadyExists) {
@@ -59,7 +59,7 @@ export const updateUniversityById = async (id, updatedUniversityData) => {
       await university.save();
       return university;
     } else if (nameAlreadyExists) {
-      throw new Error("University already registered");
+      throw new Error("UniversityForm already registered");
     }
   } catch (e) {
     throw new Error(e.message);
