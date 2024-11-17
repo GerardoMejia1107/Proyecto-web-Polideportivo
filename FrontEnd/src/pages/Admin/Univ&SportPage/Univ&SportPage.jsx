@@ -23,17 +23,19 @@ const UnivSportPage = () => {
         data: fetchedUniData,
         loading: loadingUniversities,
         error: errorUniversities,
+        overFetch: fetchUniversities,
     } = useFetch(URLS.universityURLS.fetchAll);
 
     const {
         data: fetchedSportsData,
         loading: loadingSports,
         error: errorSports,
+        overFetch: fetchSports,
     } = useFetch(URLS.sportURLS.fetchAll);
 
     useEffect(() => {
         if (fetchedUniData) setUniversitiesData(fetchedUniData);
-        if (fetchedSportsData) setSportData(fetchedSportsData);
+       setSportData(fetchedSportsData);
     }, [fetchedUniData, fetchedSportsData]);
 
 
@@ -46,6 +48,8 @@ const UnivSportPage = () => {
         setIsModalOpen(false);
         setActiveForm(null);
     };
+
+
 
 
     const universityColumns = [
@@ -108,7 +112,7 @@ const UnivSportPage = () => {
                             tableName={UNIV_TBL}
                             refreshData={() => {
                                 // Recarga los datos de universidades
-                                if (fetchedUniData) setUniversitiesData(fetchedUniData);
+                                fetchUniversities()
                             }}
                         />
                     )}
@@ -138,16 +142,20 @@ const UnivSportPage = () => {
                             urls={URLS}
                             tableName={SPORTS_TBL}
                             refreshData={() => {
-                                // Recarga los datos de universidades
-                                if (fetchedSportsData) setSportData(fetchedSportsData);
+                                fetchSports()
                             }}
                         />
                     )}
                 </section>
 
                 <Modal show={isModalOpen} onClose={closeModal}>
-                    {activeForm === UNIV_FRM && <UniversityForm onClose={closeModal}/>}
-                    {activeForm === SPORT_FRM && <SportForm onClose={closeModal}/>}
+                    {activeForm === UNIV_FRM && <UniversityForm onClose={closeModal} refresh={()=>{
+                        fetchUniversities()
+                    }}/>}
+
+                    {activeForm === SPORT_FRM && <SportForm onClose={closeModal} refresh={() => {
+                        fetchSports()
+                    }}/>}
                 </Modal>
             </main>
             <Footer/>

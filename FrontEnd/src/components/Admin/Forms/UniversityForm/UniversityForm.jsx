@@ -5,7 +5,7 @@ import {URLS} from "../../../../utils/serverRoutes.js";
 import usePut from "../../../../hooks/usePut.js";
 import useFetch from "../../../../hooks/useFetch.js";
 
-const UniversityForm = ({onClose, id}) => {
+const UniversityForm = ({onClose, id, refresh}) => {
     const [universityName, setUniversityName] = useState('');
     const [location, setLocation] = useState('');
 
@@ -43,7 +43,11 @@ const UniversityForm = ({onClose, id}) => {
                 name: universityName,
                 location: location,
             });
-            if (updated) onClose();
+            if (updated) {
+                refresh()
+                onClose()
+            }
+
 
         } else {
             const created = await postData({
@@ -51,7 +55,11 @@ const UniversityForm = ({onClose, id}) => {
                 location: location,
             });
 
-            if (created) onClose();
+            if (created) {
+                refresh()
+                onClose()
+            }
+
         }
     }
 
@@ -62,8 +70,6 @@ const UniversityForm = ({onClose, id}) => {
             </h2>
             {loadingUniversity ? (
                 <p>Cargando datos...</p>
-            ) : errorUniversity ? (
-                <p style={{color: "red"}}>Error al cargar datos: {errorUniversity}</p>
             ) : (
                 <form className="university-form" onSubmit={handleSubmit}>
                     <div className="university-form-group">

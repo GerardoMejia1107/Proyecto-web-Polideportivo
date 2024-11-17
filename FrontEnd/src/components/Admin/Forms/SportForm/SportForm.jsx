@@ -7,7 +7,7 @@ import {URLS} from "../../../../utils/serverRoutes.js";
 import useFetch from "../../../../hooks/useFetch.js";
 
 
-const SportForm = ({onClose, id}) => {
+const SportForm = ({onClose, id, refresh}) => {
     const [sportName, setSportName] = useState("");
 
     const {
@@ -42,10 +42,17 @@ const SportForm = ({onClose, id}) => {
             const updated = await handlePut(`${URLS.sportURLS.update}/${id}`, {
                 name: sportName,
             });
-            if (updated) onClose();
+            if (updated) {
+                refresh()
+                onClose()
+            }
+
         } else {
             const created = await postData({name: sportName});
-            if (created) onClose();
+            if (created) {
+                refresh()
+                onClose()
+            }
 
         }
     };

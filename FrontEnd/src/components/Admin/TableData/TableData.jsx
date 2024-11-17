@@ -41,19 +41,24 @@ const TableData = ({columnsName, data, actions, title, urls, tableName, refreshD
 
     // Función para manejar la eliminación
     const deleteRow = async (id) => {
-        const deleteUrl =
-            tableName === UNIV_TBL
-                ? `${urls.universityURLS.delete}/${id}`
-                : `${urls.sportURLS.delete}/${id}`;
+        let deleteUrl = ''
+        switch (tableName) {
+            case UNIV_TBL:
+                deleteUrl = `${urls.universityURLS.delete}/${id}`;
+                break;
 
-        const isDeleted = await handleDelete(deleteUrl);
+            case SPORTS_TBL:
+                deleteUrl = `${urls.sportURLS.delete}/${id}`;
+                break;
+        }
 
-        if (isDeleted) {
-            // Actualiza los datos localmente o solicita al padre que recargue los datos
-            setTableData((prevData) => prevData.filter((row) => row._id !== id));
-            if (refreshData) refreshData(); // Notifica al padre si `refreshData` está definido
+        if (await handleDelete(deleteUrl)) {
+            // Actualiza y solicita al padre que recargue los datos
+            refreshData()
         }
     };
+
+
 
 
     // Array que combina las columnas que se tendrán en la tabla
@@ -69,7 +74,7 @@ const TableData = ({columnsName, data, actions, title, urls, tableName, refreshD
                             className="update-button table-action-btn"
                             onClick={() => {
                                 setIdSelected(row._id);
-                                if(tableName === UNIV_TBL) {
+                                if (tableName === UNIV_TBL) {
                                     openModal(UNIV_FRM);
                                 }
                                 if (tableName === SPORTS_TBL) {
@@ -155,11 +160,15 @@ const TableData = ({columnsName, data, actions, title, urls, tableName, refreshD
             }
             <Modal show={isModalOpen} onClose={closeModal}>
                 {activeForm === SPORT_FRM && (
-                    <SportForm onClose={closeModal} id={idSelected} />
+                    <SportForm onClose={closeModal} id={idSelected} refresh={()=>{
+                        refreshData();
+                    }}/>
                 )}
 
                 {activeForm === UNIV_FRM && (
-                    <UniversityForm onClose={closeModal} id={idSelected} />
+                    <UniversityForm onClose={closeModal} id={idSelected} refresh={()=>{
+                        refreshData()
+                    }}/>
                 )}
             </Modal>
         </>
