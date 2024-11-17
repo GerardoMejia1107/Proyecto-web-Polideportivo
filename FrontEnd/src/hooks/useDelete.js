@@ -14,6 +14,7 @@ const useDelete = () => {
                 ...options,
             });
             if (!response.ok) {
+                outcome.error()
                 throw new Error(`Failed to delete: ${response.statusText}`);
             }
             outcome.success("Eliminado", "El registro fue eliminado con éxito");

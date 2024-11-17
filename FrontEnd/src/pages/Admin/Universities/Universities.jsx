@@ -8,8 +8,9 @@ import SportForm from "../../../components/Admin/Forms/Sport/SportForm.jsx";
 import Modal from "../../../components/Admin/Forms/ModalForm/Modal.jsx";
 import React, {useEffect, useState} from "react";
 import useFetch from "../../../hooks/useFetch.js";
-import {SPORT_FORM, U_FORM} from "../../../config/forms.js";
+import {SPORT_FRM, UNIV_FRM} from "../../../config/forms.js";
 import {URLS} from "../../../utils/routesFromServer.js";
+import {SPORTS_TBL, UNIV_TBL} from "../../../config/tables.js";
 
 const Universities = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -84,7 +85,7 @@ const Universities = () => {
             <main className="admin-universities-view-content">
                 <section className="universities-table-section">
                     <button
-                        onClick={() => openModal(U_FORM)}
+                        onClick={() => openModal(UNIV_FRM)}
                         className="add-btn-doc add-btn-doc-universities"
                     >
                         <i className="fa-solid fa-file-circle-plus"></i>
@@ -104,7 +105,7 @@ const Universities = () => {
                             data={uniData || []}
                             actions={actionsForTable}
                             urls={URLS}
-                            tableName={"universities"}
+                            tableName={UNIV_TBL}
                             refreshData={() => {
                                 // Recarga los datos de universidades
                                 if (fetchedUniData) setUniversitiesData(fetchedUniData);
@@ -115,7 +116,7 @@ const Universities = () => {
 
                 <section className="sports-table-section">
                     <button
-                        onClick={() => openModal(SPORT_FORM)}
+                        onClick={() => openModal(SPORT_FRM)}
                         className="add-btn-doc add-btn-doc-sports"
                     >
                         <i className="fa-solid fa-file-circle-plus"></i>
@@ -135,7 +136,7 @@ const Universities = () => {
                             data={sportData}
                             actions={actionsForTable}
                             urls={URLS}
-                            tableName={"sports"}
+                            tableName={SPORTS_TBL}
                             refreshData={() => {
                                 // Recarga los datos de universidades
                                 if (fetchedSportsData) setSportData(fetchedSportsData);
@@ -145,8 +146,8 @@ const Universities = () => {
                 </section>
 
                 <Modal show={isModalOpen} onClose={closeModal}>
-                    {activeForm === U_FORM && <UniversityForm onClose={closeModal}/>}
-                    {activeForm === SPORT_FORM && <SportForm onClose={closeModal}/>}
+                    {activeForm === UNIV_FRM && <UniversityForm onClose={closeModal}/>}
+                    {activeForm === SPORT_FRM && <SportForm onClose={closeModal}/>}
                 </Modal>
             </main>
             <Footer/>

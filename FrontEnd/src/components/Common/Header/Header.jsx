@@ -3,7 +3,6 @@ import "./Header.css";
 import UCALogo from "../../../assets/images/UCA.png";
 
 const Header = ({message}) => {
-    console.log(message)
   return (
 
     <header className="header">

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {outcome} from "../utils/sweetAlert.js";
 
 const usePut = () => {
     const [loading, setLoading] = useState(false);
@@ -20,9 +21,11 @@ const usePut = () => {
             });
 
             if (!response.ok) {
+                outcome.error()
                 throw new Error(`Failed to update: ${response.statusText}`);
             }
 
+            outcome.success()
             const result = await response.json();
             setLoading(false);
             return result; // Return the result for further use

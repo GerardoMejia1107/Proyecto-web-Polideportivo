@@ -5,6 +5,7 @@ export const URLS = {
         fetchOne: "http://localhost:3000/api/universities/",
         update: "http://localhost:3000/api/universities/update",
         post: "http://localhost:3000/api/universities/create"
+
     },
     sportURLS: {
         delete: "http://localhost:3000/api/sports/delete",

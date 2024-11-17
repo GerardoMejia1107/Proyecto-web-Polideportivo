@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from "react";
-import TableComponent, { createTheme } from "react-data-table-component";
+import React, {useState, useEffect} from "react";
+import TableComponent, {createTheme} from "react-data-table-component";
 import "./TableData.css";
 import useDelete from "../../../hooks/useDelete";
-import { SPORT_FORM, U_FORM } from "../../../config/forms.js";
+import {SPORT_FRM, UNIV_FRM} from "../../../config/forms.js";
 import UniversityForm from "../Forms/University/UniversityForm.jsx";
 import SportForm from "../Forms/Sport/SportForm.jsx";
 import Modal from "../Forms/ModalForm/Modal.jsx";
-import { outcome } from "../../../utils/sweetAlert.js";
+import {SPORTS_TBL, UNIV_TBL} from "../../../config/tables.js";
 
-const TableData = ({ columnsName, data, actions, title, urls, tableName, refreshData }) => {
+
+const TableData = ({columnsName, data, actions, title, urls, tableName, refreshData}) => {
     // Para manejar los datos de la tabla
     const [tableData, setTableData] = useState(data || []);
 
     // Hook para manejar la eliminación del registro en la base de datos
-    const { handleDelete, loading, error } = useDelete();
+    const {handleDelete, loading, error} = useDelete();
 
     // useState para manejar el id del DOC seleccionado y trabajar con este ya sea para Actualizar o Eliminar
     const [idSelected, setIdSelected] = useState(null);
@@ -40,7 +41,7 @@ const TableData = ({ columnsName, data, actions, title, urls, tableName, refresh
     // Función para manejar la eliminación
     const deleteRow = async (id) => {
         const deleteUrl =
-            tableName === "universities"
+            tableName === UNIV_TBL
                 ? `${urls.universityURLS.delete}/${id}`
                 : `${urls.sportURLS.delete}/${id}`;
 
@@ -66,8 +67,14 @@ const TableData = ({ columnsName, data, actions, title, urls, tableName, refresh
                             title="Editar"
                             className="update-button table-action-btn"
                             onClick={() => {
-                                openModal(SPORT_FORM);
                                 setIdSelected(row._id);
+                                if(tableName === UNIV_TBL) {
+                                    openModal(UNIV_FRM);
+                                }
+                                if (tableName === SPORTS_TBL) {
+                                    openModal(SPORT_FRM);
+                                }
+
                             }}
                         >
                             <i className="fa-solid fa-pen-to-square"></i>
@@ -129,7 +136,7 @@ const TableData = ({ columnsName, data, actions, title, urls, tableName, refresh
 
     return (
         <>
-            {error && <p style={{ color: "red" }}>Error: {error}</p>}
+            {error && <p style={{color: "red"}}>Error: {error}</p>}
             {loading && <p>Eliminando...</p>}
 
             <TableComponent
@@ -146,8 +153,12 @@ const TableData = ({ columnsName, data, actions, title, urls, tableName, refresh
             {// Modal que muestra como contenido el formulario correspondiente
             }
             <Modal show={isModalOpen} onClose={closeModal}>
-                {activeForm === SPORT_FORM && (
-                    <SportForm onClose={closeModal} id={idSelected} />
+                {activeForm === SPORT_FRM && (
+                    <SportForm onClose={closeModal} id={idSelected}/>
+                )}
+
+                {activeForm === UNIV_FRM && (
+                    <UniversityForm onClose={closeModal} id={idSelected} />
                 )}
             </Modal>
         </>

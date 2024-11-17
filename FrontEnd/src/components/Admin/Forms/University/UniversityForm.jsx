@@ -1,19 +1,43 @@
 import './UniversityForm.css'
 import usePost from "../../../../hooks/usePost.js";
-import React, {useState} from "react";
-import { ToastContainer, toast } from "react-toastify";
+import React, {useEffect, useState} from "react";
+import {URLS} from "../../../../utils/routesFromServer.js";
+import usePut from "../../../../hooks/usePut.js";
 
-const UniversityForm = ({ onClose }) => {
-    const {postData, data, error, loading}=usePost('http://localhost:3000/api/universities/create')
+const UniversityForm = ({ onClose, id }) => {
     const [universityName, setUniversityName] = useState('');
     const [location, setLocation] = useState('');
 
+    const {
+        postData,
+        loading: postLoading,
+        error: postError,
+        data: postDataResponse,
+    } = usePost(URLS.universityURLS.post);
+
+    const {
+        handlePut,
+        loading: putLoading,
+        error: putError,
+        success: putSuccess,
+    } = usePut();
+
+    useEffect(() => {
+
+    }, [id]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const success = await postData({ name: universityName, location });
-        if (success) {
-            toast.success("Operación exitosa!");
+        if(id){
+            await handlePut(
+                `${URLS.universityURLS.post}/${id}`,
+                {name: universityName, location: location},
+                ""
+            )
+            onClose();
+        }else{
+            await postData({name: universityName, location: location});
+            onClose();
         }
     };
     return (
@@ -42,11 +66,11 @@ const UniversityForm = ({ onClose }) => {
                         <label htmlFor="universityLogo">Logo de la universidad</label>
                         <input type="file" id="universityLogo" />
                     </div>
-                    {loading && <p>Guardando...</p>}
-                    {error && <p>Error: {error}</p>}
-                    {data && <p>Guardado exitosamente!</p>}
+                    {postLoading && <p>Guardando...</p>}
+                    {postError && <p>Error: {postError}</p>}
+                    {postDataResponse && <p>Guardado exitosamente!</p>}
                     <div className="university-form-actions">
-                        <button type="submit" className="save-button" disabled={loading}>Guardar</button>
+                        <button type="submit" className="save-button" disabled={postLoading}>Guardar</button>
                         <button onClick={onClose} className="cancel-button">Cancelar</button>
                     </div>
                 </form>

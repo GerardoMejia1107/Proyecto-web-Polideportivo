@@ -1,5 +1,5 @@
-export const U_FORM = 'university_form';
-export const SPORT_FORM = 'sport_form';
-export const MATCH_FORM = 'match_form';
-export const TRAIN_FORM = 'train_form';
-export const EDIT_OLD_MATCH_FORM = 'edit_old_matche_form';
+export const UNIV_FRM = 'university_form';
+export const SPORT_FRM = 'sport_form';
+export const MATCH_FRM = 'match_form';
+export const TRAIN_FRM = 'train_form';
+export const EDIT_OLD_MATCH_FRM = 'edit_old_match_form';
