@@ -1,12 +1,12 @@
 import React from "react";
 import NavAdmin from "../../../components/Admin/NavAdmin/NavAdmin.jsx";
-import "./HomeDashboard.css";
+import "./HomeDashPage.css";
 import Header from "../../../components/Common/Header/Header.jsx";
 import Footer from "../../../components/Common/Footer/Footer.jsx";
 import MatchEvent from "../../../components/Admin/MatchEvent/MatchEvent.jsx";
 import TrainEvent from "../../../components/Admin/TrainEvent/TrainEvent.jsx";
 
-const HomeDashboard = () => {
+const HomeDashPage = () => {
   const partidos = [
     { id: 1,
       equipo1Logo: "http://localhost:5173/src/assets/images/UCA.png",
@@ -91,4 +91,4 @@ const HomeDashboard = () => {
   );
 };
 
-export default HomeDashboard;
+export default HomeDashPage;

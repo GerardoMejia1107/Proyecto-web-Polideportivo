@@ -3,10 +3,11 @@ import TableComponent, {createTheme} from "react-data-table-component";
 import "./TableData.css";
 import useDelete from "../../../hooks/useDelete";
 import {SPORT_FRM, UNIV_FRM} from "../../../config/forms.js";
-import UniversityForm from "../Forms/University/UniversityForm.jsx";
-import SportForm from "../Forms/Sport/SportForm.jsx";
+import UniversityForm from "../Forms/UniversityForm/UniversityForm.jsx";
+import SportForm from "../Forms/SportForm/SportForm.jsx";
 import Modal from "../Forms/ModalForm/Modal.jsx";
 import {SPORTS_TBL, UNIV_TBL} from "../../../config/tables.js";
+import {UPDATE} from "../../../config/methods.js";
 
 
 const TableData = ({columnsName, data, actions, title, urls, tableName, refreshData}) => {
@@ -154,7 +155,7 @@ const TableData = ({columnsName, data, actions, title, urls, tableName, refreshD
             }
             <Modal show={isModalOpen} onClose={closeModal}>
                 {activeForm === SPORT_FRM && (
-                    <SportForm onClose={closeModal} id={idSelected}/>
+                    <SportForm onClose={closeModal} id={idSelected} />
                 )}
 
                 {activeForm === UNIV_FRM && (

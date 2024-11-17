@@ -8,7 +8,7 @@ export const createSport = async (sportData) => {
       const newSport = new Sport(sportData);
       return await newSport.save();
     }
-    throw new Error("Sport already exists");
+    throw new Error("SportForm already exists");
   } catch (e) {
     throw new Error(e.message);
   }
@@ -16,7 +16,7 @@ export const createSport = async (sportData) => {
 
 export const getAllSports = async () => {
   try {
-    return await Sport.find(); //Retorno todos los documentos de la BD de la coleccion Sport
+    return await Sport.find(); //Retorno todos los documentos de la BD de la coleccion SportForm
   } catch (err) {
     throw new Error(err.message);
   }
@@ -25,7 +25,7 @@ export const getAllSports = async () => {
 export const getMySportById = async (id) => {
   const sport = await Sport.findById(id); //Hago la busqueda del doc con el id que le pase
   if (!sport) {
-    throw new Error("Sport not found");
+    throw new Error("SportForm not found");
   }
   return sport;
 };
@@ -35,7 +35,7 @@ export const deleteSportById = async (id) => {
     const sport = await getMySportById(id); //Verifico la existencia del doc con el id especificado
     if (sport) {
       await sport.deleteOne();
-      return { message: "Sport deleted successfully", sport };
+      return { message: "SportForm deleted successfully", sport };
     }
   } catch (e) {
     throw new Error(e.message);
@@ -55,7 +55,7 @@ export const updateSportById = async (id, updatedSportData) => {
       await sport.save();
       return sport;
     } else if (nameAlreadyExists) {
-      throw new Error("Sport name already exists");
+      throw new Error("SportForm name already exists");
     }
   } catch (err) {
     throw new Error("Error updating sport: " + err.message);

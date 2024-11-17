@@ -1,12 +1,12 @@
-import './Trainings.css';
+import './TrainsPage.css';
 import React, { useState } from 'react';
 import NavAdmin from '../../../components/Admin/NavAdmin/NavAdmin.jsx';
 import Header from '../../../components/Common/Header/Header.jsx';
 import TableData from '../../../components/Admin/TableData/TableData.jsx';
-import TrainingForm from '../../../components/Admin/Forms/Training/TrainingForm.jsx';
+import TrainingForm from '../../../components/Admin/Forms/TrainForm/TrainingForm.jsx';
 
 
-const Trainings = () => {
+const TrainsPage = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -83,4 +83,4 @@ const Trainings = () => {
   );
 };
 
-export default Trainings;
+export default TrainsPage;

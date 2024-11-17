@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import './Matches.css';
+import './MatchesPage.css';
 import NavAdmin from '../../../components/Admin/NavAdmin/NavAdmin.jsx';
 import Header from '../../../components/Common/Header/Header.jsx';
 import Footer from '../../../components/Common/Footer/Footer.jsx';
 import TableData from '../../../components/Admin/TableData/TableData.jsx';
-import MatchForm from '../../../components/Admin/Forms/Match/MatchForm.jsx';
+import MatchForm from '../../../components/Admin/Forms/MatchForm/MatchForm.jsx';
 
-const Matches = () => {
+const MatchesPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
@@ -105,4 +105,4 @@ const Matches = () => {
   );
 };
 
-export default Matches;
+export default MatchesPage;
