@@ -16,7 +16,7 @@ export const createSport = async (sportData) => {
 
 export const getAllSports = async () => {
   try {
-    return await Sport.find(); //Retorno todos los documentos de la BD de la coleccion SportForm
+    return await Sport.find(undefined, undefined, undefined); //Retorno todos los documentos de la BD de la coleccion SportForm
   } catch (err) {
     throw new Error(err.message);
   }
