@@ -7,17 +7,16 @@ import cookieParser from "cookie-parser";
 
 const app = express();
 
-// Configuring CORS
 const CORS_OPTIONS = {
-  origin: "http://localhost:5173", // Allow your frontend
-  credentials: true, // Enable sending/receiving cookies
-  methods: ["GET", "PUT", "POST", "DELETE"], // Allowed HTTP methods
-  allowedHeaders: ["Content-Type", "Authorization"], // Allowed request headers
-  exposedHeaders: ["Set-Cookie"], // Expose Set-Cookie header to the frontend
+  origin: "http://localhost:5173",
+  credentials: true,
+  methods: ["GET", "PUT", "POST", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  exposedHeaders: ["Set-Cookie"],
 };
 
 app.use(cors(CORS_OPTIONS));
-app.options("*", cors(CORS_OPTIONS)); // Handle preflight requests
+app.options("*", cors(CORS_OPTIONS));
 
 // Middleware
 app.use(express.json());
@@ -25,12 +24,10 @@ app.use(cookieParser());
 app.use(urlencoded({ extended: false }));
 app.use("/api", mainRoutes);
 
-// Error handling middleware
 app.use((err, req, res, next) => {
   res.status(500).json({ message: err.message || "Internal Server Error" });
 });
 
-// Connect to MongoDB
 dotenv.config();
 const URI = `mongodb://${process.env.MONGO_HOST}/${process.env.MONGO_DB}`;
 
