@@ -2,6 +2,7 @@ import express from "express";
 import sportRoutes from "../routes/sportRoutes.js";
 import universityRoutes from "../routes/universityRoutes.js";
 import trainsRoutes from "./trainsRoutes.js";
+import authRoutes from "./authRoutes.js";
 
 const router = express.Router();
 
@@ -9,5 +10,6 @@ const router = express.Router();
 router.use("/sports", sportRoutes);
 router.use("/universities", universityRoutes);
 router.use("/trains", trainsRoutes)
+router.use('/auth', authRoutes)
 
 export default router;

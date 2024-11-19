@@ -4,18 +4,23 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './styles/App.css';
 import './styles/index.css';
 import AppRoutes from '../src/routes/AppRoutes'
-import MatchForm from './components/Admin/Forms/MatchForm/MatchForm';
-import TrainingForm from './components/Admin/Forms/TrainForm/TrainingForm'
+import axios from 'axios';
+import {Toaster} from "react-hot-toast";
+
 
 
 function App() {
     return (
-        <Router>
-            <div className="global-container">
-                <AppRoutes/>
-               
-            </div>
-        </Router>
+
+       <>
+           <Toaster position={'bottom-right'} toastOptions={{duration: 2000}}></Toaster>
+           <Router>
+               <div className="global-container">
+                   <AppRoutes/>
+
+               </div>
+           </Router>
+       </>
     );
 }
 

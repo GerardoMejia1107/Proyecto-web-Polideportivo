@@ -1,0 +1,13 @@
+.menu-example{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.menu-example button{
+    background: #030e35;
+    color: #fff;
+    border: none;
+    padding: 0.4rem;
+}

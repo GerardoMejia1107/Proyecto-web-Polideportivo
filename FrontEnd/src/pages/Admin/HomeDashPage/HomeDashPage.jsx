@@ -15,46 +15,35 @@ const HomeDashPage = () => {
       lugar: 'Magico Gonazales',
       deporte: "Fútbol",
     },
-    { id: 1,
+    { id: 2,
       equipo1Logo: "http://localhost:5173/src/assets/images/UCA.png",
       equipo2Logo: "http://localhost:5173/src/assets/images/UCA.png",
       horario: "14:00",
       lugar: 'Magico Gonazales',
       deporte: "Fútbol",
     },
-    { id: 1,
+    { id: 3,
       equipo1Logo: "http://localhost:5173/src/assets/images/UCA.png",
       equipo2Logo: "http://localhost:5173/src/assets/images/UCA.png",
       horario: "14:00",
       lugar: 'Magico Gonazales',
       deporte: "Fútbol",
     },
-    { id: 1,
+    { id: 4,
       equipo1Logo: "http://localhost:5173/src/assets/images/UCA.png",
       equipo2Logo: "http://localhost:5173/src/assets/images/UCA.png",
       horario: "14:00",
       lugar: 'Magico Gonazales',
       deporte: "Fútbol",
     },
-    { id: 1,
-      equipo1Logo: "http://localhost:5173/src/assets/images/UCA.png",
-      equipo2Logo: "http://localhost:5173/src/assets/images/UCA.png",
-      horario: "14:00",
-      lugar: 'Magico Gonazales',
-      deporte: "Fútbol",
-    },
+
 
   ];
 
   const entrenamientos = [
     { id: 1, lugar: 'Polideportivo UCA', horario: "09:00", deporte: "Voleibol" },
     { id: 2, lugar: 'Polideportivo UCA', horario: "11:00", deporte: "Futsal" },
-    { id: 1, lugar: 'Polideportivo UCA', horario: "09:00", deporte: "Voleibol" },
-    { id: 2, lugar: 'Polideportivo UCA', horario: "11:00", deporte: "Futsal" },
-    { id: 1, lugar: 'Polideportivo UCA', horario: "09:00", deporte: "Voleibol" },
-    { id: 2, lugar: 'Polideportivo UCA', horario: "11:00", deporte: "Futsal" },
-    { id: 1, lugar: 'Polideportivo UCA', horario: "09:00", deporte: "Voleibol" },
-    { id: 2, lugar: 'Polideportivo UCA', horario: "11:00", deporte: "Futsal" },
+
   ];
 
   return (

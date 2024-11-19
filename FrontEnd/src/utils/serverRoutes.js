@@ -1,6 +1,18 @@
 const API_BASIS_URL = import.meta.env.VITE_API_BASIS_URL;
 
 export const URLS = {
+    registerURLS: {
+        delete: `${API_BASIS_URL}/auth/delete`,
+        fetchAll: `${API_BASIS_URL}/auth/getAll`,
+        fetchOne: `${API_BASIS_URL}/auth/`,
+        update: `${API_BASIS_URL}/auth/update`,
+        post: `${API_BASIS_URL}/auth/register`,
+    },
+
+    loginURLS: {
+        post: `${API_BASIS_URL}/auth/login`,
+    }
+    ,
     universityURLS: {
         delete: `${API_BASIS_URL}/universities/delete`,
         fetchAll: `${API_BASIS_URL}/universities/getAll`,
@@ -16,4 +28,5 @@ export const URLS = {
         update: `${API_BASIS_URL}/sports/update`,
         post: `${API_BASIS_URL}/sports/create`
     },
+
 };
