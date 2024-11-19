@@ -7,23 +7,13 @@ const outcomeSchema = new mongoose.Schema({
     required: true,
   },
 
-  score_first_team: {
+  score_first_univ: {
     type: Number,
     required: true,
   },
-  score_second_team: {
+
+  score_second_univ: {
     type: Number,
-    required: true,
-  },
-  sets_first_team: {
-    type: Number,
-  },
-  sets_second_team: {
-    type: Number,
-  },
-  winner: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Team",
     required: true,
   },
 });

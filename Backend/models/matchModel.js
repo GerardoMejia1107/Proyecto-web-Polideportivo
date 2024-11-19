@@ -2,15 +2,21 @@ import mongoose from "mongoose";
 
 const matchSchema = new mongoose.Schema({
   
-  id_first_team: {
+  id_first_univ: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Team",
+    ref: "University",
     required: true,
   },
 
-  id_second_team: {
+  id_second_univ: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Team",
+    ref: "University",
+    required: true,
+  },
+
+  id_sport:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Sport",
     required: true,
   },
 
