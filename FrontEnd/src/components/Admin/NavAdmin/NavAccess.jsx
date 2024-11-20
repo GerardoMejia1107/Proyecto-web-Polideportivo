@@ -3,9 +3,9 @@ import './NavAccess.css'
 
 const NavAccess = () => {
     return (
-        <div className={'menu-example'}>
-            <button><Link to="/register">Crear Cuenta </Link></button>
-            <button><Link to="/login">Iniciar Sesión </Link></button>
+        <div className={'tab-conteiner'}>
+            <button className='tab-button'><Link to="/register">Crear Cuenta </Link></button>
+            <button className='tab-button active'><Link to="/login">Iniciar Sesión </Link></button>
         </div>
     )
 }

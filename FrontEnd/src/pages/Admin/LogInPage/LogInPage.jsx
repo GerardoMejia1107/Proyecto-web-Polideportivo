@@ -41,11 +41,12 @@ const LogInPage = () => {
   return (
     <>
       <NavAccess />
-      <section className={"form-container"}>
-        <form onSubmit={loginUser}>
+      <section className={"login-container"}>
+        <form onSubmit={loginUser} className="login-form">
           <div>
-            <label>Email: </label>
+            <label className="label-form">Email: </label>
             <input
+              className="login-input"
               type={"email"}
               onChange={(e) => {
                 setData({ ...data, email: e.target.value });
@@ -55,8 +56,9 @@ const LogInPage = () => {
           </div>
 
           <div>
-            <label>Contraseña: </label>
+            <label className="label-form">Contraseña: </label>
             <input
+              className="login-input"
               type={"password"}
               onChange={(e) => {
                 setData({ ...data, password: e.target.value });
@@ -65,7 +67,7 @@ const LogInPage = () => {
             />
           </div>
 
-          <button type={"submit"}>Iniciar Sesión</button>
+          <button type={"submit"} className="submit-btn">Iniciar Sesión</button>
         </form>
       </section>
     </>

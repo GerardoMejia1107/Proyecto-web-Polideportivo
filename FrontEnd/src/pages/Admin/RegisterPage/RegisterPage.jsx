@@ -41,48 +41,52 @@ const RegisterPage = () => {
 
   return (
     <>
-      <NavAccess />
-      <section className={"form-container"}>
-        <form onSubmit={registerUser}>
-          <div>
-            <label>Nombre: </label>
-            <input
-              type="text"
-              value={data.name}
-              onChange={(e) => {
-                setData({ ...data, name: e.target.value });
-              }}
-              placeholder={"ingresa tu nombre"}
-            />
-          </div>
 
-          <div>
-            <label>Email: </label>
-            <input
-              type={"email"}
-              value={data.email}
-              onChange={(e) => {
-                setData({ ...data, email: e.target.value });
-              }}
-              placeholder={"ingresa tu correo"}
-            />
-          </div>
+         <NavAccess />
+        <section className={"register-container"}>
+          <form onSubmit={registerUser} className="form-container">
+            <div>
+              <label className="label-form">Nombre: </label>
+              <input
+                type="text"
+                className="register-input"
+                value={data.name}
+                onChange={(e) => {
+                  setData({ ...data, name: e.target.value });
+                }}
+                placeholder={"ingresa tu nombre"}
+              />
+            </div>
 
-          <div>
-            <label>Contraseña: </label>
-            <input
-              type={"password"}
-              value={data.password}
-              onChange={(e) => {
-                setData({ ...data, password: e.target.value });
-              }}
-              placeholder={"ingresa tu contraseña"}
-            />
-          </div>
+            <div>
+              <label className="label-form">Email: </label>
+              <input
+                className="register-input"
+                type={"email"}
+                value={data.email}
+                onChange={(e) => {
+                  setData({ ...data, email: e.target.value });
+                }}
+                placeholder={"ingresa tu correo"}
+              />
+            </div>
 
-          <button type={"submit"}>Register</button>
-        </form>
-      </section>
+            <div>
+              <label className="label-form">Contraseña: </label>
+              <input
+                className="register-input"
+                type={"password"}
+                value={data.password}
+                onChange={(e) => {
+                  setData({ ...data, password: e.target.value });
+                }}
+                placeholder={"ingresa tu contraseña"}
+              />
+            </div>
+
+            <button type={"submit"} className="register-btn">Registrarse</button>
+          </form>
+        </section>
     </>
   );
 };
