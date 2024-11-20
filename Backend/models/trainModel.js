@@ -20,9 +20,15 @@ const trainSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+
     status: {
         type: String,
         required: true,
+    },
+
+    visibility:{
+        type: Boolean,
+        default: false,
     }
 
 });

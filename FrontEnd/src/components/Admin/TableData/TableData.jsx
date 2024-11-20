@@ -6,8 +6,9 @@ import {SPORT_FRM, TRAIN_FRM, UNIV_FRM} from "../../../config/forms.js";
 import UniversityForm from "../Forms/UniversityForm/UniversityForm.jsx";
 import SportForm from "../Forms/SportForm/SportForm.jsx";
 import Modal from "../Forms/ModalForm/Modal.jsx";
-import {SPORTS_TBL, TRAINS_TBL, UNIV_TBL} from "../../../config/tables.js";
+import {HIST_MATCHES_TBL, NEW_MATCHES_TBL, SPORTS_TBL, TRAINS_TBL, UNIV_TBL} from "../../../config/tables.js";
 import TrainingForm from "../Forms/TrainForm/TrainingForm.jsx";
+import usePut from "../../../hooks/usePut.js";
 
 const TableData = ({
                        columnsName,
@@ -23,6 +24,12 @@ const TableData = ({
 
     // Hook para manejar la eliminación del registro en la base de datos
     const {handleDelete, loading, error} = useDelete();
+
+    const {
+        handlePut,
+        loading: putLoading,
+        error: putError,
+    } = usePut();
 
     // useState para manejar el id del DOC seleccionado y trabajar con este ya sea para Actualizar o Eliminar
     const [idSelected, setIdSelected] = useState(null);
@@ -85,6 +92,29 @@ const TableData = ({
         }
     }
 
+    const updateVisibility = async (id, currentVisibility) => {
+        let updateUrl = "";
+        let switchedVisibility;
+
+        switchedVisibility = !currentVisibility;
+
+        switch (tableName) {
+            case TRAINS_TBL:
+                updateUrl = `${urls.trainURLS.update}/${id}`;
+
+                await handlePut(updateUrl, {visibility: switchedVisibility});
+                break;
+
+            case NEW_MATCHES_TBL:
+
+                break;
+
+            case HIST_MATCHES_TBL:
+                break;
+        }
+        refreshData()
+    }
+
 
     // Array que combina las columnas que se tendrán en la tabla
     const columns = [
@@ -113,6 +143,19 @@ const TableData = ({
                             <i className="fa-solid fa-trash"></i>
                         </button>
                     )}
+                    {
+                        actions.includes("visibility") && (
+                            <button
+                                title="Visibilidad"
+                                className="visibility-button table-action-btn"
+                                onClick={async () => {
+                                    await updateVisibility(row._id, row.visibility);
+                                }}
+                            >
+                                <i className={row.visibility ? "fa-solid fa-eye" : "fa-solid fa-eye-slash"}></i>
+                            </button>
+                        )
+                    }
 
                 </div>
             ),
