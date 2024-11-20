@@ -48,7 +48,7 @@ const HomeDashPage = () => {
 
   ];
 
-  return (
+  return user ?  (
     <section className="admin-home-container">
       <NavAdmin />
       <Header message={"Visualiza tus eventos deportivos transcurriendo"} />
@@ -79,7 +79,7 @@ const HomeDashPage = () => {
       </main>
       <Footer />
     </section>
-  );
+  ) : (<p>Debes iniciar sesión para entrar</p>);
 };
 
 export default HomeDashPage;
