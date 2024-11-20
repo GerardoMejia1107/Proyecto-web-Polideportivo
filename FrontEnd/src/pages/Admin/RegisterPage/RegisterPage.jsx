@@ -30,7 +30,7 @@ const RegisterPage = () => {
       toast.error(postError);
     } else {
       toast.success("User created successfully");
-      navigate("../login");
+      navigate("/login");
       setData({
         name: "",
         email: "",

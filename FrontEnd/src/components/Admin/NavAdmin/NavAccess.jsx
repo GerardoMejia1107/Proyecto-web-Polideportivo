@@ -4,9 +4,8 @@ import './NavAccess.css'
 const NavAccess = () => {
     return (
         <div className={'menu-example'}>
-            <button><Link to="/admin/home">Home </Link></button>
-            <button><Link to="/admin/register">Crear Cuenta </Link></button>
-            <button><Link to="/admin/login">Iniciar Sesión </Link></button>
+            <button><Link to="/register">Crear Cuenta </Link></button>
+            <button><Link to="/login">Iniciar Sesión </Link></button>
         </div>
     )
 }

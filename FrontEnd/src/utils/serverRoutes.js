@@ -11,6 +11,7 @@ export const URLS = {
 
     loginURLS: {
         post: `${API_BASIS_URL}/auth/login`,
+        get: `${API_BASIS_URL}/auth/profile`,
     }
     ,
     universityURLS: {

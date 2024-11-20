@@ -9,7 +9,10 @@ const useFetch = (url) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch(url);
+      const response = await fetch(url, {
+        method: "GET",
+        credentials: "include",
+      });
       if (!response.ok) throw new Error("Error fetching data");
       const result = await response.json();
       setData(result);

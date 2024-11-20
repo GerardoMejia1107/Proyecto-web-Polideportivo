@@ -23,16 +23,18 @@ const LogInPage = () => {
 
   const loginUser = async (e) => {
     e.preventDefault();
-    if (!(await postData(data))) {
-      toast.error(postError);
-    } else {
-      toast.success("User created successfully");
-      navigate("../home");
+    if ((await postData(data))) {
+      toast.success("logged in successfully");
+      navigate("/admin/home");
       setData({
         name: "",
         email: "",
         password: "",
       });
+
+    } else {
+      navigate("/login");
+      toast.error(postError);
     }
   };
 
@@ -67,7 +69,7 @@ const LogInPage = () => {
         </form>
       </section>
     </>
-  );
+  )
 };
 
 export default LogInPage;
