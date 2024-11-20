@@ -6,6 +6,11 @@ const trainSchema = new mongoose.Schema({
         required: true,
     },
 
+    time: {
+        type: String,
+        required: true,
+    }
+    ,
     sport: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Sport",

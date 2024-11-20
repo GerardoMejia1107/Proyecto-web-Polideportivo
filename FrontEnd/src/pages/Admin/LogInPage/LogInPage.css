@@ -1,0 +1,69 @@
+.login-container {
+    font-family: 'Poppins', sans-serif; /* Estilo de fuente */
+    background: linear-gradient(to bottom, #e3f2fd, #ffffff); /* Fondo degradado */
+    display: flex; /* Activa Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: 100vw; /* Ancho completo de la ventana */
+    height: 100vh; /* Altura completa de la ventana */
+    margin: 0; /* Elimina márgenes externos */
+    padding: 0; /* Elimina cualquier relleno externo */
+}
+
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo translúcido */
+    padding: 60px;
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 100%; /* Toma todo el ancho disponible */
+    max-width: 600px; /* Ancho máximo */
+  }
+
+.label-form {
+    text-align: left;
+    font-size: 14px;
+    color: #333333;
+    font-weight: 500;
+}
+
+
+
+/* Campos de entrada */
+.login-input {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 15px; /* Más espacio interno */
+    font-size: 16px; /* Texto más grande */
+    margin-bottom: 20px; /* Separación entre campos */
+    border: 1px solid #ccc; /* Borde suave */
+    border-radius: 8px; /* Bordes redondeados */
+    box-sizing: border-box; /* Evita que el padding afecte al tamaño */
+  }
+  
+.login-input:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+
+.submit-btn {
+    background: #007BFF;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.submit-btn:hover {
+    background: #0056b3;
+  }
+  

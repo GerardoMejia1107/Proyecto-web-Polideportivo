@@ -1,0 +1,28 @@
+.tab-conteiner {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 5rem;
+  }
+
+
+.tab-button {
+    margin-top: 20px;
+    background: #081c66;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.tab-button.active {
+    background: #d6caca;
+    color: #050505;
+}
+
+.tab-button:hover {
+    opacity: 0.9;
+  }
+  

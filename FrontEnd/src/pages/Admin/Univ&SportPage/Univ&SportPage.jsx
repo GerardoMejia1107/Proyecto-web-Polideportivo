@@ -18,7 +18,6 @@ const UnivSportPage = () => {
     const [sportData, setSportData] = useState([]);
     const [uniData, setUniversitiesData] = useState([]);
 
-
     const {
         data: fetchedUniData,
         loading: loadingUniversities,

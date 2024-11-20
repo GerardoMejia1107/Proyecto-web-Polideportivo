@@ -1,5 +1,4 @@
-import {useState} from 'react';
-import {outcome} from "../utils/sweetAlert.js";
+import {useState} from "react";
 
 const usePost = (url) => {
     const [data, setData] = useState(null);
@@ -10,18 +9,17 @@ const usePost = (url) => {
         setLoading(true);
         try {
             const response = await fetch(url, {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
+                method: "POST",
+                credentials: "include",
+                headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body),
             });
             if (!response.ok) {
-                outcome.error()
-                throw new Error('Error posting data');
+                throw new Error("Error posting data");
             }
-            outcome.success()
             const result = await response.json();
             setData(result);
-            return true
+            return true;
         } catch (err) {
             setError(err.message);
         } finally {
