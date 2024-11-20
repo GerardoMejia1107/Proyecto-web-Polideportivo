@@ -13,8 +13,8 @@ const NavAdmin = () => {
                 method: "POST",
                 credentials: "include",
             });
-            setUser(null); // Clear user context
-            navigate("/login"); // Redirect to login page
+            setUser(null);
+            navigate("/login");
         } catch (err) {
             console.error("Error logging out:", err);
         }

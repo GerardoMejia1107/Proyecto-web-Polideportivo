@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import {Routes, Route, Navigate} from "react-router-dom";
-import {UserContext, UserContextProvider} from "../../context/userContext.jsx"; // Adjust the path as necessary
+import {UserContext, UserContextProvider} from "../../context/userContext.jsx";
 import HomeDashPage from "../pages/Admin/HomeDashPage/HomeDashPage.jsx";
 import MatchesPage from "../pages/Admin/MatchesPage/MatchesPage.jsx";
 import HistoryPage from "../pages/Admin/HistoryPage/HistoryPage.jsx";

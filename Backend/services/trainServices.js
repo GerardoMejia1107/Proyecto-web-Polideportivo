@@ -21,7 +21,7 @@ export const getAllTrains = async () => {
 }
 
 export const getTrainById = async (id) => {
-    const train = await Train.findById(id);
+    const train = await Train.findById(id).populate("sport");
     if (!train) {
         throw new Error("Train not found");
     }

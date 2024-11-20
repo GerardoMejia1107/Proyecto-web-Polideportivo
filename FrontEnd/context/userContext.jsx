@@ -12,6 +12,7 @@ export const UserContextProvider = ({ children }) => {
                 const response = await axios.get("http://localhost:3000/api/auth/profile", {
                     withCredentials: true,
                 });
+
                 setUser(response.data);
             } catch (err) {
                 console.error("Error fetching user profile:", err);

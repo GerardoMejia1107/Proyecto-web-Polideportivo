@@ -6,7 +6,7 @@ const ProtectedRoute = ({ children }) => {
     const { user } = useContext(UserContext);
 
     // Muestra un mensaje mientras se verifica el usuario
-    if (user === null) {
+    if (user === undefined) {
         return <p>Cargando...</p>;
     }
 

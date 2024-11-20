@@ -30,4 +30,12 @@ export const URLS = {
         post: `${API_BASIS_URL}/sports/create`
     },
 
+    trainURLS: {
+        delete: `${API_BASIS_URL}/trains/delete`,
+        fetchAll: `${API_BASIS_URL}/trains/getAll`,
+        fetchOne: `${API_BASIS_URL}/trains`,
+        update: `${API_BASIS_URL}/trains/update`,
+        post: `${API_BASIS_URL}/trains/create`,
+    }
+
 };

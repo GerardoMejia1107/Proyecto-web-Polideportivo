@@ -1,64 +1,67 @@
 import './TrainsPage.css';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import NavAdmin from '../../../components/Admin/NavAdmin/NavAdmin.jsx';
 import Header from '../../../components/Common/Header/Header.jsx';
 import TableData from '../../../components/Admin/TableData/TableData.jsx';
 import TrainingForm from '../../../components/Admin/Forms/TrainForm/TrainingForm.jsx';
+import useFetch from "../../../hooks/useFetch.js";
+import {URLS} from "../../../utils/serverRoutes.js";
+import {TRAINS_TBL} from "../../../config/tables.js";
 
 
 const TrainsPage = () => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [trainData, setTrainsData] = useState([]);
 
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
 
+
+    const {
+        data: fetchedTrainsData,
+        loading: loadingTrains,
+        error: errorTrains,
+        overFetch: fetchTrains,
+    } = useFetch(URLS.trainURLS.fetchAll);
+
+    useEffect(() => {
+        if (fetchedTrainsData) setTrainsData(fetchedTrainsData);
+    }, [fetchedTrainsData]);
+
     const headersColumns = [
-        {name: 'Fecha', selector: (row) => row.fecha, sortable: true},
-        {name: 'Hora', selector: (row) => row.hora},
-        {name: 'Deporte', selector: (row) => row.deporte, sortable: true},
-        {name: 'Lugar', selector: (row) => row.lugar},
+        {
+            name: 'Fecha',
+            selector: (row) => {
+                if (!row.date) return 'Sin fecha';
+                const date = new Date(row.date);
 
-        {name: 'Estado', selector: (row) => row.estado},
+
+                const day = String(date.getUTCDate()).padStart(2, '0');
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const yearShort = String(date.getFullYear()).slice(-2);
+
+                return `${day}/${month}/${yearShort}`;
+            },
+            sortable: true
+        },
+
+        {name: 'Hora', selector: (row) => row.time},
+        {
+            name: 'Deporte',
+            selector: (row) => {
+                if (!row || !row.sport) {
+                    return 'Sin deporte';
+                }
+                return row.sport.name;
+            },
+        },
+
+        {name: 'Lugar', selector: (row) => row.location},
+
+        {name: 'Estado', selector: (row) => row.status, sortable: true},
     ];
 
-    const data = [
-        {
-            fecha: '2024-11-11',
-            hora: '10:00 AM',
-            deporte: 'Fútbol',
-            lugar: 'Universidad Central',
-            estado: 'Programado',
-        },
-        {
-            fecha: '2024-11-12',
-            hora: '2:00 PM',
-            deporte: 'Baloncesto',
-            lugar: 'Universidad del Norte',
-            estado: 'Finalizado',
-        },
-        {
-            fecha: '2024-11-13',
-            hora: '4:30 PM',
-            deporte: 'Vóleibol',
-            lugar: 'Instituto Superior Deportivo',
-            estado: 'En Progreso',
-        },
-        {
-            fecha: '2024-11-14',
-            hora: '1:00 PM',
-            deporte: 'Tenis',
-            lugar: 'Universidad Sur',
-            estado: 'Programado',
-        },
-        {
-            fecha: '2024-11-15',
-            hora: '3:15 PM',
-            deporte: 'Natación',
-            lugar: 'Escuela Nacional de Deportes',
-            estado: 'Cancelado',
-        },
-    ];
 
     const actionsForTable = ['update', 'delete', 'visibility'];
 
@@ -72,13 +75,26 @@ const TrainsPage = () => {
                         <i className='fa-solid fa-file-circle-plus'></i>
                     </button>
                 </div>
-                <TrainingForm show={isModalOpen} onClose={closeModal}/>
-                <TableData
-                    data={data}
-                    columnsName={headersColumns}
-                    actions={actionsForTable}
-                />
+
+                {loadingTrains ? (
+                    <p>Cargando datos de universidades...</p>
+                ) : errorTrains ? (
+                    <p>Error al cargar datos: {errorTrains}</p>
+                ) : (
+                    <TableData
+                        data={trainData}
+                        columnsName={headersColumns}
+                        actions={actionsForTable}
+                        urls={URLS}
+                        tableName={TRAINS_TBL}
+                        refreshData={() => {
+                            fetchTrains();
+                        }}
+                    />)}
             </main>
+            <TrainingForm show={isModalOpen} onClose={closeModal} refresh={() => {
+                fetchTrains();
+            }}/>
         </section>
     );
 };
