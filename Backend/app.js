@@ -5,8 +5,15 @@ import mainRoutes from "./routes/mainRoutes.js";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 
+dotenv.config(); // Cargar variables de entorno primero
+
+if (!process.env.MONGO_HOST || !process.env.MONGO_DB) {
+  throw new Error("Missing MONGO_HOST or MONGO_DB environment variables");
+}
+
 const app = express();
 
+// Configuración de CORS
 const CORS_OPTIONS = {
   origin: "http://localhost:5173",
   credentials: true,
@@ -24,13 +31,16 @@ app.use(cookieParser());
 app.use(urlencoded({ extended: false }));
 app.use("/api", mainRoutes);
 
+// Middleware de Error
 app.use((err, req, res, next) => {
-  res.status(500).json({ message: err.message || "Internal Server Error" });
+  console.error(err.stack);
+  res.status(err.status || 500).json({
+    message: err.message || "Internal Server Error",
+  });
 });
 
-dotenv.config();
+// Conexión a MongoDB
 const URI = `mongodb://${process.env.MONGO_HOST}/${process.env.MONGO_DB}`;
-
 mongoose
   .connect(URI)
   .then(() => {
@@ -39,5 +49,18 @@ mongoose
   .catch((err) => {
     console.error("Error connecting to DB", err);
   });
+
+// Eventos de conexión de Mongoose (Opcional para depuración)
+mongoose.connection.on("connected", () => {
+  console.log("MongoDB connection established");
+});
+
+mongoose.connection.on("error", (err) => {
+  console.error("Error in MongoDB connection:", err);
+});
+
+mongoose.connection.on("disconnected", () => {
+  console.log("MongoDB disconnected");
+});
 
 export default app;
