@@ -22,6 +22,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
   width: 100%; /* Toma todo el ancho disponible */
   max-width: 600px; /* Ancho máximo */
+  max-height: 500px;
 }
 
 .label-form {
