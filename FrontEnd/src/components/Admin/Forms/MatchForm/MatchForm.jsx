@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import './MatchForm.css'
 import useFetch from "../../../../hooks/useFetch.js";
 import {URLS} from "../../../../utils/serverRoutes.js";
+import usePost from "../../../../hooks/usePost.js";
 
 const MatchForm = ({show, onClose}) => {
     if (!show) return null;
@@ -21,6 +22,13 @@ const MatchForm = ({show, onClose}) => {
         error: errorUniversities,
         overFetch: fetchUniversities,
     } = useFetch(URLS.universityURLS.fetchAll);
+
+    const {
+        postData,
+        loading: postLoading,
+        error: postError,
+    } = usePost(URLS.trainURLS.post);
+
 
     return (
         <div className="modal-style">

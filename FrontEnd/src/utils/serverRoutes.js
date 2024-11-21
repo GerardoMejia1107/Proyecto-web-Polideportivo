@@ -36,6 +36,10 @@ export const URLS = {
         fetchOne: `${API_BASIS_URL}/trains`,
         update: `${API_BASIS_URL}/trains/update`,
         post: `${API_BASIS_URL}/trains/create`,
+    },
+
+    matchURLS:{
+
     }
 
 };
