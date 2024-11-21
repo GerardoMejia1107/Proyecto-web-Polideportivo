@@ -1,12 +1,22 @@
 import './TrainingCard.css'
-import React from "react";
+import React, {useEffect} from "react";
 
-const TrainingCard = ({ training }) => {
+const TrainingCard = ({training, refresh}) => {
+
     return (
         <div className="training-card">
-            <div className="training-day">{training.day}</div>
+            <div className="training-day">
+                {(() => {
+                    const date = new Date(training.date);
+                    const day = String(date.getUTCDate()).padStart(2, '0'); // Día en UTC
+                    const month = String(date.getUTCMonth() + 1).padStart(2, '0'); // Mes en UTC (0-indexado)
+                    const year = date.getUTCFullYear(); // Año en UTC
+                    return `${day}/${month}/${year}`;
+                })()}
+            </div>
+
             <div className="training-time">Hora: {training.time}</div>
-            <div className="training-place">Lugar: {training.place}</div>
+            <div className="training-place">Lugar: {training.location}</div>
             <div className={`training-status ${training.status.replace(" ", "-").toLowerCase()}`}>
                 {training.status === "No decidido" && (
                     <div className={'btn-training-status-container'}>
@@ -25,7 +35,8 @@ const TrainingCard = ({ training }) => {
                 {training.status === "Confirmado" && (
                     <div className={'btn-training-status-container'}>
                         <button role="img" aria-label="confirmado" className="status-icon training-status-btn"><i
-                            className="fa-regular fa-face-smile"></i> <span className={'confirm'}>Confirmado</span></button>
+                            className="fa-regular fa-face-smile"></i> <span className={'confirm'}>Confirmado</span>
+                        </button>
                     </div>
                 )}
             </div>

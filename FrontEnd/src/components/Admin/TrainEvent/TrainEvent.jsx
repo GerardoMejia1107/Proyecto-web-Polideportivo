@@ -1,7 +1,8 @@
 import React from "react";
 import './Trainevent.css'
+
 const TrainEvent = ({train}) => {
-    return (
+    { return train.visibility ?  (
         <div
             key={train.id}
             className="admin-home-training-item"
@@ -11,20 +12,20 @@ const TrainEvent = ({train}) => {
                 <tbody>
                 <tr className="admin-home-training-info">
                     <td className="admin-home-training-cell">Deporte:</td>
-                    <td className="admin-home-training-cell">{train.deporte}</td>
+                    <td className="admin-home-training-cell">{train.sport.name}</td>
                 </tr>
                 <tr className="admin-home-training-info">
                     <td className="admin-home-training-cell">Hora:</td>
-                    <td className="admin-home-training-cell">{train.horario}</td>
+                    <td className="admin-home-training-cell">{train.time}</td>
                 </tr>
                 <tr className="admin-home-training-info">
                     <td className="admin-home-training-cell">Lugar:</td>
-                    <td className="admin-home-training-cell">{train.lugar}</td>
+                    <td className="admin-home-training-cell">{train.location}</td>
                 </tr>
                 </tbody>
             </table>
         </div>
-    )
+    ) : ''}
 }
 
 export default TrainEvent
