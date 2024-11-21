@@ -24,7 +24,7 @@ const NavAdmin = () => {
         <nav className="nav flex justify-between">
             <div className="icons-container flex items-center">
                 <button
-                    className="p-2 rounded-full option"
+                    className={`p-2 rounded-full option ${location.pathname === "/admin/home" ? "active" : ""}`}
                     onClick={() => navigate("/admin/home")}
                     title="Historial de partidos"
                 >
@@ -32,7 +32,7 @@ const NavAdmin = () => {
                 </button>
 
                 <button
-                    className="p-2 rounded-full option"
+                    className={`p-2 rounded-full option ${location.pathname === "/admin/matches" ? "active" : ""}`}
                     onClick={() => navigate("/admin/matches")}
                     title="Partidos"
                 >
@@ -40,7 +40,7 @@ const NavAdmin = () => {
                 </button>
 
                 <button
-                    className="p-2 rounded-full option"
+                    className={`p-2 rounded-full option ${location.pathname === "/admin/trainings" ? "active" : ""}`}
                     onClick={() => navigate("/admin/trainings")}
                     title="Entrenos"
                 >
@@ -48,7 +48,7 @@ const NavAdmin = () => {
                 </button>
 
                 <button
-                    className="p-2 rounded-full option"
+                    className={`p-2 rounded-full option ${location.pathname === "/admin/history" ? "active" : ""}`}
                     onClick={() => navigate("/admin/history")}
                     title="Historial de partidos"
                 >
@@ -56,7 +56,7 @@ const NavAdmin = () => {
                 </button>
 
                 <button
-                    className="p-2 rounded-full option"
+                    className={`p-2 rounded-full option ${location.pathname === "/admin/universities" ? "active" : ""}`}
                     onClick={() => navigate("/admin/universities")}
                     title="Universidades"
                 >

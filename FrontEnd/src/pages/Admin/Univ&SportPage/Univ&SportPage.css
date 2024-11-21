@@ -14,13 +14,14 @@
   margin: 2rem auto 5rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 5rem;
 }
 
 .universities-table-section h3,
 .sports-table-section h3 {
   font-weight: 600;
   font-size: 1.1rem;
+  margin-bottom: 1rem;
   color: var(--bg-color-blue);
 }
 .universities-table-section,
@@ -32,5 +33,5 @@
   position: absolute;
   z-index: 1;
   right: 1rem;
-  top: 1rem;
+  top: -0.1rem;
 }

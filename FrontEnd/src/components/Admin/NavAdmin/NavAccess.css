@@ -1,15 +1,13 @@
 .tab-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
     gap: 5rem;
     margin: 10px;
   }
 
 
-button {
+button.nav-access-btn {
     margin-top: 10px;
-    background: #d6caca;
     color: #080808;
     border: none;
     padding: 10px 20px;
@@ -20,12 +18,12 @@ button {
 }
 
 
-button.active {
+.tab-container button.active {
     background: #081c66;
     color: #f3eded;
 }
 
-button:hover {
+.tab-container  button:hover {
     opacity: 0.9;
 }
   
