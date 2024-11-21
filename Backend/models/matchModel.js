@@ -1,45 +1,27 @@
 import mongoose from "mongoose";
 
 const matchSchema = new mongoose.Schema({
+    date: {type: Date, required: true},
 
-    id_first_univ: {
+    time: {type: String, required: true},
+
+    location: {type: String, required: true},
+
+    sport: {type: mongoose.Schema.Types.ObjectId, ref: "Sport", required: true},
+
+    universityHome: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "University",
         required: true,
     },
 
-    id_second_univ: {
+    universityAway: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "University",
         required: true,
     },
 
-    id_sport: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Sport",
-        required: true,
-    },
-
-    date: {
-        type: Date,
-        required: true,
-    },
-
-    location: {
-        type: String,
-        required: true,
-    },
-
-    status: {
-        type: String,
-        required: true,
-    },
-
-    visibility: {
-        type: Boolean,
-
-    }
+    result: {type: mongoose.Schema.Types.ObjectId, ref: "Outcome"}, // Resultado del partido
 });
 
-const Match = mongoose.model("Match", matchSchema);
-export default Match;
+export default mongoose.model("Match", matchSchema);

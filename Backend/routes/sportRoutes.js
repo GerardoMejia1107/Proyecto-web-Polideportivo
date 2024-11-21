@@ -1,12 +1,13 @@
 import express from "express";
 
 import {
-  addSport,
-  getSports,
-  getSportById,
-  deleteSport,
-  updateSport,
+    addSport,
+    getSports,
+    getSportById,
+    deleteSport,
+    updateSport,
 } from "../controllers/sportController.js";
+
 const router = express.Router();
 
 router.post("/create", addSport);
