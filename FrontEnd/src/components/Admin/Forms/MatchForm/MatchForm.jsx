@@ -7,8 +7,13 @@ import usePost from "../../../../hooks/usePost.js";
 const MatchForm = ({show, onClose}) => {
     if (!show) return null;
     const [sport, setSport] = useState('');
-    const [firstUniv, setFirstUniv] = useState('');
-    const [secondUniv, setSecondUniv] = useState('');
+    const [universityHome, setUniversityHome] = useState('');
+    const [universityAway, setUniversityAway] = useState('');
+    const [date, setDate] = useState(""); // Fecha del partido
+    const [time, setTime] = useState(""); // Hora del partido
+    const [location, setLocation] = useState(""); // Ubicación del partido
+
+
     const {
         data: fetchedSportsData,
         loading: loadingSports,
@@ -27,7 +32,21 @@ const MatchForm = ({show, onClose}) => {
         postData,
         loading: postLoading,
         error: postError,
-    } = usePost(URLS.trainURLS.post);
+    } = usePost(URLS.matchURLS.post);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const matchData = {
+            date,
+            time,
+            location,
+            sport,
+            universityHome,
+            universityAway,
+        }
+        const created = await postData(matchData);
+        created && onClose()
+    }
 
 
     return (
@@ -39,79 +58,77 @@ const MatchForm = ({show, onClose}) => {
                 <div className="match-form-container">
                     <h2 className="match-form-title">Información Sobre Partido</h2>
 
-                    {/* Campo de selección de Deporte */}
-                    <div className="form-group">
-                        <label htmlFor="sport">Deporte</label>
-                        <select id="sport"
-                                name="sport"
-                                value={sport}
-                                onChange={(e) => setSport(e.target.value)}
-                                required>
-                            <option value="" disabled>
-                                {loadingSports ? 'Cargando deportes...' : 'Seleccionar deporte'}
-                            </option>
-                            {fetchedSportsData &&
-                                fetchedSportsData.map((sport) => (
-                                    <option key={sport._id} value={sport._id}>
-                                        {sport.name}
-                                    </option>
-                                ))}
-                        </select>
-                    </div>
+                    <form className={'match-form'} onSubmit={handleSubmit}>
+                        {/* Campo de selección de Deporte */}
 
-                    {/* Fecha y Hora */}
-                    <div className="form-group-inline">
                         <div className="form-group">
-                            <label>Fecha</label>
-                            <input type="date"/>
+                            <label htmlFor="sport">Deporte</label>
+                            <select id="sport"
+                                    name="sport"
+                                    value={sport}
+                                    onChange={(e) => setSport(e.target.value)}
+                                    required>
+                                <option value="" disabled>
+                                    {loadingSports ? 'Cargando deportes...' : 'Seleccionar deporte'}
+                                </option>
+                                {fetchedSportsData &&
+                                    fetchedSportsData.map((sport) => (
+                                        <option key={sport._id} value={sport._id}>
+                                            {sport.name}
+                                        </option>
+                                    ))}
+                            </select>
                         </div>
-                        <div className="form-group">
-                            <label>Hora</label>
-                            <input type="time"/>
-                        </div>
-                    </div>
 
-                    {/* Poster promocional */}
-                    <div className="form-group image-upload">
+                        {/* Fecha y Hora */}
+                        <div className="form-group-inline">
+                            <div className="form-group">
+                                <label htmlFor="date">Fecha</label>
+                                <input type="date" id="date" name="date" value={date}
+                                       onChange={(e) => setDate(e.target.value)}
+                                       required/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="time">Hora</label>
+                                <input type="time" id="time" name="time" value={time}
+                                       onChange={(e) => setTime(e.target.value)}
+                                       required/>
+                            </div>
+                        </div>
+
+                        {/* Poster promocional */}
+                        {/*<div className="form-group image-upload">
                         <label>Agrega un poster promocional del evento</label>
                         <div className="upload-box">
                             <i className="fa fa-image"></i>
                             <p>Buscar</p>
                         </div>
-                    </div>
+                    </div>*/}
 
-                    {/* Universidades */}
-                    <div className="form-group-inline">
                         <div className="form-group">
-                            <label htmlFor="university1">Universidad Local</label>
-                            <select id="university1"
-                                    name="university1"
-                                    value={firstUniv}
-                                    onChange={(e) => setFirstUniv(e.target.value)}
-                                    required>
-                                <option value="" disabled>
-                                    {loadingUniversities ? 'Cargando deportes...' : 'Seleccionar Universidad'}
-                                </option>
-                                {fetchedUniversitiesData &&
-                                    fetchedUniversitiesData.map((univ) => (
-                                        <option key={univ._id} value={univ._id}>
-                                            {univ.name}
-                                        </option>
-                                    ))}
-
-                            </select>
+                            <label htmlFor="location">Lugar</label>
+                            <input
+                                type="text"
+                                id="location"
+                                name="location"
+                                placeholder="Ej. San Salvador, El Salvador"
+                                value={location}
+                                onChange={(e) => setLocation(e.target.value)}
+                                required
+                            />
                         </div>
 
+                        {/* Universidades */}
                         <div className="form-group-inline">
                             <div className="form-group">
                                 <label htmlFor="university1">Universidad Local</label>
                                 <select id="university1"
                                         name="university1"
-                                        value={secondUniv}
-                                        onChange={(e) => setSecondUniv(e.target.value)}
+                                        value={universityHome}
+                                        onChange={(e) => setUniversityHome(e.target.value)}
                                         required>
                                     <option value="" disabled>
-                                        {loadingUniversities ? 'Cargando deportes...' : 'Seleccionar universidad'}
+                                        {loadingUniversities ? 'Cargando deportes...' : 'Seleccionar Universidad'}
                                     </option>
                                     {fetchedUniversitiesData &&
                                         fetchedUniversitiesData.map((univ) => (
@@ -122,26 +139,48 @@ const MatchForm = ({show, onClose}) => {
 
                                 </select>
                             </div>
+
+                            <div className="form-group-inline">
+                                <div className="form-group">
+                                    <label htmlFor="university1">Universidad Local</label>
+                                    <select id="university1"
+                                            name="university1"
+                                            value={universityAway}
+                                            onChange={(e) => setUniversityAway(e.target.value)}
+                                            required>
+                                        <option value="" disabled>
+                                            {loadingUniversities ? 'Cargando deportes...' : 'Seleccionar universidad'}
+                                        </option>
+                                        {fetchedUniversitiesData &&
+                                            fetchedUniversitiesData.map((univ) => (
+                                                <option key={univ._id} value={univ._id}>
+                                                    {univ.name}
+                                                </option>
+                                            ))}
+
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div className="form-group">
-                        <label>Estado</label>
-                        <select>
-                            <option>Seleccionar estado</option>
-                            <option>En progreso</option>
-                            <option>Cancelado</option>
-                            <option>Planificado</option>
-                            <option>Finalizado</option>
-                        </select>
-                    </div>
+                        <div className="form-group">
+                            <label>Estado</label>
+                            <select>
+                                <option>Seleccionar estado</option>
+                                <option>En progreso</option>
+                                <option>Cancelado</option>
+                                <option>Planificado</option>
+                                <option>Finalizado</option>
+                            </select>
+                        </div>
 
 
-                    {/* Botones de acción */}
-                    <div className="form-buttons">
-                        <button className="save-btn">Guardar</button>
-                        <button className="cancel-btn" onClick={onClose}>Cancelar</button>
-                    </div>
+                        {/* Botones de acción */}
+                        <div className="form-buttons">
+                            <button type={'submit'} className="save-btn">Guardar</button>
+                            <button className="cancel-btn" onClick={onClose}>Cancelar</button>
+                        </div>
+                    </form>
                 </div>
 
             </div>

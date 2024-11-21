@@ -38,8 +38,12 @@ export const URLS = {
         post: `${API_BASIS_URL}/trains/create`,
     },
 
-    matchURLS:{
-
+    matchURLS: {
+        delete: `${API_BASIS_URL}/matches/delete`,
+        fetchAll: `${API_BASIS_URL}/matches/getAll`,
+        fetchOne: `${API_BASIS_URL}/matches`,
+        update: `${API_BASIS_URL}/matches/update`,
+        post: `${API_BASIS_URL}/matches/create`,
     }
 
 };
