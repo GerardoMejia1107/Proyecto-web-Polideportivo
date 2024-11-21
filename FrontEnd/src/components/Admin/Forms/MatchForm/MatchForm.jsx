@@ -48,7 +48,7 @@ const MatchForm = ({show, onClose}) => {
                                 onChange={(e) => setSport(e.target.value)}
                                 required>
                             <option value="" disabled>
-                                {loadingSports ? 'Cargando deportes...' : 'Seleccionar Deporte'}
+                                {loadingSports ? 'Cargando deportes...' : 'Seleccionar deporte'}
                             </option>
                             {fetchedSportsData &&
                                 fetchedSportsData.map((sport) => (
@@ -111,7 +111,7 @@ const MatchForm = ({show, onClose}) => {
                                         onChange={(e) => setSecondUniv(e.target.value)}
                                         required>
                                     <option value="" disabled>
-                                        {loadingUniversities ? 'Cargando deportes...' : 'Seleccionar Universidad'}
+                                        {loadingUniversities ? 'Cargando deportes...' : 'Seleccionar universidad'}
                                     </option>
                                     {fetchedUniversitiesData &&
                                         fetchedUniversitiesData.map((univ) => (
@@ -123,6 +123,17 @@ const MatchForm = ({show, onClose}) => {
                                 </select>
                             </div>
                         </div>
+                    </div>
+
+                    <div className="form-group">
+                        <label>Estado</label>
+                        <select>
+                            <option>Seleccionar estado</option>
+                            <option>En progreso</option>
+                            <option>Cancelado</option>
+                            <option>Planificado</option>
+                            <option>Finalizado</option>
+                        </select>
                     </div>
 
 
