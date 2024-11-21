@@ -6,12 +6,21 @@ import {URLS} from "../../../../utils/serverRoutes.js";
 const MatchForm = ({show, onClose}) => {
     if (!show) return null;
     const [sport, setSport] = useState('');
+    const [firstUniv, setFirstUniv] = useState('');
+    const [secondUniv, setSecondUniv] = useState('');
     const {
         data: fetchedSportsData,
         loading: loadingSports,
         error: errorSports,
         overFetch: fetchSports,
     } = useFetch(URLS.sportURLS.fetchAll);
+
+    const {
+        data: fetchedUniversitiesData,
+        loading: loadingUniversities,
+        error: errorUniversities,
+        overFetch: fetchUniversities,
+    } = useFetch(URLS.universityURLS.fetchAll);
 
     return (
         <div className="modal-style">
@@ -66,34 +75,48 @@ const MatchForm = ({show, onClose}) => {
                     {/* Universidades */}
                     <div className="form-group-inline">
                         <div className="form-group">
-                            <label>Universidad Local</label>
-                            <select>
-                                <option>Seleccionar Universidad</option>
+                            <label htmlFor="university1">Universidad Local</label>
+                            <select id="university1"
+                                    name="university1"
+                                    value={firstUniv}
+                                    onChange={(e) => setFirstUniv(e.target.value)}
+                                    required>
+                                <option value="" disabled>
+                                    {loadingUniversities ? 'Cargando deportes...' : 'Seleccionar Universidad'}
+                                </option>
+                                {fetchedUniversitiesData &&
+                                    fetchedUniversitiesData.map((univ) => (
+                                        <option key={univ._id} value={univ._id}>
+                                            {univ.name}
+                                        </option>
+                                    ))}
+
                             </select>
                         </div>
-                        <div className="form-group">
-                            <label>Universidad Visitante</label>
-                            <select>
-                                <option>Seleccionar Universidad</option>
-                            </select>
+
+                        <div className="form-group-inline">
+                            <div className="form-group">
+                                <label htmlFor="university1">Universidad Local</label>
+                                <select id="university1"
+                                        name="university1"
+                                        value={secondUniv}
+                                        onChange={(e) => setSecondUniv(e.target.value)}
+                                        required>
+                                    <option value="" disabled>
+                                        {loadingUniversities ? 'Cargando deportes...' : 'Seleccionar Universidad'}
+                                    </option>
+                                    {fetchedUniversitiesData &&
+                                        fetchedUniversitiesData.map((univ) => (
+                                            <option key={univ._id} value={univ._id}>
+                                                {univ.name}
+                                            </option>
+                                        ))}
+
+                                </select>
+                            </div>
                         </div>
                     </div>
 
-                    {/* Entrenadores */}
-                    <div className="form-group-inline">
-                        <div className="form-group">
-                            <label>Entrenador Local</label>
-                            <select>
-                                <option>Seleccionar Entrenador</option>
-                            </select>
-                        </div>
-                        <div className="form-group">
-                            <label>Entrenador Visitante</label>
-                            <select>
-                                <option>Seleccionar Entrenador</option>
-                            </select>
-                        </div>
-                    </div>
 
                     {/* Botones de acción */}
                     <div className="form-buttons">
