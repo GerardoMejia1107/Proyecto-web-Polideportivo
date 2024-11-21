@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
     z-index: 999;
-    
+
 }
 
 /* Contenedor del contenido del modal */
@@ -27,7 +27,7 @@
     overflow-y: auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     z-index: 1000;
-    
+
 }
 
 .modal-close-btn {
@@ -50,7 +50,7 @@
     align-items: center;
     max-width: 500px;
     width: 100%;
-    padding: 1 rem;
+    padding: 1rem;
     border-radius: 5px;
     border: 2px solid transparent; /* Transparente por defecto */
     background-color: white;

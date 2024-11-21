@@ -34,7 +34,7 @@ const UnivSportPage = () => {
 
     useEffect(() => {
         if (fetchedUniData) setUniversitiesData(fetchedUniData);
-       setSportData(fetchedSportsData);
+        setSportData(fetchedSportsData);
     }, [fetchedUniData, fetchedSportsData]);
 
 
@@ -49,10 +49,24 @@ const UnivSportPage = () => {
     };
 
 
-
-
     const universityColumns = [
-        {name: "Nombre", selector: (row) => row.name, sortable: true},
+        {
+            name: "Nombre", selector: (row) => row.name, sortable: true,
+            cell: (row) => (
+                <div
+                    style={{
+                        lineHeight: "2.0",
+                        textAlign: "start",
+                        whiteSpace: "normal",
+                        wordWrap: "break-word",
+                        wordBreak: "break-word",
+
+                    }}
+                >
+                    {row.name}
+                </div>
+            ),
+        },
         {
             name: "Ubicación",
             selector: (row) => row.location,
@@ -148,7 +162,7 @@ const UnivSportPage = () => {
                 </section>
 
                 <Modal show={isModalOpen} onClose={closeModal}>
-                    {activeForm === UNIV_FRM && <UniversityForm onClose={closeModal} refresh={()=>{
+                    {activeForm === UNIV_FRM && <UniversityForm onClose={closeModal} refresh={() => {
                         fetchUniversities()
                     }}/>}
 

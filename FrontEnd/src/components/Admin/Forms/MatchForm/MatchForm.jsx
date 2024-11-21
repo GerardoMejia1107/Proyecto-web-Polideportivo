@@ -12,6 +12,7 @@ const MatchForm = ({show, onClose}) => {
     const [date, setDate] = useState(""); // Fecha del partido
     const [time, setTime] = useState(""); // Hora del partido
     const [location, setLocation] = useState(""); // Ubicación del partido
+    const [status, setStatus] = useState(""); // Ubicación del partido
 
 
     const {
@@ -43,6 +44,7 @@ const MatchForm = ({show, onClose}) => {
             sport,
             universityHome,
             universityAway,
+            status
         }
         const created = await postData(matchData);
         created && onClose()
@@ -164,13 +166,23 @@ const MatchForm = ({show, onClose}) => {
                         </div>
 
                         <div className="form-group">
-                            <label>Estado</label>
-                            <select>
-                                <option>Seleccionar estado</option>
-                                <option>En progreso</option>
-                                <option>Cancelado</option>
-                                <option>Planificado</option>
-                                <option>Finalizado</option>
+                            <label htmlFor="status">Estado</label>
+                            <select
+                                id="status"
+                                name="status"
+                                value={status}
+                                onChange={(e) => setStatus(e.target.value)}
+                                required
+                            >
+                                <option value="" disabled>
+                                    Seleccionar Estado
+                                </option>
+                                <option value="Planificado">Planificado</option>
+                                <option value="Cancelado">Cancelado</option>
+                                <option value="En curso">En curso</option>
+                                <option value="Finalizado">Finalizado</option>
+
+
                             </select>
                         </div>
 
