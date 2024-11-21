@@ -1,8 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import './MatchForm.css'
+import useFetch from "../../../../hooks/useFetch.js";
+import {URLS} from "../../../../utils/serverRoutes.js";
 
-const MatchForm = ({ show, onClose }) => {
+const MatchForm = ({show, onClose}) => {
     if (!show) return null;
+    const [sport, setSport] = useState('');
+    const {
+        data: fetchedSportsData,
+        loading: loadingSports,
+        error: errorSports,
+        overFetch: fetchSports,
+    } = useFetch(URLS.sportURLS.fetchAll);
 
     return (
         <div className="modal-style">
@@ -15,12 +24,21 @@ const MatchForm = ({ show, onClose }) => {
 
                     {/* Campo de selección de Deporte */}
                     <div className="form-group">
-                        <label>Deporte</label>
-                        <select>
-                            <option>Seleccionar Deporte</option>
-                            <option>Fútbol</option>
-                            <option>Baloncesto</option>
-                            <option>Voleibol</option>
+                        <label htmlFor="sport">Deporte</label>
+                        <select id="sport"
+                                name="sport"
+                                value={sport}
+                                onChange={(e) => setSport(e.target.value)}
+                                required>
+                            <option value="" disabled>
+                                {loadingSports ? 'Cargando deportes...' : 'Seleccionar Deporte'}
+                            </option>
+                            {fetchedSportsData &&
+                                fetchedSportsData.map((sport) => (
+                                    <option key={sport._id} value={sport._id}>
+                                        {sport.name}
+                                    </option>
+                                ))}
                         </select>
                     </div>
 
@@ -84,9 +102,9 @@ const MatchForm = ({ show, onClose }) => {
                     </div>
                 </div>
 
-            </div>   
-        
-        </div> 
+            </div>
+
+        </div>
 
     )
 }
