@@ -7,9 +7,6 @@ import cookieParser from "cookie-parser";
 
 dotenv.config(); // Cargar variables de entorno primero
 
-if (!process.env.MONGO_HOST || !process.env.MONGO_DB) {
-  throw new Error("Missing MONGO_HOST or MONGO_DB environment variables");
-}
 
 const app = express();
 
@@ -40,7 +37,7 @@ app.use((err, req, res, next) => {
 });
 
 // Conexión a MongoDB
-const URI = `mongodb://${process.env.MONGO_HOST}/${process.env.MONGO_DB}`;
+const URI = `${process.env.MONGO_URI}`;
 mongoose
   .connect(URI)
   .then(() => {
