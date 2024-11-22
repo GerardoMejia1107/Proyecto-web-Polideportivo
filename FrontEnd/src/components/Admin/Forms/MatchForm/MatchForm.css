@@ -1,154 +1,158 @@
-/* Contenedor principal con borde que responde al hover */
-.modal-style {
+.match-form-modal-style {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
-    align-items: center;
     justify-content: center;
-    z-index: 999;
-
-}
-
-/* Contenedor del contenido del modal */
-.modal-content-style {
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 20px;
-    /*position: relative;*/
-    width: 90%;
-    max-width: 500px;
-    max-height: 90vh;
-    overflow-y: auto;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    align-items: center;
     z-index: 1000;
-
 }
 
-.modal-close-btn {
+.match-form-modal-content-style {
+    background-color: white;
+    max-width: 30rem;
+    width: 50%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: auto;
+}
+
+.match-form-modal-close-btn {
     position: absolute;
     top: 10px;
-    right: 10px;
-    font-size: 1.5rem;
+    right: 15px;
+    font-size: 20px;
     background: none;
     border: none;
     cursor: pointer;
-    color: #333;
+    color: #555;
     font-weight: bold;
 }
-
 
 .match-form-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 500px;
-    width: 100%;
-    padding: 1rem;
-    border-radius: 5px;
-    border: 2px solid transparent; /* Transparente por defecto */
-    background-color: white;
-    margin-top: 1rem;
-    transition: border-color 0.3s ease; /* Transición suave solo en el color del borde */
-}
-
-.match-form-container:hover {
-    border-color: #0070c9; /* Cambia el borde a azul cuando el cursor pasa sobre el contenedor */
+    align-items: stretch;
 }
 
 .match-form-title {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #00509E;
+    font-size: 20px;
     text-align: center;
-    margin-bottom: 1.5rem;
-    position: relative;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #0070c9; /* Línea inferior azul */
-    letter-spacing: 1px; /* Espaciado entre letras */
+    color: #002855;
+    margin-bottom: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #002855;
+    padding-bottom: 10px;
 }
 
-.form-group {
-    margin-bottom: 1.5rem;
-    display: flex;
-    flex-direction: column;
+.match-form {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    padding: 1rem;
+    gap: 1.5rem;
 }
 
-.form-group label {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #003366;
+ .match-form-buttons, .match-form-group-inline, .match-form-group-location {
+    grid-column: 1 / -1;
+    margin: 0 auto;
 }
 
-.form-group select,
-.form-group input {
-    padding: 0.5rem;
-    border: 1px solid #b0c4de;
-    border-radius: 4px;
-    font-size: 1rem;
-}
 
-.form-group-inline {
-    display: flex;
-    justify-content: space-between;
+
+.match-form-group-inline {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     gap: 1rem;
 }
 
-.image-upload .upload-box {
+.match-form-group-univ-local, .match-form-group-sport, .match-form-group-date-and-time {
+    grid-column: 1 / 4;
+}
+
+.match-form-group-date-and-time{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px dashed #0070c9;
-    border-radius: 8px;
-    padding: 1.5rem;
-    color: #0070c9;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.image-upload .upload-box:hover {
-    background-color: #e0f0ff;
+.match-form-group-univ-away, .match-form-group-status, .match-form-group-location {
+    grid-column: 4 / 7;
 }
 
-.form-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 1.5rem;
-    gap: 10px;
-}
 
-.save-btn,
-.cancel-btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
+
+
+
+
+
+
+
+
+.match-form label {
+    font-size: 14px;
+    color: #333;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    margin-bottom: 5px;
 }
 
-.save-btn {
-    background-color: #0070c9;
+.match-form input,
+.match-form select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.match-form input:focus,
+.match-form select:focus {
+    outline: none;
+    border-color: #002855;
+    box-shadow: 0 0 4px rgba(0, 40, 85, 0.3);
+}
+
+.match-form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+
+}
+
+.match-form-save-btn {
+    background-color: #002855;
     color: white;
     border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 400;
+    transition: 0.3s ease-in;
 }
 
-.cancel-btn {
-    background-color: #cccccc;
-    color: #333333;
+.match-form-save-btn:hover {
+    background-color: #004080;
+}
+
+.match-form-cancel-btn {
+    background-color: #ccc;
+    color: #333;
     border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 400;
+    transition: 0.3s ease-in;
 }
 
-.save-btn:hover {
-    background-color: #00509E;
+.match-form-cancel-btn:hover {
+    background-color: #aaa;
 }
 
-.cancel-btn:hover {
-    background-color: #b3b3b3;
-}
